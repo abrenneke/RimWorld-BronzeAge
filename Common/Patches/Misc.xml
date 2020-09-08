@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Config error in Sandbags: has stackLimit > 1 but also has drawGUIOverlay = false -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName = "Sandbags" and drawGUIOverlay = "false"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "Sandbags"]/drawGUIOverlay</xpath>
+          <value>
+            <drawGUIOverlay>false</drawGUIOverlay>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName = "Sandbags"]/stackLimit</xpath>
+          <value>
+            <stackLimit>1</stackLimit>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Config error in HeavySandbags: has stackLimit > 1 but also has drawGUIOverlay = false -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName='HeavySandbags']/drawGUIOverlay</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='HeavySandbags']</xpath>
+            <value>
+              <drawGUIOverlay>true</drawGUIOverlay>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>/Defs/ThingDef[defName='HeavySandbags']/drawGUIOverlay[text()='false']</xpath>
+          <value>
+            <drawGUIOverlay>true</drawGUIOverlay>
+          </value>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ThingDef[defName='HeavySandbags']/stackLimit</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='HeavySandbags']</xpath>
+            <value>
+              <stackLimit>1</stackLimit>
+            </value>
+          </nomatch>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='HeavySandbags']/stackLimit</xpath>
+            <value>
+              <stackLimit>1</stackLimit>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Config error in AcidBurn: Hediff with defName AcidBurn has no description! -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/HediffDef[defName = "AcidBurn"]/description</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName = "AcidBurn"]</xpath>
+        <value>
+          <description>A painful burn from acid.</description>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Config error in Sting: Hediff with defName Sting has no description! -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/HediffDef[defName = "Sting"]/description</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName = "Sting"]</xpath>
+        <value>
+          <description>A sting from an insect-like creature.</description>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Config error in PlatypusVenom: Hediff with defName PlatypusVenom has no description! -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/HediffDef[defName = "PlatypusVenom"]/description</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName = "PlatypusVenom"]</xpath>
+        <value>
+          <description>Excruciatingly painful venom from being stabbed with a platypus's venom spur.</description>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Config error in ScorpionVenom: Hediff with defName ScorpionVenom has no description! -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/HediffDef[defName = "ScorpionVenom"]/description</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName = "ScorpionVenom"]</xpath>
+        <value>
+          <description>Painful venom from a scorpion sting.</description>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Config error in ToxicVenom: Hediff with defName ToxicVenom has no description! -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/HediffDef[defName = "ToxicVenom"]/description</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName = "ToxicVenom"]</xpath>
+        <value>
+          <description>Painful toxic venom.</description>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Could not load UnityEngine.Texture2D at Things/Building/Linked/RockWall in any active mod or in base resources. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Medieval</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/ThingDef[defName = "VFEM_CobblestoneWall"]/graphicData/graphicClass</xpath>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "VFEM_CobblestoneWall"]/graphicData</xpath>
+        <value>
+          <graphicClass>Graphic_Appearances</graphicClass>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
+  <!-- Simple Chains: Leather, fixes Medieval patching out Rawgrape -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Leather</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Factions Expanded - Medieval</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <success>Always</success>
+            <xpath>
+              /Defs/RecipeDef[defName="Owl_MakeTanningLiquorFromFood"]/ingredients/li[1]/filter/thingDefs/li[text() = "Rawgrape"] |
+              /Defs/RecipeDef[defName="Owl_MakeTanningLiquorFromFood"]/fixedIngredientFilter/thingDefs/li[text() = "Rawgrape"]
+            </xpath>
+            <value>
+              <li>VFEM_RawGrapes</li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Fix grape/wine references being wrong -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Medieval</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>/Defs/ThingDef[defName="Wine"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>/Defs/ThingDef[defName="FermentingBarrel" or defName="VG_LargeFermentingBarrel"]/comps/li[@Class="Drinks.CompProperties_UniversalFermenter"]/products/li[thingDef="Wine"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>//li[text()='Wine']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Drinks UF</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Factions Expanded - Medieval</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/RecipeDef[defName="BrewGrapeSoda"]/ingredients/li/filter/thingDefs/li</xpath>
+            <value>
+              <li>VFEM_RawGrapes</li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/RecipeDef[defName="BrewGrapeSoda"]/fixedIngredientFilter/thingDefs/li</xpath>
+            <value>
+              <li>VFEM_RawGrapes</li>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/RecipeDef[defName="VG_MakeGrapeMust"]</xpath>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName="VG_GrapeMust"]</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/SeedsPlease.SeedDef[defName="Seed_Grape"]/sources/li[1]</xpath>
+            <value>
+              <li>VFEM_Plant_Grape</li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[defName = "ExtractSeed_Grape"]/ingredients/li[1]/filter/thingDefs/li[1] |
+              /Defs/RecipeDef[defName = "ExtractSeed_Grape"]/fixedIngredientFilter/thingDefs/li[1]
+            </xpath>
+            <value>
+              <li>VFEM_RawGrapes</li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Bloomery support for VFEM chunks -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[K]Extra Stone(w/ Cupro's Textures)</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[@Name="STN_NormalChunkBase" or @Name="STN_GraniticChunkBase" or @Name="STN_SmoothChunkBase" or @Name="STN_MarbledChunkBase" or @Name="STN_BandedChunkBase"]</xpath>
+      <value>
+        <stuffProps>
+          <categories>
+            <li>Chunky</li>
+          </categories>
+        </stuffProps>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Mud bricks and adobe bricks are redundant, use the mud bricks -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/RecipeDef[defName="MedTimes_MakeAdobeBricks"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Ceramics Balance -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Ceramics</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/RecipeDef[defName="Make_FiberFromWood"]/products/N7_PlantFiber</xpath>
+            <value>
+              <N7_PlantFiber>20</N7_PlantFiber>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MineableClay"]/building/mineableYield</xpath>
+            <value>
+              <mineableYield>5</mineableYield>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/RecipeDef[defName="Make_RawMudbricks"]/ingredients/li[1]/count</xpath>
+            <value>
+              <count>3</count>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/RecipeDef[defName="Make_RawMudbricks"]/ingredients/li[2]/count</xpath>
+            <value>
+              <count>30</count>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/RecipeDef[defName="Make_RawBricks"]/ingredients/li[1]/count</xpath>
+            <value>
+              <count>3</count>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/RecipeDef[defName="Make_RawBricks"]/ingredients/li[2]/count</xpath>
+            <value>
+              <count>3</count>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Fiber to plant scraps -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Fertile Fields [1.1]</li>
+      </mods>
+      <match Class="PatchOperationReplace">
+        <xpath>/Defs/RecipeDef[defName="Make_FiberFromWood"]/products/N7_PlantFiber</xpath>
+        <value>
+          <PlantScraps>30</PlantScraps>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Burn plant scraps -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Simple Chains: Lumber</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>//li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs[li[text()='Owl_Firewood']]</xpath>
+        <value>
+          <li>PlantScraps</li>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- N7_Sand Fix -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <success>Always</success>
+      <xpath>//li[text()='N7_Sand']</xpath>
+      <value>
+        <li>SandPile</li>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Railgun dunno -->
+  <Operation Class="PatchOperationRemove">
+    <success>Always</success>
+    <xpath>/Defs/WeaponExtensionDef[defName='WeaponExtensionDef_Gun_RailgunMKI']</xpath>
+  </Operation>
+
+  <!-- Research bench not require steel -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='SimpleResearchBench']/costList/li[text() = 'Steel']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/ThingDef[defName='SimpleResearchBench']/costList</xpath>
+    </match>
+  </Operation>
+
+  <!-- Drying rack for bricks made from most anything, not only lumber -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/ThingDef[defName='Building_DryingRack']/costList |
+            /Defs/ThingDef[defName='Building_DryingRack']/constructEffect
+          </xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Building_DryingRack']</xpath>
+          <value>
+            <costStuffCount>40</costStuffCount>
+            <stuffCategories>
+              <li>Woody</li>
+              <li>Stony</li>
+              <li>Metallic</li>
+            </stuffCategories>
+          </value>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/StuffCategoryDef[defName='RawWoody']</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='Building_DryingRack']/stuffCategories</xpath>
+            <value>
+              <li>RawWoody</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Coal chunks from wood, make it make more sense -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/label</xpath>
+          <value>
+            <label>make charcoal</label>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/description</xpath>
+          <value>
+            <description>Make charcoal by slowly burning wood</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/recipeUsers</xpath>
+          <value>
+            <recipeUsers>
+              <li>MedTimes_Smokehouse</li>
+            </recipeUsers>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Smoked meat</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/recipeUsers</xpath>
+            <value>
+              <li>Smokepit</li>
+              <li>SmokeHouse</li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Simple Chains: Lumber</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/ingredients/li[1]/filter/thingDefs/li[1] |
+              /Defs/RecipeDef[defName='MedTimes_MakeCoalFromWood']/fixedIngredientFilter/thingDefs/li[1]
+            </xpath>
+            <value>
+              <li>Owl_Firewood</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- AnimalCollabProj + Diseases Overhauled causes a problem -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Diseases Overhauled</li>
+      </mods>
+      <match Class="PatchOperationRemove">
+        <xpath>/Defs/HediffDef[@Name='InfectionBase']/comps/li[@Class="HediffCompProperties_Discoverable"]</xpath>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Vanilla Textures Expanded Mod Expansion Bug -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/MainButtonDef[defName='Guests' and count(iconPath) > 1]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/MainButtonDef[defName='Guests']/iconPath[2]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Apparel Texturer + Visible Pants incompatibility -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_FlakPants']/apparel[count(wornGraphicPath) > 1]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/ThingDef[defName='Apparel_Pants' or defName='Apparel_FlakPants']/apparel/wornGraphicPath[1]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Duplicate Agave plants - let's take VG_Plant_Agave -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='VG_Plant_Agave']</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/ThingDef[defName='Plant_Agave']</xpath>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName='Plant_Agave']</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <success>Always</success>
+            <xpath>//li[text()='Plant_Agave']</xpath>
+            <value>
+              <li>VG_Plant_Agave</li>
+            </value>
+          </li>
+          <li Class="PatchOperationSetName">
+            <success>Always</success>
+            <xpath>//Plant_Agave</xpath>
+            <name>VG_Plant_Agave</name>
+          </li>
+          <li Class="PatchOperationAttributeSet">
+            <xpath>/Defs/ThingDef[defName='VG_Plant_Agave']</xpath>
+            <attribute>ParentName</attribute>
+            <value>VG_WildPlantDef</value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VG_Plant_Agave']/plant</xpath>
+            <value>
+              <sowTags>
+                <li>Ground</li>
+                <li>Hydroponic</li>
+              </sowTags>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Duplicate butcher table -->
+  <Operation Class="PatchOperationRemove">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName='GL_TableButcher'] | //li[text()='GL_TableButcher']</xpath>
+  </Operation>
+
+  <!-- Barber's table should be removed, mod name mismatch -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Facial Stuff 1.1</li>
+    </mods>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/ThingDef[defName="VHE_TableBarber"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Duplicate Smokehouse -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Smoked meat</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='MedTimes_Smokehouse'] |
+              //li[text()='MedTimes_Smokehouse']
+            </xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[
+                defName='DryFruit'
+                or defName='BakeMeatPie'
+                or defName='MedTimes_CookMealDriedAgaveFruit'
+                or defName='MedTimes_CookMealDriedAgaveFruitBulk'
+                or defName='MedTimes_CookMealDriedBerries'
+                or defName='MedTimes_CookMealDriedBerriesBulk'
+                or defName='MedTimes_CookMealJerkedMeats'
+                or defName='MedTimes_CookMealJerkedMeatsBulk'
+                or defName='DryFruit'
+              ]/recipeUsers
+            </xpath>
+            <value>
+              <recipeUsers>
+                <li>Oven</li>
+                <li>ElectricOven</li>
+                <li>Smokepit</li>
+                <li>SmokeHouse</li>
+                <li>MedTimes_StoneHearth</li>
+              </recipeUsers>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Duplicate ballista and catapult -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded - Security</li>
+      </mods>
+      <match Class="PatchOperationRemove">
+        <xpath>
+          /Defs/ThingDef[
+            defName='MedTimes_Artillery_CatapultTop'
+            or defName='MedTimes__Artillery_Catapult'
+            or defName='MedTimes_Bolt_Ballista'
+            or defName='MedTimes_Turret_BallistaTop'
+            or defName='MedTimes_Turret_Ballista'
+          ]
+        </xpath>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Duplicate cotton bandages -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='Bandagekit']</xpath>
+    <match Class="PatchOperationRemove">
+      <success>Always</success>
+      <xpath>/Defs/ThingDef[defName='MSBandage'] | /Defs/RecipeDef[defName='MakeMSBandage']</xpath>
+    </match>
+  </Operation>
+
+  <!-- Unknown warning -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Expanded Framework</li>
+    </mods>
+    <match Class="PatchOperationRemove">
+      <xpath>/Defs/KCSG.SymbolDef[thing='VFEV_FurBed']</xpath>
+    </match>
+  </Operation>
+
+  <!-- Duplicate Bulk Crafting -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simply Bulk Crafting</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>
+            /Defs/RecipeDef[
+              defName='CookMealSimpleBulk'
+              or defName='CookMealFineBulk'
+              or defName='CookMealLavishBulk'
+            ][1] |
+            /Defs/RecipeDef[
+              defName='CookMealSimple_Bulk'
+              or defName='CookMealSimpleD'
+              or defName='CookMealFine_Bulk'
+              or defName='CookMealFineD'
+              or defName='CookMealLavish_Bulk'
+              or defName='CookMealLavishD'
+              or defName='Make_PemmicanBulk'
+              or defName='VG_MakebulkPemmican'
+            ] |
+            /Defs/ThingDef[defName='Campfire']/recipes/li[
+              text()='CookMealSimpleBulk'
+              or text()='Make_PemmicanBulk'
+            ] |
+            //li[text()='Make_PemmicanBulk']
+          </xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Baking uses the oven -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>VGP Garden Gourmet</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[
+                defName='VCE_CookBakeSimple'
+                or defName='VCE_CookBakeSimpleBulk'
+                or defName='VCE_CookBakeFine'
+                or defName='VCE_CookBakeFineBulk'
+                or defName='VCE_CookBakeLavish'
+                or defName='VCE_CookBakeLavishBulk'
+                or defName='VCE_CookBakeGourmet'
+              ]/recipeUsers
+            </xpath>
+            <value>
+              <recipeUsers>
+                <li>Oven</li>
+                <li>ElectricOven</li>
+              </recipeUsers>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='VCE_Flour'] |
+              /Defs/RecipeDef[defName='ExtractSeed_VCEWheat']
+            </xpath>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+            <value>
+              <ThingDef ParentName="RoughPlantBase">
+                <defName>VCE_Spelt</defName>
+                <label>spelt</label>
+                <description>Raw spelt wheat, ideal for grinding up to flour. Spelt flour takes a very long time to go bad, if stored in a dry environment.</description>
+                <soundInteract>Grain_Drop</soundInteract>
+                <soundDrop>Grain_Drop</soundDrop>
+                <graphicData>
+                  <texPath>Things/Items/Raw/VCE_Flour</texPath>
+                </graphicData>
+                <statBases>
+                  <MarketValue>1.9</MarketValue>
+                  <Nutrition>0.05</Nutrition>
+                  <Flammability>1.3</Flammability>
+                </statBases>
+                <thingCategories>
+                  <li>PlantMatter</li>
+                </thingCategories>
+                <comps>
+                  <li Class="CompProperties_Rottable">
+                    <daysToRotStart>100</daysToRotStart>
+                    <rotDestroys>true</rotDestroys>
+                  </li>
+                  <li>
+                    <compClass>QualityOfBuilding.QualityCheckComp</compClass>
+                  </li>
+                </comps>
+                <ingestible>
+                  <preferability>NeverForNutrition</preferability>
+                </ingestible>
+              </ThingDef>
+              <RecipeDef ParentName="ExtractSeed">
+                <defName>ExtractSeed_VCEWheat</defName>
+                <label>extract seeds from spelt</label>
+                <description>Extract spelt seeds from raw spelt</description>
+                <ingredients>
+                  <li>
+                    <filter>
+                      <thingDefs>
+                        <li>VCE_Spelt</li>
+                      </thingDefs>
+                    </filter>
+                    <count>4</count>
+                  </li>
+                </ingredients>
+                <fixedIngredientFilter>
+                  <thingDefs>
+                    <li>VCE_Spelt</li>
+                  </thingDefs>
+                </fixedIngredientFilter>
+                <products>
+                  <Seed_VCEWheat>3</Seed_VCEWheat>
+                </products>
+                <researchPrerequisite>BasicAgriculture</researchPrerequisite>
+              </RecipeDef>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef/fixedIngredientFilter/thingDefs/li[text()='VCE_Flour'] |
+              /Defs/RecipeDef/defaultIngredientFilter/thingDefs/li[text()='VCE_Flour'] |
+              /Defs/RecipeDef/ingredients/li/filter/thingDefs/li[text()='VCE_Flour']
+            </xpath>
+            <value>
+              <li>Flour</li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='VCE_Wheat']/plant/harvestedThingDef</xpath>
+            <value>
+              <harvestedThingDef>VCE_Spelt</harvestedThingDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='CraftFlour' or defName='CraftBulkFlour']/ingredients/li[1]/filter/thingDefs |
+              /Defs/RecipeDef[defName='CraftFlour' or defName='CraftBulkFlour']/fixedIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>VCE_Spelt</li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Duplicate coals -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>[WD] Simple Coal</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName='MedTimes_Resource_Coal'] | Defs/StuffCategoryDef[defName='MedTimes_Coal']</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>//li[text()='MedTimes_Resource_Coal']</xpath>
+            <value>
+              <li>WDCoal</li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>//thingDef[text()='MedTimes_Resource_Coal']</xpath>
+            <value>
+              <thingDef>WDCoal</thingDef>
+            </value>
+          </li>
+          <li Class="PatchOperationSetName">
+            <success>Always</success>
+            <xpath>//MedTimes_Resource_Coal</xpath>
+            <name>WDCoal</name>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Bloomery takes an obscenely long time to make, I don't see a good reason for that -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Steel</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='Owl_Bloomery']/statBases/WorkToBuild</xpath>
+      <value>
+        <WorkToBuild>1500</WorkToBuild>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- ACP overwrites InfectionBase for some reason -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>AnimalCollabProj</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/HediffDef[@Name='InfectionBase']</xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <HediffDef Name="InfectionBase" Abstract="True">
+              <hediffClass>HediffWithComps</hediffClass>
+              <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+              <initialSeverity>0.001</initialSeverity>
+              <removeOnRedressChanceByDaysCurve>
+                <points>
+                  <li>(0, 0)</li>
+                  <li>(2, 0)</li>
+                  <li>(7, 0.5)</li>
+                  <li>(20, 1)</li>
+                </points>
+              </removeOnRedressChanceByDaysCurve>
+            </HediffDef>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Things that can use wrought iron -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAddModExtension">
+        <xpath>/Defs/ThingDef[defName='WroughtIron']</xpath>
+        <value>
+          <li Class="ABrenneke.BronzeAge.AlternateResources">
+            <thingDefs>
+              <li>Steel</li>
+            </thingDefs>
+          </li>
+        </value>
+      </li>
+      <li Class="PatchOperationSetName">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='ToolCabinet'
+          or defName='TableSculpting'
+          or defName='FueledSmithy'
+          or defName='FueledStove'
+          or defName='TableStonecutter'
+          or defName='Brewery'
+          or defName='SimpleResearchBench'
+          or defName='FermentingBarrel'
+          or defName='Hopper'
+          or defName='Heater'
+          or defName='Cooler'
+          or defName='Vent'
+          or defName='Piano'
+          or defName='TableAnimalProsthetics'
+          or defName='SimpleProstheticLegAnimal'
+          or defName='SimpleProstheticArmAnimal'
+          or defName='NoseAnimalSimple'
+          or defName='JawAnimalSimple'
+          or defName='EarAnimalSimple'
+          or defName='RimFridge_SingleRefrigerator'
+          or defName='RimFridge_Refrigerator'
+          or defName='RimFridge_SingleWallRefrigerator'
+          or defName='RimFridge_WallRefrigerator'
+          or defName='LWM_VeryBigShelf'
+          or defName='LWM_FabricHamper'
+          or defName='GlassworkTable'
+          or defName='FueledGlassworkTable'
+          or defName='Window'
+          or defName='WallLamp'
+          or defName='OutdoorGroundLamp'
+          or defName='DoorGlass'
+          or defName='VFEPD_SteelBookshelf'
+          or defName='VFEPD_SteelCupboard'
+          or defName='VFEPD_SteelCupboardDouble'
+          or defName='VFEPD_SteelCupboardPlates'
+          or defName='VFEPD_SteelCupboardNarrow'
+          or defName='VFEPD_SteelTallCabinet'
+          or defName='VFEPD_SteelShortCupboard'
+          or defName='VFEPD_SteelShortCupboardPlates'
+          or defName='VFEPD_SteelDivider'
+          or defName='VFEPD_SteelPlankDivider'
+          or defName='VFEPD_SteelMirror'
+          or defName='VFEPD_WarehouseShelfEmpty'
+          or defName='VFEPD_WarehouseShelfBoxes'
+          or defName='VFEPD_BinBag'
+          or defName='VFEPD_ContainerGreen'
+          or defName='VFEPD_ContainerGrey'
+          or defName='VFEPD_ContainerRed'
+          or defName='VFEPD_ContainerYellow'
+          or defName='VFEPD_ContainerBlue'
+          or defName='VFEPD_Pipes'
+          or defName='VFEPD_Cone'
+          or defName='VFEPD_ConcreteBags'
+          or defName='VFEPD_VentilationShaft'
+          or defName='VFEPD_Lockers'
+          or defName='VFEPD_Cooker'
+          or defName='VFEPD_Fridge'
+          or defName='VFEPD_FoodTrolley'
+          or defName='VFEPD_KitchenSurface'
+          or defName='VFEPD_KitchenSurfaceEmpty'
+          or defName='VFEPD_KitchenSink'
+          or defName='VFEPD_MopBucket'
+          or defName='VFEPD_Anvil'
+          or defName='VFEPD_ArmorStandFull'
+          or defName='VFEPD_ArrowCage'
+          or defName='VFEPD_CageBrazier'
+          or defName='VFEPD_WeaponRackSwords'
+          or defName='VFEPD_WeaponRackSpears'
+          or defName='VFEPD_CagePlatform'
+          or defName='VFEPD_Exhaust'
+          or defName='VFEPD_SmallExhaust'
+          or defName='VFEPD_CoalBurner'
+          or defName='VFEPD_SkipBlack'
+          or defName='VFEPD_SkipWhite'
+          or defName='VFEPD_SkipSilver'
+          or defName='VFEPD_SkipBlue'
+          or defName='VFEPD_SkipRed'
+          or defName='VFEPD_BinBagDeep'
+          or defName='VFEPD_OvenDeep'
+          or defName='VFEPD_FoodTrolleyDeep'
+          or defName='VFEPD_SteelCupboardDeep'
+          or defName='VFEPD_SteelCupboardDoubleDeep'
+          or defName='INSDoor_Biomass'
+          or defName='INSDoor_Fibre'
+          or defName='INSDoor_Hyper'
+          or defName='INSDoor_Polymer'
+          or defName='MedTimes_Shrine_RandomNumberGod'
+          or defName='MedTimes_GodKingThrone'
+          or defName='MedTimes_StreetLamp'
+          or defName='MedTimes_FoodPrepStation'
+          or defName='MedTimes_BlacksmithForge'
+          or defName='MedTimes_BlacksmithForgeTierTwo'
+          or defName='MedTimes_FueledSmelter'
+          or defName='MedTimes_IceboxFancy'
+          or defName='MedTimes_CoalGenerator'
+          or defName='MedTimes_Trap_Caltrops'
+          or defName='MedTimes_Artillery_MurderHole'
+          or defName='MedTimes_Puzzlebox'
+          or defName='MedTimes_CraftingTools'
+          or defName='MedTimes_SteelBow'
+          or defName='MedTimes_AdvancedTriggerMechanism'
+          or defName='MedTimes_WarbourneShield'
+          or defName='MedTimes_Ranged_MedievalGrenade'
+          or defName='MedTimes_Ranged_GrenadesAntioch'
+          or defName='MedTimes_Ranged_GrenadesAntioch_Dud'
+          or defName='MedTimes_Melee_AxeForester'
+          or defName='MedTimes_Melee_BoarSpear'
+          or defName='MedTimes_Melee_Gisarme'
+          or defName='MedTimes_Melee_ShortSword'
+          or defName='MedTimes_Melee_MaceHand'
+          or defName='MedTimes_Melee_HammerBandit'
+          or defName='MedTimes_Melee_WarKnife'
+          or defName='MedTimes_Melee_DaggerKnight'
+          or defName='MedTimes_Melee_SwordArming'
+          or defName='MedTimes_Melee_MaceFlanged'
+          or defName='MedTimes_Melee_MorningStar'
+          or defName='MedTimes_Melee_SwordLong'
+          or defName='MedTimes_Melee_WarKnifeHiQ'
+          or defName='MedTimes_Melee_Halberd'
+          or defName='MedTimes_Melee_BattleAxe'
+          or defName='MedTimes_Melee_AxeBearded'
+          or defName='MedTimes_Melee_Claymore'
+          or defName='MedTimes_Melee_WarHammer'
+          or defName='RTFTJToolBench'
+          or defName='Joy_PunchingBag'
+          or defName='Table_LightEndTable'
+          or defName='Light_Streetlamp'
+          or defName='VFE_Sprinkler'
+          or defName='plumbingValve'
+          or defName='airPipe'
+          or defName='BurnPit'
+          or defName='HotTub'
+          or defName='WaterTowerS'
+          or defName='WaterTowerL'
+          or defName='WindPump'
+          or defName='LogBoiler'
+          or defName='GasBoiler'
+          or defName='SolarHeater'
+          or defName='RadiatorStuffed'
+          or defName='RadiatorLarge'
+          or defName='FreezerUnit'
+          or defName='BiosolidsComposter'
+          or defName='UniversalFermenter'
+          or defName='RockMill'
+          or defName='CompostBarrel'
+          or defName='HeavySandbags'
+          or defName='VFE_MachiningCabinet'
+          or defName='VFE_SmithyCabinet'
+          or defName='VFE_KitchenSinkCabinet'
+          or defName='VFE_TailorCabinet'
+          or defName='VFE_TableSmithyLarge'
+          or defName='VFE_TableStoveLarge'
+          or defName='VFE_TableTailorLarge'
+          or defName='VFE_FueledSmelter'
+          or defName='RGK_EndTableWithLamp'
+          or defName='RGK_EndTableWithLampE'
+          or defName='GL_Bookshelf'
+          or defName='GL_TablewareShelf'
+          or defName='GL_Locker'
+          or defName='RGK_Flower'
+          or defName='RGK_Door'
+          or defName='GL_DoorFrame'
+          or defName='RGK_FireplaceE'
+          or defName='RGK_lamp'
+          or defName='RGK_LampM'
+          or defName='GL_lamp_White'
+          or defName='GL_LampM_White'
+          or defName='RGK_Street_Lamp_L'
+          or defName='RGK_Street_Lamp'
+          or defName='RGK_Street_Lamp_Seven'
+          or defName='GL_Street_Lamp_L_White'
+          or defName='GL_Street_Lamp_White'
+          or defName='GL_Street_Lamp_Seven_White'
+          or defName='RGK_SimpleResearchBench'
+          or defName='GL_Bonfire'
+          or defName='GL_HandTailoringBench'
+          or defName='GL_FueledSmithy'
+          or defName='SM_Sink'
+          or defName='SM_ButcherShelf'
+          or defName='SM_KitchenCupboard_A'
+          or defName='SM_KitchenCupboard_B'
+          or defName='SM_KitchenCupboard_C'
+          or defName='SM_CornerIRD'
+          or defName='GloomyDeco_Board'
+          or defName='GloomyDeco_Box'
+          or defName='GloomyDeco_Bucket'
+          or defName='GloomyDeco_Cart'
+          or defName='GloomyDeco_Kennel'
+          or defName='GloomyDeco_Lumberjack'
+          or defName='GloomyDeco_MailBox'
+          or defName='GloomyDeco_Sign'
+          or defName='GloomyDeco_Tool'
+          or defName='GloomyDeco_TrashCan'
+          or defName='GloomyDeco_Well'
+          or defName='GloomyDeco_Windmill'
+          or defName='Shelf_RepairRack'
+          or defName='Table_interactive_1x1c'
+          or defName='Table_interactive_2x2c'
+          or defName='VCE_Grill'
+          or defName='VCE_DeepFrier'
+          or defName='VCE_CanningMachine'
+          or defName='VCE_CondimentPrepTable'
+          or defName='VCE_CheesePress'
+          or defName='VFE_ArchotechSculpture'
+          or defName='AJO_Dartboard'
+          or defName='Blackboard'
+          or defName='SchoolTable'
+          or defName='FM_ManagerStation'
+          or defName='Apparel_NordShield'
+          or defName='Apparel_KiteShield'
+          or defName='Apparel_CrusaderShield'
+          or defName='Apparel_Pavise'
+          or defName='Apparel_PlagueDoctorMask'
+          or defName='Gun_arquebus'
+          or defName='Gun_latarquebus'
+          or defName='Gun_advarquebus'
+          or defName='Gun_EaMusket'
+          or defName='Gun_Axe_Pistol'
+          or defName='Gun_Hand_Cannon'
+          or defName='Ball_HighExplosive'
+          or defName='RoofTransparentFraming'
+          or defName='RoofSolarFraming'
+          or defName='ThickStoneRoofFraming'
+          or defName='ChainFence'
+          or defName='ChainFenceGate'
+          or defName='ChainFenceGateB'
+          or defName='CounterTopModular'
+          or defName='ShootingRangeTarget'
+          or defName='QRY_Quarry'
+          or defName='QRY_MiniQuarry'
+          or defName='SteelArm'
+          or defName='HookHand'
+          or defName='HydraulicJaw'
+          or defName='SimpleProstheticHand'
+          or defName='SimpleProstheticFoot'
+          or defName='SimpleProstheticLeg'
+          or defName='SimpleProstheticArm'
+          or defName='ArtificialPelvis'
+          or defName='ArtificialClavicle'
+          or defName='HandCanningstove'
+          or defName='FueledCandyTable'
+          or defName='CandyTable'
+          or defName='CookingTools'
+          or defName='TableLoom'
+          or defName='WDReinforcedDoor'
+          or defName='RB_ClimatizedBeehouse'
+          or defName='RB_HybridizationChamber'
+          or defName='RB_MeadFermentingBarrel'
+          or defName='Owl_CarpentersTrestle'
+          or defName='SmokeHouse'
+          or defName='VCE_StewPot'
+          or defName='VCE_SoyFermenter'
+          or defName='VG_LargeFermentingBarrel'
+          or defName='CPD_DrinksTable'
+          or defName='Building_ChemshineBarrel'
+          or defName='Windmill'
+          or defName='CanningFactory'
+          or defName='VG_CanningFactory'
+          or defName='BarrelDye'
+          or defName='VFEM_WineBarrel'
+          or defName='VFEM_Shield_Heater'
+          or defName='ClutterSlabBed'
+          or defName='ClutterDoubleSlabBed'
+          or defName='ClutterBasicLocker'
+          or defName='ClutterOldDesk'
+          or defName='SteelRefiner'
+          or defName='ClutterFence'
+          or defName='ClutterConcreteFenceA'
+          or defName='BenchWoolLoom'
+          or defName='RimSeasoning_Mill'
+          or defName='LWM_DS_RimFridge_Refrigerator'
+          or defName='GloomyDeco_DeepBox'
+          or defName='GloomyDeco_Deep_Storage_Cart'
+          or defName='GL_DeepLocker'
+          ]/costList/Steel
+        </xpath>
+        <name>WroughtIron</name>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

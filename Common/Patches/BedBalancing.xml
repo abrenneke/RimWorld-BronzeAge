@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Patch>
+  <!-- Straw bed stuff -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName='PlantScraps' or defName='Hay']</xpath>
+    <value>
+      <stuffProps>
+        <stuffAdjective>plant scrap</stuffAdjective>
+        <categories>
+          <li>StrawLike</li>
+        </categories>
+        <commonality>1.00</commonality>
+        <color>(180,173,141)</color>
+        <appearance>Smooth</appearance>
+        <constructEffect>ConstructDirt</constructEffect>
+        <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+        <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+        <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+        <statFactors>
+          <MaxHitPoints>0.30</MaxHitPoints>
+          <Beauty>0.5</Beauty>
+          <Flammability>3</Flammability>
+          <WorkToMake>0.5</WorkToMake>
+          <WorkToBuild>0.5</WorkToBuild>
+          <DoorOpenSpeed>0.5</DoorOpenSpeed>
+        </statFactors>
+      </stuffProps>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName='Hay']/stuffProps/color</xpath>
+    <value>
+      <color>(103,121,56)</color>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName='Hay']/stuffProps/stuffAdjective</xpath>
+    <value>
+      <stuffAdjective>hay</stuffAdjective>
+    </value>
+  </Operation>
+  <!-- Tier 0 -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='SleepingSpot']/statBases/BedRestEffectiveness</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='SleepingSpot']/statBases/BedRestEffectiveness</xpath>
+      <value>
+        <BedRestEffectiveness>0.5</BedRestEffectiveness>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='SleepingSpot']/statBases</xpath>
+      <value>
+        <BedRestEffectiveness>0.5</BedRestEffectiveness>
+      </value>
+    </nomatch>
+  </Operation>
+  <!-- Tier 1 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>
+      /Defs/ThingDef[
+        defName='Bed_Straw'
+        or defName='Bed_StrawDouble'
+        or defName='Bed_StoneSlab'
+      ]/statBases/BedRestEffectiveness
+    </xpath>
+    <value>
+      <BedRestEffectiveness>0.6</BedRestEffectiveness>
+    </value>
+  </Operation>
+  <!-- Tier 2 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>
+      /Defs/ThingDef[
+        defName='Bed_Simple'
+        or defName='Bedroll'
+        or defName='BedrollDouble'
+      ]/statBases/BedRestEffectiveness
+    </xpath>
+    <value>
+      <BedRestEffectiveness>0.75</BedRestEffectiveness>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[JPT] Soft Warm Beds</li>
+    </mods>
+    <match Class="PatchOperationReplace"> <!-- Hammock uses material bonus, rawhide at min give +35% -->
+      <xpath>/Defs/ThingDef[defName='Rede']/statBases/BedRestEffectiveness</xpath>
+      <value>
+        <BedRestEffectiveness>0.35</BedRestEffectiveness>
+      </value>
+    </match>
+  </Operation>
+  
+  <!-- Tier 3 (can have bedsheets, 0.5 without + X for sheets) (have you ever tried sleeping on your bed frame?) -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>
+      /Defs/ThingDef[
+        defName='RGK_bedSingle'
+        or defName='RGK_bedSingleB'
+        or defName='RGK_bedDouble'
+        or defName='RGK_bedDoubleB'
+        or defName='Bed'
+        or defName='DoubleBed'
+        or defName='HospitalBed'
+      ]/statBases/BedRestEffectiveness
+    </xpath>
+    <value>
+      <BedRestEffectiveness>0.5</BedRestEffectiveness>
+    </value>
+  </Operation>
+  <!-- Tier 4 -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>
+      /Defs/ThingDef[
+        defName='Bed_OperatingTable'
+        or defName='RoyalBed'
+        or defName='Bed_Kingsize'
+        or defName='GL_ClassyDoubleBed'
+      ]/statBases/BedRestEffectiveness
+    </xpath>
+    <value>
+      <BedRestEffectiveness>0.55</BedRestEffectiveness>
+    </value>
+  </Operation>
+  <!-- Tier 5 -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>
+      /Defs/ThingDef[
+        defName='Bed_AdvBed'
+        or defName='Bed_AdvDoubleBed'
+        or defName='Bed_Ergonomic'
+        or defName='Bed_DoubleErgonomic'
+      ]/statBases/BedRestEffectiveness
+    </xpath>
+    <value>
+      <BedRestEffectiveness>0.65</BedRestEffectiveness>
+    </value>
+  </Operation>
+</Patch>

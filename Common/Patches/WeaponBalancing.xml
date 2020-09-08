@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- See Excel file -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Early Firearms mod</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Remove Duplicates -->
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/ThingDef[defName='Gun_Flintlock_Pistol' or defName='Gun_advMusket'] |
+            /Defs/RecipeDef[defName='Gun_Flintlock_Musket' or defName='RGun_Flintlock_Pistol']
+          </xpath>
+        </li>
+        <!-- TEMPORARY, UNBALANCED -->
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName='Gun_EABlunderbuss' or defName='Gun_Hand_Cannonr' or defName='Turret_cannon' or @Name='BasecannonBuilding']</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/RecipeDef[defName='Gun_Early_Blunderbuss' or defName='Gun_Hand_Cannonr']</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='Early_Cannons' or defName='Hand_Cannons' or defName='Early_Blunderbuss']</xpath>
+        </li>
+        <!-- Late Arquebus -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_latarquebus']/description</xpath>
+          <value>
+            <description>The final evolution of the arquebus firearm. A rifled barrel improves on accuracy and damage compared to its predecessor, while improvements to tooling makes the weapon easier to use and reload.\n\nAn arquebus is the first handheld firearm ever developed. A matchlock mechanism drops a lit match, igniting the gunpowder in the barrel and firing a lead ball. Even the earliest arquebus is able to penetrate more armor than a bow. The long length of the barrel gives it a decent range, however the lead balls tend to veer off course during their flight. Reloading an arquebus takes some time.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_latarquebus']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>12000</WorkToMake>
+              <Mass>3.5</Mass>
+              <AccuracyTouch>0.55</AccuracyTouch>
+              <AccuracyShort>0.85</AccuracyShort>
+              <AccuracyMedium>0.75</AccuracyMedium>
+              <AccuracyLong>0.65</AccuracyLong>
+              <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_latarquebus']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.2</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_latarquebus']/verbs/li[1]/range</xpath>
+          <value><range>36</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Bullet_Ball_EAFAav']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Bullet</damageDef>
+              <damageAmountBase>25</damageAmountBase>
+              <stoppingPower>2.0</stoppingPower>
+              <armorPenetrationBase>0.65</armorPenetrationBase>
+              <speed>90</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Advanced Arquebus -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_advarquebus']/description</xpath>
+          <value>
+            <description>An improvement over the first arquebus designs. Better machining, tolerances, and firing mechanisms give a firearm with greatly increased reliability in all areas.\n\nAn arquebus is the first handheld firearm ever developed. A matchlock mechanism drops a lit match, igniting the gunpowder in the barrel and firing a lead ball. Even the earliest arquebus is able to penetrate more armor than a bow. The long length of the barrel gives it a decent range, however the lead balls tend to veer off course during their flight. Reloading an arquebus takes some time.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_advarquebus']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>9500</WorkToMake>
+              <Mass>3.0</Mass>
+              <AccuracyTouch>0.55</AccuracyTouch>
+              <AccuracyShort>0.85</AccuracyShort>
+              <AccuracyMedium>0.65</AccuracyMedium>
+              <AccuracyLong>0.35</AccuracyLong>
+              <RangedWeapon_Cooldown>3.25</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_advarquebus']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.3</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_advarquebus']/verbs/li[1]/range</xpath>
+          <value><range>28</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Bullet_Ball_EAFAADVarq']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Bullet</damageDef>
+              <damageAmountBase>22</damageAmountBase>
+              <stoppingPower>1.8</stoppingPower>
+              <armorPenetrationBase>0.65</armorPenetrationBase>
+              <speed>70</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Early Arquebus -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_arquebus']/description</xpath>
+          <value>
+            <description>An arquebus is the first handheld firearm ever developed. A matchlock mechanism drops a lit match, igniting the gunpowder in the barrel and firing a lead ball. Even the earliest arquebus is able to penetrate more armor than a bow. The long length of the barrel gives it a decent range, however the lead balls tend to veer off course during their flight. Reloading an arquebus takes some time.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_arquebus']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>8000</WorkToMake>
+              <Mass>3.5</Mass>
+              <AccuracyTouch>0.55</AccuracyTouch>
+              <AccuracyShort>0.70</AccuracyShort>
+              <AccuracyMedium>0.50</AccuracyMedium>
+              <AccuracyLong>0.25</AccuracyLong>
+              <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_arquebus']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.5</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_arquebus']/verbs/li[1]/range</xpath>
+          <value><range>26</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Bullet_Ball_EAFA']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Bullet</damageDef>
+              <damageAmountBase>22</damageAmountBase>
+              <stoppingPower>1.5</stoppingPower>
+              <armorPenetrationBase>0.65</armorPenetrationBase>
+              <speed>65</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Early Musket -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_EaMusket']/description</xpath>
+          <value>
+            <description>The first handheld weapon which uses a flintlock mechanism. When the flint is striked by pulling a trigger, a spark is generates which ignites the gunpowder in the barrel to fire out a lead ball. A musket is smaller and lighter than an arquebus, and while it cannot deliver quite the same amount of power, its ease of use makes it more versatile.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_EaMusket']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>9000</WorkToMake>
+              <Mass>3.5</Mass>
+              <AccuracyTouch>0.55</AccuracyTouch>
+              <AccuracyShort>0.70</AccuracyShort>
+              <AccuracyMedium>0.50</AccuracyMedium>
+              <AccuracyLong>0.25</AccuracyLong>
+              <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_EaMusket']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.5</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Gun_EaMusket']/verbs/li[1]/range</xpath>
+          <value><range>18</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Bullet_Ball_EAFAM']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Bullet</damageDef>
+              <damageAmountBase>20</damageAmountBase>
+              <stoppingPower>0.8</stoppingPower>
+              <armorPenetrationBase>0.30</armorPenetrationBase>
+              <speed>65</speed>
+            </projectile>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Remove Duplicates -->
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/ThingDef[defName='MedTimes_Ranged_Longbow' or defName='MedTimes_Ranged_Musket' or defName='MedTimes_Ranged_Longbow_Nan' or defName='MedTimes_Ranged_Musket_Nan'] |
+            //li[text()='MedTimes_Ranged_Longbow' or text()='MedTimes_Ranged_Musket']
+          </xpath>
+        </li>
+        <!-- One-Handed Crossbow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow']/description</xpath>
+          <value>
+            <description>A small one-handed crossbow. Lighter and easier to use than a regular bow, and reloads quicker than a full-sized crossbow. Does not pack as much of a punch, however. The small size makes it difficult to aim at long distances, so it is useful as a melee sidearm.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow']/statBases</xpath>
+          <value>
+            <statBases>
+              <Mass>1.5</Mass>
+              <AccuracyTouch>0.80</AccuracyTouch>
+              <AccuracyShort>0.70</AccuracyShort>
+              <AccuracyMedium>0.50</AccuracyMedium>
+              <AccuracyLong>0.25</AccuracyLong>
+              <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>0.5</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow']/verbs/li[1]/range</xpath>
+          <value><range>12</range></value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="MedTimes_ArrowBase">
+              <defName>Medieval_Bolt_HandCrossbow</defName>
+              <label>Crossbow Bolt</label>
+              <graphicData>
+                <texPath>Things/Item/Equipment/WeaponRanged/Ammo/MedTimes_Bolt</texPath>
+              </graphicData>
+              <projectile>
+                <damageAmountBase>15</damageAmountBase>
+                <speed>62</speed>
+                <stoppingPower>1</stoppingPower>
+                <armorPenetrationBase>0.1</armorPenetrationBase>
+              </projectile>
+            </ThingDef>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow']/verbs/li[1]/defaultProjectile</xpath>
+          <value><defaultProjectile>Medieval_Bolt_HandCrossbow</defaultProjectile></value>
+        </li>
+        <!-- Crossbow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Crossbow']/description</xpath>
+          <value>
+            <description>A crossbow has a similar principle to a bow, consisting of a bow-like assembly mounted horizontally on a sturdy frame, which is handheld in a similar fashion to the stock of a long gun, having a mechanical holding and release mechanism to fire a small bolt. A crossbow is quick to aim and fire, but takes a while to reload the mechanism. It is, however, easier to use than a full-size bow.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Crossbow']/statBases</xpath>
+          <value>
+            <statBases>
+              <AccuracyTouch>0.65</AccuracyTouch>
+              <AccuracyShort>0.90</AccuracyShort>
+              <AccuracyMedium>0.70</AccuracyMedium>
+              <AccuracyLong>0.40</AccuracyLong>
+              <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Crossbow']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>0.6</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Crossbow']/verbs/li[1]/range</xpath>
+          <value><range>22</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Medieval_Bolt_Crossbow']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Arrow</damageDef>
+              <damageAmountBase>18</damageAmountBase>
+              <stoppingPower>1.5</stoppingPower>
+              <armorPenetrationBase>0.2</armorPenetrationBase>
+              <speed>62</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Composite Bow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Composite']/description</xpath>
+          <value>
+            <description>A recurve bow with composite materials. By layering several different types of wood or similar materials, and then gluing them together with animal glue, improved characteristics can be given to a recurve bow, delivering faster, more accurate shots than bows made from a single piece of wood.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Composite']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>7500</WorkToMake>
+              <Mass>1.8</Mass>
+              <AccuracyTouch>0.75</AccuracyTouch>
+              <AccuracyShort>0.80</AccuracyShort>
+              <AccuracyMedium>0.70</AccuracyMedium>
+              <AccuracyLong>0.45</AccuracyLong>
+              <RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Composite']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.25</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Composite']/verbs/li[1]/range</xpath>
+          <value><range>20</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Medieval_Arrow_Composite']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>ArrowHighVelocity</damageDef>
+              <damageAmountBase>13</damageAmountBase>
+              <stoppingPower>1.2</stoppingPower>
+              <armorPenetrationBase>0.15</armorPenetrationBase>
+              <speed>58</speed>
+            </projectile>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RT's Weapon Pack Reloaded (1.1)</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Remove Duplicates -->
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/ThingDef[defName='Bow_TCrossbow_rt' or defName='Bow_Compound_rt'] |
+            /Defs/RecipeDef[defName='TCrossbowCraft' or defName='CompoundbowCraft']
+          </xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Weapons Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Remove Duplicates -->
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Crossbow']</xpath>
+        </li>
+        <!-- Longbow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/description</xpath>
+          <value>
+            <description>A longbow is a large bow approximately the same height as the person firing it. It takes some strength to pull back, but is a reliable and relatively accurate weapon over a long distance.\n\nAs it is only one long piece of wood with a string, a longbow is quick and cheap to construct. It is the choice weapon for a medieval army.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>4000</WorkToMake>
+              <Mass>3.2</Mass>
+              <AccuracyTouch>0.65</AccuracyTouch>
+              <AccuracyShort>0.85</AccuracyShort>
+              <AccuracyMedium>0.75</AccuracyMedium>
+              <AccuracyLong>0.50</AccuracyLong>
+              <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>2.0</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/verbs/li[1]/range</xpath>
+          <value><range>30</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Arrow_Long']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Arrow</damageDef>
+              <damageAmountBase>15</damageAmountBase>
+              <stoppingPower>1</stoppingPower>
+              <armorPenetrationBase>0.15</armorPenetrationBase>
+              <speed>49</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Compound Bow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/description</xpath>
+          <value>
+            <description>By using finely-tuned pulleys and a cam system, a compound bow can multiply the force delivered to an arrow, while being both easy to use and accurate over a very long range. This modern-day bow emits very little sound when firing, making it ideal for hunting.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>12000</WorkToMake>
+              <Mass>2</Mass>
+              <AccuracyTouch>0.65</AccuracyTouch>
+              <AccuracyShort>0.90</AccuracyShort>
+              <AccuracyMedium>0.85</AccuracyMedium>
+              <AccuracyLong>0.78</AccuracyLong>
+              <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>3</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/verbs/li[1]/range</xpath>
+          <value><range>36</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Arrow_Compound']/projectile</xpath>
+          <value>
+            <projectile>
+              <flyOverhead>false</flyOverhead>
+              <damageDef>ArrowHighVelocity</damageDef>
+              <damageAmountBase>18</damageAmountBase>
+              <stoppingPower>1.5</stoppingPower>
+              <armorPenetrationBase>0.25</armorPenetrationBase>
+              <speed>52</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Flintlock Musket -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Musket']/description</xpath>
+          <value>
+            <description>Improvements to the musket design, such as a rifled barrel, give more range, accuracy, and damage, while maintaining easy portability and its low learning curve.\n\nA musket is the first handheld weapon which uses a flintlock mechanism. When the flint is striked by pulling a trigger, a spark is generates which ignites the gunpowder in the barrel to fire out a lead ball. A musket is smaller and lighter than an arquebus, and while it cannot deliver quite the same amount of power, its ease of use makes it more versatile.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Musket']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>12000</WorkToMake>
+              <Mass>2.5</Mass>
+              <AccuracyTouch>0.70</AccuracyTouch>
+              <AccuracyShort>0.80</AccuracyShort>
+              <AccuracyMedium>0.65</AccuracyMedium>
+              <AccuracyLong>0.50</AccuracyLong>
+              <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Musket']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Musket']/verbs/li[1]/range</xpath>
+          <value><range>25</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Bullet_Leadball']/projectile</xpath>
+          <value>
+            <projectile>
+              <damageDef>Bullet</damageDef>
+              <damageAmountBase>25</damageAmountBase>
+              <stoppingPower>1.5</stoppingPower>
+              <armorPenetrationBase>0.45</armorPenetrationBase>
+              <speed>60</speed>
+            </projectile>
+          </value>
+        </li>
+        <!-- Flintlock Pistol -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Flintlock']/description</xpath>
+          <value>
+            <description>Placing the musket's mechanisms in a small package that can be held in one hand results in the first type of pistol, able to fire a small lead ball with surprising force, but not so much accuracy.\n\nA musket is the first handheld weapon which uses a flintlock mechanism. When the flint is striked by pulling a trigger, a spark is generates which ignites the gunpowder in the barrel to fire out a lead ball. A musket is smaller and lighter than an arquebus, and while it cannot deliver quite the same amount of power, its ease of use makes it more versatile.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Flintlock']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>12000</WorkToMake>
+              <Mass>1.2</Mass>
+              <AccuracyTouch>0.80</AccuracyTouch>
+              <AccuracyShort>0.70</AccuracyShort>
+              <AccuracyMedium>0.50</AccuracyMedium>
+              <AccuracyLong>0.25</AccuracyLong>
+              <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Flintlock']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>0.6</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Flintlock']/verbs/li[1]/range</xpath>
+          <value><range>22</range></value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <ThingDef ParentName="BaseBullet">
+              <defName>Bullet_Leadball_Pistol</defName>
+              <label>lead ball</label>
+              <projectile>
+                <damageDef>Bullet</damageDef>
+                <damageAmountBase>16</damageAmountBase>
+                <speed>56</speed>
+              </projectile>
+              <graphicData>
+                <texPath>Things/Projectile/Bullet_Musket</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+              </graphicData>
+            </ThingDef>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VWE_Gun_Flintlock']/verbs/li[1]/defaultProjectile</xpath>
+          <value><defaultProjectile>Bullet_Leadball_Pistol</defaultProjectile></value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded: Medieval</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Heavy Crossbow -->
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFEM_Bow_HeavyCrossbow']/description</xpath>
+          <value>
+            <description>A massive crossbow firing an extremely heavy bolt. While it takes forever to reload a shot, the shots from this "handheld ballista" can penetrate several layers of metal. \n\nA crossbow has a similar principle to a bow, consisting of a bow-like assembly mounted horizontally on a sturdy frame, which is handheld in a similar fashion to the stock of a long gun.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFEM_Bow_HeavyCrossbow']/statBases</xpath>
+          <value>
+            <statBases>
+              <WorkToMake>20000</WorkToMake>
+              <Mass>4.6</Mass>
+              <AccuracyTouch>0.65</AccuracyTouch>
+              <AccuracyShort>0.85</AccuracyShort>
+              <AccuracyMedium>0.70</AccuracyMedium>
+              <AccuracyLong>0.40</AccuracyLong>
+              <RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
+            </statBases>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFEM_Bow_HeavyCrossbow']/verbs/li[1]/warmupTime</xpath>
+          <value><warmupTime>1.25</warmupTime></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFEM_Bow_HeavyCrossbow']/verbs/li[1]/range</xpath>
+          <value><range>26</range></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFEM_Arrow_HeavyBolt']/projectile</xpath>
+          <value>
+            <projectile>
+              <flyOverhead>false</flyOverhead>
+              <damageDef>ArrowHighVelocity</damageDef>
+              <damageAmountBase>32</damageAmountBase>
+              <stoppingPower>2</stoppingPower>
+              <armorPenetrationBase>0.85</armorPenetrationBase>
+              <speed>48</speed>
+            </projectile>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Base -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- Greatbow -->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Great']/description</xpath>
+        <value>
+          <description>A massive bow firing an extremely large arrow. Difficult to use, but packs a punch over a long distance. Has better armor piercing and stopping power than most other bows.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Great']/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>9000</WorkToMake>
+            <Mass>3.0</Mass>
+            <AccuracyTouch>0.65</AccuracyTouch>
+            <AccuracyShort>0.85</AccuracyShort>
+            <AccuracyMedium>0.70</AccuracyMedium>
+            <AccuracyLong>0.40</AccuracyLong>
+            <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+          </statBases>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Great']/verbs/li[1]/warmupTime</xpath>
+        <value><warmupTime>3.0</warmupTime></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Great']/verbs/li[1]/range</xpath>
+        <value><range>26</range></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Arrow_Great']/projectile</xpath>
+        <value>
+          <projectile>
+            <damageDef>Arrow</damageDef>
+            <damageAmountBase>20</damageAmountBase>
+            <stoppingPower>1.75</stoppingPower>
+            <armorPenetrationBase>0.30</armorPenetrationBase>
+            <speed>49</speed>
+          </projectile>
+        </value>
+      </li>
+      <!-- Recurve Bow -->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Recurve']/description</xpath>
+        <value>
+          <description>A recurve bow. The limbs of this bow curve away from the archer when it it held. Due to this construction, it is able to store more energy in a smaller package than a self-bow, delivering a faster, more accurate arrow.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Recurve']/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>5000</WorkToMake>
+            <Mass>1.3</Mass>
+            <AccuracyTouch>0.70</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.60</AccuracyMedium>
+            <AccuracyLong>0.35</AccuracyLong>
+            <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+          </statBases>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Recurve']/verbs/li[1]/warmupTime</xpath>
+        <value><warmupTime>1</warmupTime></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Recurve']/verbs/li[1]/range</xpath>
+        <value><range>18</range></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Arrow_Recurve']/projectile</xpath>
+        <value>
+          <projectile>
+            <damageDef>ArrowHighVelocity</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+            <stoppingPower>1</stoppingPower>
+            <armorPenetrationBase>0.15</armorPenetrationBase>
+            <speed>56</speed>
+          </projectile>
+        </value>
+      </li>
+      <!-- Short Bow -->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Short']/description</xpath>
+        <value>
+          <description>A simple short self-bow made from a single piece of wood. The earliest type of bow ever created. The arrow does not fly particularly fast, and it is not very accurate because of the crude methods for creating the bow and arrows.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Short']/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>2000</WorkToMake>
+            <Mass>0.8</Mass>
+            <AccuracyTouch>0.75</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.45</AccuracyMedium>
+            <AccuracyLong>0.25</AccuracyLong>
+            <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+          </statBases>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Short']/verbs/li[1]/warmupTime</xpath>
+        <value><warmupTime>1.35</warmupTime></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Bow_Short']/verbs/li[1]/range</xpath>
+        <value><range>15</range></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName='Arrow_Short']/projectile</xpath>
+        <value>
+          <projectile>
+            <damageDef>Arrow</damageDef>
+            <damageAmountBase>9</damageAmountBase>
+            <stoppingPower>0.5</stoppingPower>
+            <armorPenetrationBase>0.10</armorPenetrationBase>
+            <speed>44</speed>
+          </projectile>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

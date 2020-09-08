@@ -1,0 +1,2772 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Remove everything that is by default TribalStart -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ResearchProjectDef/tags/li[text()='TribalStart']</xpath>
+  </Operation>
+
+  <!-- Merge Mushroom Cultivation, Devilstrand, Potokus -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>ReGrowth - Cold Bog Expansion</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ResearchProjectDef[defName='RG-B_PotokusGrowing' or defName='RG_MushroomCultivation']</xpath>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='RG-B_Plant_Volopus' or defName='RG-B_Plant_Potokus']/plant/sowResearchPrerequisites/li[1]</xpath>
+              <value>
+                <li>Devilstrand</li>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Devilstrand']/label</xpath>
+        <value>
+          <label>mushroom cultivation</label>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Devilstrand']/description</xpath>
+        <value>
+          <description>Cultivate and grow wild mushrooms.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>VGP Vegetable Garden</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Plantmushroom']/plant</xpath>
+          <value>
+            <sowResearchPrerequisites>
+              <li>Devilstrand</li>
+            </sowResearchPrerequisites>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Research that depends on Basic Agriculture -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>
+      /Defs/ResearchProjectDef[
+        defName='TreeSowing'
+        or defName='Devilstrand'
+        or defName='Companion_Farming'
+        or defName='MSOpiumPoppy'
+        or defName='agriculture'
+      ]
+    </xpath>
+    <value>
+      <prerequisites>
+        <li>BasicAgriculture</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <!-- T0 Tribal medical care -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Hospitals Extended</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>SeedsPlease</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/RecipeDef[defName='ProcessRawHealroot' or defName='ProcessRawHealrootBulk']</xpath>
+            <value>
+              <researchPrerequisite>medicaddons_research_tribal_med</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Plant_HealrootWild' or defName='Plant_Healroot']/plant</xpath> <!-- Seeds interaction, can't sow anyway -->
+          <value>
+            <sowResearchPrerequisites>
+              <li>medicaddons_research_tribal_med</li>
+            </sowResearchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Add more into Farming - compost etc not available at start -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='CompostBin'] | /def/RecipeDef[defName='MakeCompost' or defName='MakeCompost5']</xpath>
+      <value>
+        <researchPrerequisites>
+          <li>RFF_Farming</li>
+        </researchPrerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Merge Farming techniques and Farming -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded - Farming</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_FarmingTechniques']</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>//li[text()='VFE_Res_FarmingTechniques']</xpath>
+            <value>
+              <li>RFF_Farming</li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Move Obelisk into Carvings -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Art</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_Obelisk']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>//li[text()='VFE_Res_Obelisk']</xpath>
+          <value>
+            <li>VFE_Res_WallCarvings</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Move food condiments into medieval -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ResearchProjectDef[defName='VCE_CondimentsResearch']/techLevel</xpath>
+      <value>
+        <techLevel>Medieval</techLevel>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Sky lights require glass -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Skylights</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Glass+Lights</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[@Name='BasedSkyLight']</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>GlassworksResearch</li>
+          </researchPrerequisites>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Bloomery into new Iron Smelting research -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Lumber</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='Owl_Bloomery']</xpath>
+      <value>
+        <researchPrerequisites>
+          <li>IronWorking</li>
+        </researchPrerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Tanning research -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Leather</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/RecipeDef[@Name='MakeTanningLiquorBase']</xpath>
+          <value>
+            <researchPrerequisite>Tanning</researchPrerequisite>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Owl_TanningVat']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Tanning</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Basic agriculture crops -->
+  <Operation Class="PatchOperationAdd">
+    <xpath> <!-- https://en.wikipedia.org/wiki/Neolithic_founder_crops -->
+      /Defs/ThingDef[
+        defName='Plant_Rice'
+        or defName='Plant_Haygrass'
+        or defName='Plant_Barley'
+        or defName='Plantwheat'
+        or defName='PlantFlax'
+        or defName='VCE_Peas'
+        or defName='Plantsquash'
+        or defName='VCE_Wheat'
+      ]/plant
+    </xpath>
+    <value>
+      <sowResearchPrerequisites>
+        <li>BasicAgriculture</li>
+      </sowResearchPrerequisites>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='Plant_redlentil']/plant/sowResearchPrerequisites/li[1]</xpath>
+      <value>
+        <li>BasicAgriculture</li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>
+        /Defs/RecipeDef[
+          defName='ExtractSeedRice'
+          or defName='ExtractSeed_Barley'
+          or defName='ExtractSeed_Wheat'
+          or defName='ExtractSeed_Flax'
+          or defName='ExtractSeed_VCEPea'
+          or defName='ExtractSeed_Squash'
+          or defName='ExtractSeedHaygrass'
+        ]
+      </xpath>
+      <value>
+        <researchPrerequisite>BasicAgriculture</researchPrerequisite>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Agriculture 1 crops -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName='agriculture']</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='Plant_Potato'
+              or defName='Plant_Cotton'
+              or defName='Plant_Smokeleaf'
+              or defName='Plant_PincushionCactus'
+              or defName='Plantsugarcane'
+              or defName='VCE_Soybean'
+              or defName='VCE_Onion'
+              or defName='Plantcarrot'
+              or defName='Plant_Corn'
+            ]/plant
+          </xpath>
+          <value>
+            <sowResearchPrerequisites>
+              <li>agriculture</li>
+            </sowResearchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>SeedsPlease</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[
+                defName='ExtractSeedPotato'
+                or defName='ExtractSeedCotton'
+                or defName='ExtractSeedSmokeleaf'
+                or defName='ExtractSeed_PincushionCactus'
+                or defName='ExtractSeed_Sugarcane'
+                or defName='ExtractSeed_VCESoybean'
+                or defName='ExtractSeed_VCEOnion'
+                or defName='ExtractSeed_Carrot'
+                or defName='ExtractSeedCorn'
+              ]
+            </xpath>
+            <value>
+              <researchPrerequisite>agriculture</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Agriculture 2 crops -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName='agricultureII']</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='Plant_Psychoid'
+              or defName='BiomesIslands_Pineappleplant'
+              or defName='VGP_Agarilux'
+              or defName='Plant_Tea'
+              or defName='VCE_Tomato'
+              or defName='VCE_Pumpkin'
+              or defName='VCE_Eggplant'
+              or defName='VCE_Cabbage'
+              or defName='PlantTomato'
+              or defName='Plant_BlueCorn'
+              or defName='Plantpumpkin'
+              or defName='Planteggplant'
+              or defName='PlantTobacco'
+            ]/plant
+          </xpath>
+          <value>
+            <sowResearchPrerequisites>
+              <li>agricultureII</li>
+            </sowResearchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>SeedsPlease</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[
+                defName='ExtractSeedPsychoid'
+                or defName='ExtractSeed_BiomesIslands_Pineappleplant'
+                or defName='ExtractSeed_Agarilux'
+                or defName='ExtractSeed_Tea'
+                or defName='ExtractSeed_VCETomato'
+                or defName='ExtractSeed_Tomato'
+                or defName='ExtractSeed_Pumpkin'
+                or defName='ExtractSeed_VCEPumpkin'
+                or defName='ExtractSeed_VCEEggplant'
+                or defName='ExtractSeed_VCECabbage'
+                or defName='ExtractSeed_BlueCorn'
+                or defName='ExtractSeed_Eggplant'
+                or defName='ExtractSeed_Tobacco'
+              ]
+            </xpath>
+            <value>
+              <researchPrerequisite>agricultureII</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Agriculture 3 crops -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName='agricultureIII']</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='Plant_Coffee'
+              or defName='Plant_Hops'
+              or defName='VCE_Wasabi'
+              or defName='Plant_Chemroot'
+              or defName='Plant_Allspice'
+              or defName='VCE_Pepper'
+              or defName='RimSeasoning_RedPepperPlant'
+              or defName='RimSeasoning_PepperPlant'
+            ]/plant
+          </xpath>
+          <value>
+            <sowResearchPrerequisites>
+              <li>agricultureIII</li>
+            </sowResearchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>SeedsPlease</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[
+                defName='ExtractSeed_Coffee'
+                or defName='ExtractSeedHops'
+                or defName='ExtractSeed_VCESWasabi'
+                or defName='ExtractSeed_VCEAllspice'
+                or defName='ExtractSeed_VCEPepper'
+                or defName='ExtractSeed_RimSeasoning_Pepper'
+                or defName='ExtractSeed_RimSeasoning_RedPepper'
+              ]
+            </xpath>
+            <value>
+              <researchPrerequisite>agricultureIII</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Tree Sowing -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName='Plant_TreeBamboo']/plant</xpath>
+    <value>
+      <sowResearchPrerequisites>
+        <li>TreeSowing</li>
+      </sowResearchPrerequisites>
+    </value>
+  </Operation>
+
+  <!-- 3 Sisters Plant Grafting -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Three Sisters Plants</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='Plant_Grafting']</xpath>
+      <value>
+        <prerequisites>
+          <li>Companion_Farming</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Perrywinkle -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ResearchProjectDef[defName='MSPerrywinkle']</xpath>
+    <value>
+      <prerequisites>
+        <li>agricultureII</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <!-- Alien agriculture parent -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fantastic Flora</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ResearchProjectDef[defName='agricultureII']</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName='AlienAgriculture']</xpath>
+            <value>
+              <prerequisites>
+                <li>agricultureII</li>
+              </prerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef/plant/sowResearchPrerequisites[li='FantasticFlora' or li='FantasticFloraII']</xpath>
+          <value>
+            <sowResearchPrerequisites>
+              <li>AlienAgriculture</li>
+            </sowResearchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='FantasticFlora' or defName='FantasticFloraII']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Succulent Sowing -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Plants Expanded - Succulents</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='VCE_SucculentSowing']</xpath>
+      <value>
+        <prerequisites>
+          <li>agricultureII</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Wild Biome Plants -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName='agricultureIV']</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ResearchProjectDef[defName='agricultureIV']/prerequisites</xpath>
+      <value>
+        <prerequisites>
+          <li>TreeSowing</li>
+          <li>agricultureII</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Crossbow -> Heavy Crossbow -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Medieval</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Weapons Expanded</li>
+      </mods>
+      <match Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='VFEM_HeavyCrossbow']/prerequisites/li[1]</xpath>
+        <value>
+          <li>VWE_Crossbow</li>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Merge in Gunpowder, make cheaper -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Weapons Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Gunpowder']</xpath>
+          <value>
+            <prerequisites>
+              <li>Smithing</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Gunpowder']/baseCost</xpath>
+          <value>
+            <baseCost>1000</baseCost>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Early Firearms mod</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationRemove">
+                <xpath>/Defs/ResearchProjectDef[defName='Early_Arquebuses']</xpath>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ResearchProjectDef[defName='Adv_Arquebuses' or defName='Early_Musket']/prerequisites</xpath>
+                <value>
+                  <prerequisites>
+                    <li>VWE_Gunpowder</li>
+                  </prerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ResearchProjectDef[defName='Flintlock_Musket']/prerequisites</xpath>
+                <value>
+                  <prerequisites>
+                    <li>Adv_Arquebuses</li>
+                    <li>Early_Musket</li>
+                  </prerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>//researchPrerequisite[text()='Early_Arquebuses']</xpath>
+                <value>
+                  <researchPrerequisite>VWE_Gunpowder</researchPrerequisite>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='VWE_Gun_Musket' or defName='VWE_Gun_Flintlock']//researchPrerequisite</xpath>
+                <value>
+                  <researchPrerequisite>Flintlock_Musket</researchPrerequisite>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Compound bow merge -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Weapons Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>RT's Weapon Pack Reloaded (1.1)</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ResearchProjectDef[defName='VWE_CompoundBow']</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>RT_AdvancedBow</researchPrerequisite>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Advanced bow prerequisites -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RT's Weapon Pack Reloaded (1.1)</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='RT_AdvancedBow']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>Greatbow</li>
+              <li>VWE_Crossbow</li>
+              <li>Machining</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Factions Expanded: Medieval</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName='RT_AdvancedBow']/prerequisites</xpath>
+            <value>
+              <li>VFEM_HeavyCrossbow</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Farming prerequisites -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='RFF_Farming']</xpath>
+      <value>
+        <prerequisites>
+          <li>BasicAgriculture</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Medicine research tree -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Medicines</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Hospitals Extended</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName='EarlyMedievalMedicine']</xpath>
+            <value>
+              <prerequisites>
+                <li>medicaddons_research_tribal_med</li>
+              </prerequisites>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='medicaddons_research_tribal_med']/label</xpath>
+            <value>
+              <label>tribal medical care</label>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='EarlyMedievalMedicine']/label</xpath>
+            <value>
+              <label>medieval medical care</label>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef/researchPrerequisites[li='sd_medicaddons_research_medieval_med']</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>EarlyMedievalMedicine</li>
+              </researchPrerequisites>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ResearchProjectDef[defName='sd_medicaddons_research_medieval_med']</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='sd_medicaddons_research_industrial_med']/prerequisites/li[text()='sd_medicaddons_research_medieval_med']</xpath>
+            <value>
+              <li>ParesianMedicine</li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='EarlyMedievalMedicine']/baseCost</xpath>
+            <value>
+              <baseCost>350</baseCost>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='LateMedievalMedicine']/baseCost</xpath>
+            <value>
+              <baseCost>450</baseCost>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='ParesianMedicine']/baseCost</xpath>
+            <value>
+              <baseCost>750</baseCost>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Carvings -> art, prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Art</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ResearchProjectDef[
+              defName='VFE_Res_Statues'
+              or defName='VFE_Res_Monuments'
+              or defName='VFE_Res_ArtfulDisplay'
+              or defName='Jewelry'
+            ]
+          </xpath>
+          <value>
+            <prerequisites>
+              <li>VFE_Res_WallCarvings</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_WallCarvings']/label</xpath>
+          <value>
+            <label>art</label>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_WallCarvings']/description</xpath>
+          <value>
+            <description>Create basic neolithic art by carving raw materials into desired shapes.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='TableSculpting']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>VFE_Res_WallCarvings</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Resource plants prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Resources</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='resourceleafs']</xpath>
+          <value>
+            <prerequisites>
+              <li>agricultureIII</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='resourceleafs']/techLevel</xpath>
+          <value>
+            <techLevel>Industrial</techLevel>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Smithing changes -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Smithing']/techLevel</xpath>
+        <value>
+          <techLevel>Neolithic</techLevel>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='Smithing']</xpath>
+        <value>
+          <prerequisites>
+            <li>IronWorking</li>
+          </prerequisites>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Starting Research -->
+  <!--<Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill></skill>
+        <weight>1</weight>
+      </li>
+    </value>
+  </Operation>-->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='Pemmican']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Cooking</skill>
+        <weight>3</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='IronWorking']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Crafting</skill>
+        <weight>5</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='Tanning']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Animals</skill>
+        <weight>5</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='MF_BasicFurniture']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Construction</skill>
+          <weight>5</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='BasicAgriculture']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Plants</skill>
+        <weight>8</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName='agriculture']</xpath>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='agriculture']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Plants</skill>
+          <weight>1</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='PrimitiveCeramics']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Crafting</skill>
+          <weight>5</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Hospitals Extended</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='medicaddons_research_tribal_med']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Medicine</skill>
+          <weight>4</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='PassiveCooler']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Construction</skill>
+        <weight>1</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Doors Expanded</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_Gates']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Construction</skill>
+          <weight>1</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Art</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_WallCarvings']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Mining</skill>
+          <weight>1</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Apparello 2</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ResearchProjectDef[defName='ApparelloTribalwearDesign']</xpath>
+      <value>
+        <li Class="ABrenneke.BronzeAge.StartingResearch">
+          <skill>Crafting</skill>
+          <weight>1</weight>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='RecurveBow']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Shooting</skill>
+        <weight>1</weight>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ResearchProjectDef[defName='Brewing']</xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingResearch">
+        <skill>Cooking</skill>
+        <weight>1</weight>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Bow research balancing -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName='Greatbow']/baseCost</xpath>
+    <value>
+      <baseCost>500</baseCost>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Weapons Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Longbow']/baseCost</xpath>
+          <value>
+            <baseCost>500</baseCost>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Crossbow']/baseCost</xpath>
+          <value>
+            <baseCost>500</baseCost>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Crossbow']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>VWE_Longbow</li>
+              <li>Smithing</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VWE_Longbow']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>RecurveBow</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='Greatbow']/prerequisites/li[1]</xpath>
+          <value>
+            <li>VWE_Longbow</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_HandCrossbow' or defName='MedTimes_Ranged_Crossbow']/recipeMaker</xpath>
+          <value>
+            <researchPrerequisite>VWE_Crossbow</researchPrerequisite>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Composite']/recipeMaker</xpath>
+          <value>
+            <researchPrerequisite>RecurveBow</researchPrerequisite>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Lower tech level than prerequisite -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>More Vanilla Turrets 1.1</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='PrecisionTurret' or defName='BlastTurret' or defName='VulcanCannon']/techLevel</xpath>
+          <value>
+            <techLevel>Spacer</techLevel>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>RimBees</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='RB_BeeHybridizing']/techLevel</xpath>
+          <value>
+            <techLevel>Industrial</techLevel>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Merge medieval research -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>
+            /Defs/ThingDef[defName='MedTimes_StoneHearth']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>StoneStructures</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>
+              /Defs/ThingDef[
+              defName='MedTimes_Cot'
+              or defName='MedTimes_CotDouble'
+              or defName='MedTimes_SmallTable'
+              or defName='MedTimes_MedStool'
+              or defName='MedTimes_Brazier'
+              or defName='MedTimes_StreetLamp'
+              or defName='MedTimes_Reflector'
+              ]/researchPrerequisites
+            </xpath>
+            <value>
+              <researchPrerequisites>
+                <li>MF_BasicFurniture</li>
+              </researchPrerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Fertile Fields [1.1]</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='MedTimes_GardeningBox']/researchPrerequisites</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>RFF_Farming</li>
+              </researchPrerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_BlacksmithForge']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>IronWorking</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalTechnologies'] | //li[text()='MedTimes_MedievalTechnologies']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalTailoring']/label</xpath>
+          <value>
+            <label>Medieval Clothing</label>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='ComplexClothing']</xpath>
+          <value>
+            <prerequisites>
+              <li>MedTimes_MedievalTailoring</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Apparello 2</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalTailoring']/prerequisites</xpath>
+            <value>
+              <prerequisites>
+                <li>ApparelloTribalwearDesign</li>
+              </prerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_TailoringStation']/stuffCategories</xpath>
+          <value>
+            <li>Stony</li>
+            <li>Metallic</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd"> <!-- Allow basic stuff at the medieval tailoring station -->
+          <xpath>/Defs/ThingDef/recipeMaker/recipeUsers[li='CraftingSpot' and li='HandTailoringBench' and not(li='MedTimes_TailoringStation')]</xpath>
+          <value>
+            <li>MedTimes_TailoringStation</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Desk']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ComplexFurniture</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='MedTimes_CraftingStation']/researchPrerequisites</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>MF_BasicFurniture</li>
+              </researchPrerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded - Art</li>
+          </mods>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[
+              defName='MedTimes_ArtisanStation'
+              or defName='MedTimes_IceSculptureGrand'
+              or defName='MedTimes_IceSculptureLarge'
+              or defName='MedTimes_IceSculptureSmall'
+              ]/researchPrerequisites</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>VFE_Res_WallCarvings</li>
+              </researchPrerequisites>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_StoneQuarry']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Stonecutting</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalCrafting' or defName='MedTimes_IceSculpting'] | //li[text()='MedTimes_MedievalCrafting']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_AdvancedMedievalSmithing']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>Smithing</li>
+              <li>MedTimes_MedievalTailoring</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_AdvancedMedievalSmithing']/label</xpath>
+          <value>
+            <label>Advanced Smithing</label>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalDefenses' or defName='MedTimes_ImprovedMedievalDefenses']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>
+            /Defs/ThingDef[
+              defName='MedTimes_Wall_Parapet'
+              or defName='MedTimes_Wall_IceParapet'
+              or defName='MedTimes_Trap_Caltrops'
+              or defName='MedTimes_Wall_IceEmbrasure'
+              or defName='MedTimes_Wall_Embrasure'
+              or defName='MedTimes_Artillery_MurderHole'
+              or defName='MedTimes_Trap_Firepot'
+              or defName='MedTimes_Wall_Ice'
+            ]/researchPrerequisites
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>DefensiveStructures</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[defName='Embrasure' or defName='ED_Embrasure']
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>DefensiveStructures</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/RecipeDef[defName='MedTimes_MakeStoneChunks_Steel' or defName='MedTimes_MakeStoneChunks_Silver'] |
+            /Defs/ResearchProjectDef[defName='MedTimes_AdvancedMining']
+          </xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_FoodPrepStation']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Pemmican</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_Icebox' or defName='MedTimes_IceCreationStation' or defName='MedTimes_IceboxFancy']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>IronWorking</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='MedTimes_MedievalFoodStorage']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef/recipeMaker/researchPrerequisite[text()='PlateArmor']</xpath>
+          <value>
+            <researchPrerequisite>MedTimes_AdvancedMedievalSmithing</researchPrerequisite>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef/hiddenPrerequisites/li[text()='PlateArmor']</xpath>
+          <value>
+            <li>MedTimes_AdvancedMedievalSmithing</li>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='PlateArmor']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Stone Structures research -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>GloomyFurniture</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='RGK_Fireplace' or defName='RGK_FireplaceE' or defName='GL_FlowerWall']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>StoneStructures</li>
+            </researchPrerequisites>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Smoked meat</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='SmokeHouse']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>StoneStructures</li>
+              <li>Pemmican</li>
+            </researchPrerequisites>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Old Leather tanning research -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Armour Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>/Defs/ThingDef/recipeMaker/researchPrerequisite[text()='VAE_LeatherTanning']</xpath>
+          <value>
+            <researchPrerequisite>ComplexClothing</researchPrerequisite>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>/Defs/ResearchProjectDef[defName='VAE_LeatherTanning']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Heating requires plumbing -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='LogBoilers']</xpath>
+      <value>
+        <prerequisites>
+          <li>Plumbing</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Pemmican -> Food Preservation -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Pemmican']/label</xpath>
+        <value>
+          <label>food preservation</label>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Pemmican']/description</xpath>
+        <value>
+          <description>Learn the basics of food preservation. Craft pemmican, a preserved combination of meat and plant food that doesn't go bad for a long time. Great for travelling.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Smoked meat</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Smokepit']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Pemmican</li>
+            </researchPrerequisites>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Quilting Prereq -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Apparello 2</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='ApparelloResearchQuilting']</xpath>
+      <value>
+        <prerequisites>
+          <li>MedTimes_MedievalTailoring</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Canning stuff -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Canning</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='VG_CanningTable']</xpath>
+          <value>
+            <prerequisites>
+              <li>Pemmican</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VG_CanningTable']/label</xpath>
+          <value>
+            <label>Canning</label>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Cooking Expanded</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='VCE_CanningMachine']/researchPrerequisites</xpath>
+                <value>
+                  <researchPrerequisites>
+                    <li>VG_CanningFactory</li>
+                  </researchPrerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationRemove">
+                <xpath>/Defs/ResearchProjectDef[defName='VCE_Canning']</xpath>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/RecipeDef/recipeUsers[li='VCE_CanningMachine']</xpath>
+                <value>
+                  <li>CanningFactory</li>
+                  <li>VG_CanningFactory</li>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ResearchProjectDef[defName='VG_CanningFactory']/prerequisites</xpath>
+                <value>
+                  <prerequisites>
+                    <li>VG_CanningTable</li>
+                    <li>Electricity</li>
+                  </prerequisites>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Stew Cooking -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded - Stews</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VCE_StewCooking']/techLevel</xpath>
+          <value>
+            <techLevel>Neolithic</techLevel>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove"><!-- Duplicate stews -->
+          <success>Always</success>
+          <xpath>
+            /Defs/RecipeDef[
+              defName='MedTimes_CookMealWeakStew'
+              or defName='MedTimes_CookMealWeakStewBulk'
+              or defName='MedTimes_CookMealHeartyStew'
+              or defName='MedTimes_CookMealHeartyStewBulk'
+              or defName='Cookstewpot'
+            ]
+          </xpath>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>VGP Garden Gourmet</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/RecipeDef[defName='CookPorridge']</xpath>
+            <value>
+              <researchPrerequisite>VCE_StewCooking</researchPrerequisite>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='AdvFoodPreparation']/prerequisites</xpath>
+          <value>
+            <li>VCE_StewCooking</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Condiments -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='VCE_CondimentsResearch']</xpath>
+          <value>
+            <prerequisites>
+              <li>Pemmican</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>RimSeasoning</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>
+                  /Defs/ThingDef[
+                    defName='RimSeasoning_BottledKetchupSpot'
+                    or defName='RimSeasoning_BottledSeasoningSpot'
+                    or defName='RimSeasoning_BottledMayonnaiseSpot'
+                    or defName='RimSeasoning_BottledMustardSpot'
+                    or defName='RimSeasoning_BottledSoySauseSpot'
+                    or defName='RimSeasoning_FurikakeSpot'
+                    or defName='RimSeasoning_Mill'
+                  ]
+                </xpath>
+                <value>
+                  <researchPrerequisites>
+                    <li>VCE_CondimentsResearch</li>
+                  </researchPrerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>
+                  /Defs/RecipeDef[
+                    defName='RimSeasonings_RecipeBottledKetchup_ForVanillaCookingExpanded'
+                    or defName='RimSeasonings_RecipeBottledMayonnaise_ForVanillaCookingExpanded'
+                    or defName='RimSeasonings_RecipeBottledSoySause_ForVanillaCookingExpandedSushi'
+                  ]
+                </xpath>
+                <value>
+                  <researchPrerequisite>VCE_CondimentsResearch</researchPrerequisite>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Board Games -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Tabletop Trove - Additional Joy Objects and Decor</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='TabletopGames']</xpath>
+        <value>
+          <prerequisites>
+            <li>MF_BasicFurniture</li>
+          </prerequisites>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Glassworks Prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Glass+Lights</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='GlassworksResearch']</xpath>
+          <value>
+            <prerequisites>
+              <li>IronWorking</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Ceramics</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName='GlassworksResearch']/prerequisites</xpath>
+            <value>
+              <li>PrimitiveCeramics</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Just a notice -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Expanded Prosthetics and Organ Engineering</li>
+    </mods>
+    <match Class="PatchOperationRemove">
+      <success>Always</success>
+      <xpath>/Defs/ResearchProjectDef[defName='BrainWiring']</xpath>
+    </match>
+  </Operation>
+
+  <!-- Advanced Food Preparation -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Cooking Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='VCE_CheesePress']/researchPrerequisites</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>AdvFoodPreparation</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ResearchProjectDef[defName='VCE_CheeseMaking']</xpath>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+            defName='HandCanningstove'
+            or defName='VCE_SushiPrepTable'
+            or defName='CookingTools'
+            or defName='CPD_DrinksTable'
+          ]
+        </xpath>
+        <value>
+          <researchPrerequisites>
+            <li>AdvFoodPreparation</li>
+          </researchPrerequisites>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>
+          /Defs/RecipeDef[
+            defName='BrewTea'
+            or defName='BulkBrewTea'
+            or defName='BrewCoffee'
+            or defName='BulkBrewCoffee'
+            or defName='Stirfrymeal'
+            or defName='VCE_CookDessertSimple'
+            or defName='VCE_CookDessertSimpleBulk'
+            or defName='VCE_CookDessertFine'
+            or defName='VCE_CookDessertFineBulk'
+            or defName='VCE_CookDessertLavish'
+            or defName='VCE_CookDessertLavishBulk'
+            or defName='VCE_CookDessertGourmet'
+            or defName='VCE_CookMealGourmet'
+            or defName='CookMakiRoll'
+            or defName='Make_Nigiri'
+            or defName='ProcessRawCocoa'
+          ]
+        </xpath>
+        <value>
+          <researchPrerequisite>AdvFoodPreparation</researchPrerequisite>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- More furniture relocating -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Furniture Expanded</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[
+              defName='Table3x3c'
+              or defName='Table2x4c'
+              or defName='RGK_TableB'
+              or defName='TableCircular'
+              or defName='Anon2TableTiny'
+              or defName='AnimalBed'
+              or defName='Seat_Cushion'
+            ]
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>MF_BasicFurniture</li>
+            </researchPrerequisites>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+            defName='GL_Cupboard'
+            or defName='Anon2CounterA'
+            or defName='GL_TablewareShelf'
+            or defName='SM_ButcherShelf'
+            or defName='SM_KitchenCupboard_A'
+          ]
+        </xpath>
+        <value>
+          <researchPrerequisites>
+            <li>ComplexFurniture</li>
+          </researchPrerequisites>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Doors Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ResearchProjectDef[defName='ComplexFurniture']/prerequisites</xpath>
+              <value>
+                <li>ProjectHeron_Gates</li>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_PrisonDoors']</xpath>
+              <value>
+                <prerequisites>
+                  <li>ProjectHeron_Gates</li>
+                </prerequisites>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Soy Sauce Fermenter -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded - Sushi</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VCE_SoyFermenter']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>AdvFoodPreparation</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='VCE_SoyFermentation']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Hinges, gates, and hooks-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Doors Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/DoorsExpanded.DoorExpandedDef[defName='HeronCurtainTribal']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ProjectHeron_Gates</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[defName='RGK_DoorOld'] |
+            /Defs/DoorsExpanded.DoorExpandedDef[defName='PH_DoorDouble' or defName='PH_DoorTriple']
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ProjectHeron_Gates</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_Curtains']</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_Gates']/label</xpath>
+          <value>
+            <label>Hinges, gates, and hooks</label>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Passive cooler before plumbing -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='Plumbing']</xpath>
+      <value>
+        <prerequisites>
+          <li>PassiveCooler</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Prosthetics requites tribal medical care -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Expanded Prosthetics and Organ Engineering</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Hospitals Extended</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='BasicProsthetics']</xpath>
+        <value>
+          <prerequisites>
+            <li>medicaddons_research_tribal_med</li>
+          </prerequisites>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Modern fixtures requires ceramics -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Ceramics</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='ModernFixtures']/prerequisites</xpath>
+        <value>
+          <li>BasicCeramics</li>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Sewage sludge composting into farming -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Fertile Fields [1.1]</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='SewageSludgeComposting']</xpath>
+        <value>
+          <prerequisites>
+            <li>RFF_Farming</li>
+          </prerequisites>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Carpet Prereqs -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ResearchProjectDef[defName='CarpetMaking']/prerequisites</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='CarpetMaking']/prerequisites</xpath>
+          <value>
+            <prerequisites></prerequisites>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='CarpetMaking']</xpath>
+          <value>
+            <prerequisites></prerequisites>
+          </value>
+        </nomatch>
+      </li>
+      <!-- Tanning is by itself, make it a prereq for carpet making -->
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Simple Chains: Leather</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='CarpetMaking']/prerequisites</xpath>
+          <value>
+            <li>Tanning</li>
+          </value>
+        </match>
+      </li>
+      <!-- Weaving -->
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Apparello 2</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='CarpetMaking']/prerequisites</xpath>
+          <value>
+            <li>ApparelloTribalwearDesign</li>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Grilling -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VCE_Grilling']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>IronWorking</li>
+              <li>AdvFoodPreparation</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/RecipeDef[
+              defName='GrillKabob'
+              or defName='Grillsteak'
+              or defName='GrillVegetables'
+              or defName='CookGrillcheese'
+              or defName='GrillPolenta'
+              or defName='Cookgrilledsandwich'
+              or defName='CookTacos'
+            ]
+          </xpath>
+          <value>
+            <researchPrerequisite>VCE_Grilling</researchPrerequisite>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Props Grouping -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>
+      /Defs/ResearchProjectDef[
+        defName='PlantProps'
+        or defName='MedievalProps'
+        or defName='FarmProps'
+        or defName='PowerProps'
+        or defName='KitchenProps'
+        or defName='DecalsProps'
+        or defName='FurnitureProps'
+        or defName='SpaceshipProps'
+        or defName='SpacerProps'
+        or defName='IndustrialProps'
+        or defName='VehicleProps'
+      ]
+    </xpath>
+    <value>
+      <prerequisites>
+        <li>PropsGroup</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <!-- Remote Doors, blast doors Prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Doors Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_RemoteDoors' or defName='ProjectHeron_BlastDoors']</xpath>
+          <value>
+            <prerequisites>
+              <li>Electricity</li>
+              <li>ProjectHeron_PrisonDoors</li>
+            </prerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Duplicate "Basic Furniture" research -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[O21] Clutter Furniture</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='FurnitureAssembler']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Electricity</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='ClutterSlabBed' or defName='ClutterDoubleSlabBed' or defName='ClutterStool' or defName='ClutterComfySeat']/researchPrerequisites</xpath>
+                <value>
+                  <researchPrerequisites>
+                    <li>MF_ModernFurniture</li>
+                  </researchPrerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='ClutterComfySeat']/recipeMaker/researchPrerequisite</xpath>
+                <value>
+                  <researchPrerequisite>MF_ModernFurniture</researchPrerequisite>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='ClutterStool']/recipeMaker/researchPrerequisite</xpath>
+                <value>
+                  <researchPrerequisite>MF_BasicFurniture</researchPrerequisite>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[defName='FurnitureAssembler']/researchPrerequisites</xpath>
+                <value>
+                  <li>MF_ModernFurniture</li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='ClutterAlloyHydroponicsBasinVS']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>Hydroponics</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='SteelRefiner']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>IronWorking</li>
+              <li>Electricity</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='ComfyTech'] | //li[text()='ComfyTech']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Drug Production Prereqs -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ResearchProjectDef[defName='DrugProduction']</xpath>
+        <value>
+          <prerequisites />
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Medieval Medicines</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='DrugProduction']/prerequisites</xpath>
+          <value>
+            <li>EarlyMedievalMedicine</li>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Medicine Expanded</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='DrugProduction']/prerequisites</xpath>
+          <value>
+            <li>Research_OpimolRefining</li>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Medical Supplements (Continued)</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='DrugProduction']/prerequisites</xpath>
+          <value>
+            <li>MSOpium</li>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Soup Cooking Prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='VCE_SoupCooking']/prerequisites</xpath>
+          <value>
+            <prerequisites>
+              <li>Electricity</li>
+            </prerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Cooking Expanded - Stews</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName='VCE_SoupCooking']/prerequisites</xpath>
+            <value>
+              <li>VCE_StewCooking</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+    
+  </Operation>
+
+  <!-- Tribal Adornment becomes Weaving -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Apparello 2</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='ApparelloTribalwearDesign']/label</xpath>
+          <value>
+            <label>weaving</label>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName='ApparelloTribalwearDesign']/description</xpath>
+          <value>
+            <description>The basics of creating new cloth, weaving garmets, and using textiles.</description>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='TableLoom']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ApparelloTribalwearDesign</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded - Art</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_Rugs']</xpath>
+                <value>
+                  <prerequisites>
+                    <li>ApparelloTribalwearDesign</li>
+                  </prerequisites>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_Rugs']/techLevel</xpath>
+                <value>
+                  <techLevel>Medieval</techLevel>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/RecipeDef[defName='MakeClothHand' or defName='MakeLinenHand' or defName='MakeHempClothHand']</xpath>
+          <value>
+            <researchPrerequisite>ApparelloTribalwearDesign</researchPrerequisite>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Merge wallpapers with modern furniture -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Art</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='VFE_Wallpaper']/researchPrerequisites</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>MF_ModernFurniture</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ResearchProjectDef[defName='VFE_Res_Wallpapers']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Gunsmithing Prereqs -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName='Gunsmithing']/prerequisites</xpath>
+        <value>
+          <prerequisites>
+            <li>Machining</li>
+          </prerequisites>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Early Firearms mod</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/ResearchProjectDef[defName='Gunsmithing']/prerequisites</xpath>
+          <value>
+            <li>Flintlock_Musket</li>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+  
+
+  <!-- Music Prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Art</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ResearchProjectDef[defName='Harp']/prerequisites</xpath>
+      <value>
+        <prerequisites>
+          <li>ComplexFurniture</li>
+          <li>VFE_Res_WallCarvings</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Xtra flowers merge into Ag II -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Xtra Trees and Flowers</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/ResearchProjectDef[defName='agricultureII']</xpath>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef/plant/sowResearchPrerequisites/li[text()='Xtraflower']</xpath>
+            <value>
+              <li>agricultureII</li>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ResearchProjectDef[defName='Xtraflower']</xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Sweets Table -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Gourmet</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ResearchProjectDef[defName='CookingI']/prerequisites</xpath>
+      <value>
+        <prerequisites>
+          <li>AdvFoodPreparation</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Polemics -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Rimocracy</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='Politics_WritingSpot']</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>PoliticsPolemicsTech</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Furniture Designs Prereqs -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[O21] Clutter Furniture</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ResearchProjectDef[defName='ComfyTechTierII' or defName='TableDesign']</xpath>
+      <value>
+        <prerequisites>
+          <li>MF_ModernFurniture</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Animal Healing Prereqs -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ResearchProjectDef[defName='AnimalHeal']</xpath>
+    <value>
+      <prerequisites>
+        <li>MedicineProduction</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <!-- Prototype Apparel -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Apparello 2</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <success>Always</success>
+      <xpath>/Defs/ResearchProjectDef[defName='ApparelloResearchPrototype']</xpath>
+      <value>
+        <prerequisites>
+          <li>ComplexClothing</li>
+          <li>Electricity</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Dartboard -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Additional Joy Objects - Misc</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='AJO_Dartboard']</xpath>
+      <value>
+        <researchPrerequisites>
+          <li>MF_ModernFurniture</li>
+        </researchPrerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Doormats -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Door Mat</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[@Name='LT_MatBase']</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>MF_BasicFurniture</li>
+              </researchPrerequisites>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Lamp Bug -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>GloomyFurniture</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='RGK_lampE'
+              or defName='GL_lampE_White'
+              or defName='RGK_Street_Lamp_SevenE'
+              or defName='GL_Street_Lamp_SevenE_White'
+            ]
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ComplexFurniture</li>
+              <li>Electricity</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='GL_lamp_White'
+              or defName='GL_LampM_White'
+              or defName='GL_Street_Lamp_L_White'
+              or defName='GL_Street_Lamp_Seven_White'
+            ]
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>ComplexFurniture</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Hammock -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[JPT] Soft Warm Beds</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='Rede']</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>MF_BasicFurniture</li>
+          </researchPrerequisites>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Stonecutting requires smithing, to make the metal tools to cut the stone -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ResearchProjectDef[defName='Stonecutting']</xpath>
+    <value>
+      <prerequisites>
+        <li>IronWorking</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <!-- Redundant prerequisites -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+      /Defs/ResearchProjectDef[defName='ReinforcedGlassResearch']/prerequisites/li[text()='Electricity'] |
+      /Defs/ResearchProjectDef[defName='RT_WeaponAssemblyTable']/prerequisites/li[text()='Machining'] |
+      /Defs/ResearchProjectDef[defName='RT_AdvancedBow']/prerequisites/li[text()='Smithing'] |
+      /Defs/ResearchProjectDef[defName='RT_Melee']/prerequisites/li[text()='Smithing'] |
+      /Defs/ResearchProjectDef[defName='RT_HeavyWeapons']/prerequisites/li[text()='GasOperation'] |
+      /Defs/ResearchProjectDef[defName='VG_ClothII']/prerequisites/li[text()='ComplexClothing'] |
+      /Defs/ResearchProjectDef[defName='Machining']/prerequisites/li[text()='Smithing'] |
+      /Defs/ResearchProjectDef[defName='CentralHeating']/prerequisites/li[text()='Plumbing'] |
+      /Defs/ResearchProjectDef[defName='MSRimCodamol']/prerequisites/li[text()='Opium'] |
+      /Defs/ResearchProjectDef[defName='MSMorphine']/prerequisites/li[text()='Opium'] |
+      /Defs/ResearchProjectDef[defName='Research_AdvancedMedicine']/prerequisites/li[text()='Research_OpimolRefining'] |
+      /Defs/ResearchProjectDef[defName='RT_WeaponAssemblyTable']/prerequisites/li[text()='Machining'] |
+      /Defs/ResearchProjectDef[defName='UtilityStructures']/prerequisites/li[text()='Smithing']
+    </xpath>
+  </Operation>
+
+  <!-- Numbers Balance -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <!--<li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName=''
+          ]/baseCost
+        </xpath>
+        <value><baseCost></baseCost></value>
+      </li>-->
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='Pemmican'
+            or defName='PrimitiveCeramics'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>100</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='VFE_Res_WallCarvings'
+            or defName='PassiveCooler'
+            or defName='RecurveBow'
+            or defName='ApparelloTribalwearDesign'
+            or defName='VWE_Longbow'
+            or defName='ApparelloResearchQuilting'
+            or defName='RB_BasicBeekeeping'
+            or defName='RB_BeeswaxLighting'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>200</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='PoliticsPolemicsTech'
+            or defName='Brewing'
+            or defName='agriculture'
+            or defName='ProjectHeron_PrisonDoors'
+            or defName='VCE_Grilling'
+            or defName='VFE_Res_Rugs'
+            or defName='VFE_Res_ArtfulDisplay'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>300</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='VWE_Crossbow'
+            or defName='VFE_Res_Statues'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>400</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='Companion_Farming'
+            or defName='TreeSowing'
+            or defName='Devilstrand'
+            or defName='VCE_SucculentSowing'
+            or defName='AlienAgriculture'
+            or defName='AdvFoodPreparation'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>500</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='Cocoa'
+            or defName='ComplexFurniture'
+            or defName='VWE_Tools'
+            or defName='CarpetMaking'
+            or defName='VG_PrecursorBulk'
+            or defName='VG_industrialfermenting'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>600</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='ComplexClothing'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>750</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='Flintlock_Musket'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>800</baseCost></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ResearchProjectDef[
+            defName='agricultureII'
+            or defName='agricultureIV'
+            or defName='VFE_Res_Monuments'
+            or defName='RT_Melee'
+          ]/baseCost
+        </xpath>
+        <value><baseCost>1000</baseCost></value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Starting weapon knowledge -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>
+      /Defs/ThingDef[
+        defName='Weapon_Slingshot_rt'
+        or defName='Bow_Short'
+        or defName='Beer'
+        or defName='WoodLog'
+        or defName='Owl_WoodLog'
+        or defName='MeleeWeapon_Knife'
+        or defName='MeleeWeapon_Club'
+        or defName='RTFTJ_Neo_Shovel'
+        or defName='RTFTJ_Neo_Pick'
+      ]
+    </xpath>
+    <value>
+      <li Class="ABrenneke.BronzeAge.StartingWeapon"></li>
+    </value>
+  </Operation>
+</Patch>

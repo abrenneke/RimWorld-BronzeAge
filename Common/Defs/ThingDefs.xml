@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Defs>
+  <!-- Straw Bed -->
+  <StuffCategoryDef>
+    <defName>StrawLike</defName>
+    <label>straw-like</label>
+  </StuffCategoryDef>
+  <ThingDef ParentName="BedBase">
+    <defName>Bed_Straw</defName>
+    <label>straw bed</label>
+    <description>Straw or leaves spread out on the ground. Very cheap and more comfortable than sleeping on the floor, but ugly and not as good as a real bed.</description>
+    <graphicData>
+      <texPath>Things/Furniture/StrawBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <Flammability>3.0</Flammability>
+      <Beauty>0.3</Beauty>
+      <WorkToBuild>20</WorkToBuild>
+      <Mass>3</Mass>
+      <BedRestEffectiveness>0.6</BedRestEffectiveness>
+      <Comfort>0.10</Comfort>
+      <ImmunityGainSpeedFactor>0.98</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>0.98</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1, 2)</size>
+    <stuffCategories>
+      <li>StrawLike</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>3</bed_healPerDay>
+    </building>
+    <fillPercent>0.3</fillPercent>
+    <pathCost>0</pathCost>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>False</castEdgeShadows>
+    <techLevel>Neolithic</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+    <designationCategory>Furniture</designationCategory>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BedBase">
+    <defName>Bed_StrawDouble</defName>
+    <label>double straw bed</label>
+    <description>Straw or leaves spread out on the ground. Very cheap and more comfortable than sleeping on the floor, but ugly and not as good as a real bed.</description>
+    <graphicData>
+      <texPath>Things/Furniture/StrawBedDouble</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <Flammability>3.0</Flammability>
+      <Beauty>0.3</Beauty>
+      <WorkToBuild>30</WorkToBuild>
+      <Mass>3</Mass>
+      <BedRestEffectiveness>0.6</BedRestEffectiveness>
+      <Comfort>0.10</Comfort>
+      <ImmunityGainSpeedFactor>0.98</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>0.98</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(2, 2)</size>
+    <stuffCategories>
+      <li>StrawLike</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>3</bed_healPerDay>
+    </building>
+    <fillPercent>0.3</fillPercent>
+    <pathCost>0</pathCost>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>False</castEdgeShadows>
+    <techLevel>Neolithic</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+    <designationCategory>Furniture</designationCategory>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Wrought Iron -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>WroughtIron</defName>
+    <label>wrought iron</label>
+    <description>Refined iron with low impurities. Easy to work with, but rather soft, so it does not make for good weapons. Prone to rusting.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WroughtIron</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <statBases>
+      <MarketValue>1.3</MarketValue>
+      <Mass>0.5</Mass>
+      <StuffPower_Armor_Sharp>0.6</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.35</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.61</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>0.7</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.9</BluntDamageMultiplier>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <burnableByRecipe>false</burnableByRecipe>
+    <smeltable>true</smeltable>
+    <stuffProps>
+      <stuffAdjective>wrought iron</stuffAdjective>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <commonality>1.00</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(110,74,64)</color>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>1.5</MaxHitPoints>
+        <Beauty>0.75</Beauty>
+        <Flammability>0.0</Flammability>
+        <WorkToMake>0.5</WorkToMake>
+        <WorkToBuild>0.5</WorkToBuild>
+      </statFactors>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+  </ThingDef>
+</Defs>

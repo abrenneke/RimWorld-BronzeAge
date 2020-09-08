@@ -1,8 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{72E45314-FA8C-4D2E-92E3-AAE070EE0A0E}</ProjectGuid>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="About\About.xml" />
     <None Include="About\Preview.png" />
-    <None Include="Common\**" />
+    <None Include="Common\Assemblies\BronzeAge.dll" />
+    <None Include="Common\Assemblies\BronzeAge.pdb" />
+    <None Include="Common\Assemblies\HumanResources.dll" />
+    <None Include="Common\Assemblies\HumanResources.pdb" />
+    <None Include="Common\Defs\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\Defs\ResearchProjectDefs.xml" />
+    <Content Include="Common\Defs\ScenarioDefs.xml" />
+    <Content Include="Common\Defs\ThingDefs.xml" />
+    <Content Include="Common\Patches\Architect.xml" />
+    <Content Include="Common\Patches\BedBalancing.xml" />
+    <Content Include="Common\Patches\RecipeDefs.xml" />
+    <Content Include="Common\Patches\Seeds.xml" />
+    <Content Include="Common\Patches\WeaponBalancing.xml" />
+    <Content Include="Common\Patches\Misc.xml" />
+    <Content Include="Common\Patches\Research.xml" />
+    <Content Include="Common\Patches\ScenarioDefs.xml" />
   </ItemGroup>
 </Project>

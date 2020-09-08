@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Patch>
+  <!-- Saloon door requires hinges -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Settlers</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='DoorSaloon']</xpath>
+      <value>
+        <researchPrerequisites>
+          <li>ProjectHeron_Gates</li>
+        </researchPrerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Research bench is in Hospital for some reason? -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName='SimpleResearchBench']/designationCategory</xpath>
+    <value>
+      <designationCategory>Production</designationCategory>
+    </value>
+  </Operation>
+
+  <!-- Move more fences into fences tab -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/DesignationCategoryDef[defName='Fences']</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <DesignationCategoryDef>
+          <defName>Fences</defName>
+          <label>fences</label>
+          <order>700</order>
+          <specialDesignatorClasses>
+            <li>Designator_Cancel</li>
+            <li>Designator_Deconstruct</li>
+          </specialDesignatorClasses>
+        </DesignationCategoryDef>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Palisades</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[@Name='DoorBase_Palisade' or @Name='Palisade' or @Name='PalisadeLower' or @Name='PalisadePylon']/designationCategory</xpath>
+      <value>
+        <designationCategory>Fences</designationCategory>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>GloomyFurniture</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='RGK_WoodFence' or defName='RGK_Door']/designationCategory</xpath>
+      <value>
+        <designationCategory>Fences</designationCategory>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='MedTimes_Fencing_Wooden' or defName='MedTimes_Gate_Wooden']</xpath>
+      <value>
+        <designationCategory>Fences</designationCategory>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[O21] Clutter Structures</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='ClutterFence' or defName='ClutterConcreteFenceA']/designationCategory</xpath>
+      <value>
+        <designationCategory>Fences</designationCategory>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Remove duplicate Fences tab -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Architect Expanded - Fences (Tab Patch)</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <success>Always</success>
+          <xpath>//designationCategory[text()='ArchitectExpandedFence']</xpath>
+          <value>
+            <designationCategory>Fences</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <success>Always</success>
+          <xpath>/Defs/DesignationCategoryDef[defName='ArchitectExpandedFence']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Merge Ext. Furniture into Furniture -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>//designationCategory[text()='AOMorefurniture']</xpath>
+          <value>
+            <designationCategory>Furniture</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='AOMorefurniture']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Merge Furniture+ into Furniture -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>More Furniture [1.1 + 1.2]</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>//designationCategory[text()='ANON2MF']</xpath>
+          <value>
+            <designationCategory>Furniture</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='ANON2MF']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Merge in medieval times with the rest of stuff -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>
+            /Defs/ThingDef[@Name="MedTimes_BenchBaseTag"]/designationCategory |
+            /Defs/ThingDef[defName='MedTimes_IceGatheringStation']/designationCategory
+          </xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_CorpseBonfire']</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='MedTimes_Cot'
+              or defName='MedTimes_CotDouble'
+              or defName='MedTimes_SmallTable'
+              or defName='MedTimes_MedStool'
+            ]
+          </xpath>
+          <value>
+            <designationCategory>Furniture</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='MedTimes_CombatStandPlaced'
+              or defName='MedTimes_StoragePallet'
+              or defName='MedTimes_StoragePotPlaced'
+              or defName='MedTimes_Icebox'
+              or defName='MedTimes_IceboxFancy'
+            ]
+          </xpath>
+          <value>
+            <designationCategory>LWM_DS_Storage</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_GardeningBox']</xpath>
+          <value>
+            <designationCategory>RFF_Farm</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='MedTimes_StoneHearth']</xpath>
+          <value>
+            <designationCategory>Temperature</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+              defName='MedTimes_Brazier'
+              or defName='MedTimes_StreetLamp'
+              or defName='MedTimes_Reflector'
+            ]
+          </xpath>
+          <value>
+            <designationCategory>LightsTab</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name='MedTimes_SandbagBase']/designationCategory</xpath>
+          <value>
+            <designationCategory>Security</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='MedTimes_Medieval']</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef/designationCategory[text()='MedTimes_Medieval']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Fire place e -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>GloomyFurniture</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='RGK_FireplaceE']/designationCategory</xpath>
+      <value>
+        <designationCategory>Temperature</designationCategory>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Medical stuff in Misc -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>
+      /Defs/ThingDef[
+        defName='MSMedicalMat'
+        or defName='MSMedicalMatSpacer'
+        or defName='MSMedicalMatUltra'
+        or defName='MSMedicalMatEarly'
+        or defName='MSDrugMixer'
+        or defName='MS_DStand'
+      ]/designationCategory
+    </xpath>
+    <value>
+      <designationCategory>HE_Hospital</designationCategory>
+    </value>
+  </Operation>
+
+  <!-- Salt Mine -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName='VG_SaltMine']/designationCategory</xpath>
+    <value>
+      <designationCategory>Production</designationCategory>
+    </value>
+  </Operation>
+</Patch>

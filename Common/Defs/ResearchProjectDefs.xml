@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Defs>
+  <ResearchProjectDef>
+    <defName>BasicAgriculture</defName>
+    <label>basic agriculture</label>
+    <description>The very basics of an agricultural society. Enables sowing of staple crops, such as wheat, barley, and rye.</description>
+    <baseCost>100</baseCost>
+    <techLevel>Neolithic</techLevel>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>IronWorking</defName>
+    <label>ironworking</label>
+    <description>Smelt iron ore into usable wrought iron and steel. Work iron into useful tools and weapons.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Neolithic</techLevel>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>Tanning</defName>
+    <label>tanning</label>
+    <description>Working the hides and pelts of animals into usable leathers.</description>
+    <baseCost>100</baseCost>
+    <techLevel>Neolithic</techLevel>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>StoneStructures</defName>
+    <label>stone structures</label>
+    <description>Build useful structures out of stone blocks and chunks, which do not fall over under their own weight.</description>
+    <baseCost>100</baseCost>
+    <techLevel>Neolithic</techLevel>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>DefensiveStructures</defName>
+    <label>defensive structures</label>
+    <description>Build structures to aid in the defense of the colony, prevent injuries, and keep enemies out.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>StoneStructures</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>AdvFoodPreparation</defName>
+    <label>advanced food preparation</label>
+    <description>Make more complex and specialty foods.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>Pemmican</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>PropsGroup</defName>
+    <label>props</label>
+    <description>Prerequisite research for building non-functional props.</description>
+    <baseCost>10</baseCost>
+    <techLevel>Neolithic</techLevel>
+  </ResearchProjectDef>
+</Defs>

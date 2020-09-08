@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<assembly name="Assembly-CSharp">
+  <member name="T:Verse.StaticConstructorOnStartup">
+    <attribute ctor="M:JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(JetBrains.Annotations.ImplicitUseTargetFlags)">
+      <argument>3</argument>
+    </attribute>
+  </member>
+</assembly>
