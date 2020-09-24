@@ -40,12 +40,20 @@
       <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DInterests">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2089927321\1.2\Assemblies\DInterests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HugsLib">
       <HintPath>..\packages\UnlimitedHugs.Rimworld.HugsLib.7.2.1\lib\net472\HugsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HumanResources">
       <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2119687603\Assemblies\HumanResources.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interests and Callings">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2089938084\1.2\Assemblies\Interests and Callings.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Seeds">
@@ -64,6 +72,10 @@
       <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2073225100\Assemblies\UniversalFermenter.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="WorkTab">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\725219116\1.2\Assemblies\WorkTab.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alternates.cs" />
@@ -73,18 +85,24 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Patches\Mods\HumanResources\ModBaseHumanResources_MapComponentsInitializing.cs" />
     <Compile Include="Patches\Mods\ModUniversalFermenter\CompUniversalFermenter_DoTicks.cs" />
-    <Compile Include="Patches\RimWorld\Bill_IsFixedOrAllowedIngredient_AlternateThings.cs" />
+    <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsSameCondimentLoverSocial_NoWarning.cs" />
+    <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsDifferentCondimentLoverSocial_NoWarning.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_ResearchChanges.cs" />
+    <Compile Include="Patches\RimWorld\Game_InitNewGame_WorkDefaults.cs" />
     <Compile Include="Patches\RimWorld\GenConstruct_AmountNeededByOf_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\ItemAvailability_ThingsAvailableAnywhere_AlternateThing.cs" />
+    <Compile Include="Patches\RimWorld\Pawn_WorkSettings_EnableAndInitialize_CustomPriorities.cs" />
     <Compile Include="Patches\Verse\ListerThings_ThingsMatching_AlternateThings.cs" />
-    <Compile Include="Patches\Verse\ThingFilter_Allows_AlternateThings.cs" />
+    <Compile Include="Patches\Verse\LogMessageQueue_Enqueue_LogLevel.cs" />
+    <Compile Include="Patches\Verse\Pawn_GenerateNecessaryName_NoErrorPatch.cs" />
     <Compile Include="Patches\Verse\ThingOwner_TotalStackCountOfDef_AlternateThings.cs" />
     <Compile Include="Patches\Verse\ThingRequest_Accepts_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\WorkGiver_ConstructDeliverResources_ResourceValidator_AlternateThings.cs" />
     <Compile Include="Patches\UnityEngine\ColorUtility_TryParseHtmlString.cs" />
     <Compile Include="Patches\Verse\LoadedModManager_ParseAndProcessXML.cs" />
     <Compile Include="ModPatchAttribute.cs" />
+    <Compile Include="Patches\Verse\WindManager_WindManagerTick_AddLimits.cs" />
+    <Compile Include="PawnWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DefModExtensions.cs" />
   </ItemGroup>

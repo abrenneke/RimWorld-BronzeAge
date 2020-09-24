@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using HarmonyLib;
 using HugsLib;
+using HugsLib.Settings;
 using JetBrains.Annotations;
 using Verse;
 
@@ -9,17 +10,22 @@ namespace ABrenneke.BronzeAge
     [EarlyInit, PublicAPI]
     public class BronzeAgeMod : ModBase
     {
+        public static BronzeAgeMod Instance { get; private set; } = null!;
+
         public static readonly bool Debug = true;
 
         public sealed override string LogIdentifier => "abrenneke.bronzeage";
 
         protected override bool HarmonyAutoPatch => false;
 
+        public SettingHandle<bool>? LogLevel { get; set; }
+
         // HugsLib Documentation: https://github.com/UnlimitedHugs/RimworldHugsLib/wiki
 
         public BronzeAgeMod()
         {
             HarmonyInst = new Harmony(LogIdentifier);
+            Instance = this;
         }
 
         public override void EarlyInitialize()
@@ -29,6 +35,8 @@ namespace ABrenneke.BronzeAge
             {
                 HarmonyInst.CreateClassProcessor(type).Patch();
             }
+
+            LogLevel = Settings.GetHandle<bool>("hideMessageLogs", "Hide Message Logs", "Hide non-warning log messages");
         }
 
         public override void StaticInitialize()

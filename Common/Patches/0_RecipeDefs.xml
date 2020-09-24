@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <Patch>
+  <!-- Create wrought iron -->
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Steel</li>
@@ -16,7 +17,7 @@
               <jobString>Refining iron ore.</jobString>
               <effectWorking>Smelt</effectWorking>
               <soundWorking>Recipe_Smelt</soundWorking>
-              <workAmount>1300</workAmount>
+              <workAmount>800</workAmount>
               <workSpeedStat>SmeltingSpeed</workSpeedStat>
               <workSkillLearnFactor>0.25</workSkillLearnFactor>
               <targetCountAdjustment>15</targetCountAdjustment>

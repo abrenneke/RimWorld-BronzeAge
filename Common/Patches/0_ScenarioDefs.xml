@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RT's Weapon Pack Reloaded (1.1)</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts</xpath>
+      <value>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Weapon_Slingshot_rt</thingDef>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Gemstones</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts/li[thingDef='MeleeWeapon_Knife']/stuff</xpath>
+      <value>
+        <stuff>Z_Quartz</stuff>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Lumber</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts/li[def='ScatterThingsNearPlayerStart' and thingDef='WoodLog']/thingDef</xpath>
+      <value>
+        <thingDef>Owl_WoodLog</thingDef>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Steel</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts</xpath>
+      <value>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Owl_Iron</thingDef>
+          <count>50</count>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Rim of Madness - Bones</li>
+      <li>VGP Vegetable Garden</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts/li[def='StartingThing_Defined' and thingDef='Bow_Short']</xpath>
+      <value>
+        <stuff>WoodLog</stuff>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Fertile Fields [1.1]</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts</xpath>
+            <value>
+              <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                <def>ScatterThingsNearPlayerStart</def>
+                <thingDef>N7_RawClay</thingDef>
+                <count>50</count>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts</xpath>
+            <value>
+              <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                <def>ScatterThingsNearPlayerStart</def>
+                <thingDef>PlantScraps</thingDef>
+                <count>500</count>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts/li[
+              def='ScatterThingsNearPlayerStart' and (thingDef='WoodLog' or thingDef='Owl_WoodLog')]/count</xpath>
+            <value>
+              <count>250</count>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+</Patch>

@@ -9,8 +9,6 @@ namespace ABrenneke.BronzeAge.Patches.Verse
     [HarmonyPatch(typeof(ListerThings), nameof(ListerThings.ThingsMatching))]
     public static class ListerThings_ThingsMatching_AlternateThings
     {
-        private static Dictionary<ThingDef, AlternateResources>? thingsWithAlternates;
-
         public static void Postfix(ThingRequest req, ListerThings __instance, ref List<Thing> __result)
         {
             if (req.singleDef == null || !Alternates.TryGet(req.singleDef, out var alternates))

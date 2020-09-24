@@ -407,6 +407,18 @@
             </projectile>
           </value>
         </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Medieval Times Unofficial Update</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/recipeMaker/recipeUsers</xpath>
+            <value>
+              <li>MedTimes_CraftingStation</li>
+              <li>MedTimes_BlacksmithForge</li>
+            </value>
+          </match>
+        </li>
         <!-- Compound Bow -->
         <li Class="PatchOperationReplace">
           <xpath>/Defs/ThingDef[defName='VWE_Bow_Compound']/description</xpath>
@@ -592,6 +604,14 @@
               <speed>48</speed>
             </projectile>
           </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Medieval Times Unofficial Update</li>
+          </mods>
+          <match Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName='MedTimes_Ranged_Arbalest']</xpath>
+          </match>
         </li>
       </operations>
     </match>

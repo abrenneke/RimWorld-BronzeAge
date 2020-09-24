@@ -68,7 +68,7 @@
         </li>
         <li Class="ScenPart_StartingAnimal">
           <def>StartingAnimal</def>
-          <count>3</count>
+          <count>2</count>
           <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
         </li>
         <li Class="ScenPart_ScatterThingsNearPlayerStart">

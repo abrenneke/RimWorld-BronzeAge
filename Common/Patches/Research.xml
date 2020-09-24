@@ -978,6 +978,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Doors Expanded</li>
+      <li>Doors Expanded (Dev)</li>
     </mods>
     <match Class="PatchOperationAddModExtension">
       <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_Gates']</xpath>
@@ -1753,9 +1754,17 @@
             defName='HandCanningstove'
             or defName='VCE_SushiPrepTable'
             or defName='CookingTools'
-            or defName='CPD_DrinksTable'
           ]
         </xpath>
+        <value>
+          <researchPrerequisites>
+            <li>AdvFoodPreparation</li>
+          </researchPrerequisites>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='CPD_DrinksTable']/researchPrerequisites</xpath>
         <value>
           <researchPrerequisites>
             <li>AdvFoodPreparation</li>
@@ -1838,6 +1847,7 @@
       <li Class="PatchOperationFindMod">
         <mods>
           <li>Doors Expanded</li>
+          <li>Doors Expanded (Dev)</li>
         </mods>
         <match Class="PatchOperationSequence">
           <operations>
@@ -1887,11 +1897,12 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Doors Expanded</li>
+      <li>Doors Expanded (Dev)</li>
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/DoorsExpanded.DoorExpandedDef[defName='HeronCurtainTribal']/researchPrerequisites</xpath>
+          <xpath>/Defs/ThingDef[researchPrerequisites/li='ProjectHeron_Curtains']/researchPrerequisites</xpath>
           <value>
             <researchPrerequisites>
               <li>ProjectHeron_Gates</li>
@@ -1899,15 +1910,25 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>
-            /Defs/ThingDef[defName='RGK_DoorOld'] |
-            /Defs/DoorsExpanded.DoorExpandedDef[defName='PH_DoorDouble' or defName='PH_DoorTriple']
-          </xpath>
+          <xpath>/Defs/ThingDef[defName='PH_DoorDouble' or defName='PH_DoorTriple']</xpath>
           <value>
             <researchPrerequisites>
               <li>ProjectHeron_Gates</li>
             </researchPrerequisites>
           </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>GloomyFurniture</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='RGK_DoorOld']</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>ProjectHeron_Gates</li>
+              </researchPrerequisites>
+            </value>
+          </match>
         </li>
         <li Class="PatchOperationRemove">
           <xpath>/Defs/ResearchProjectDef[defName='ProjectHeron_Curtains']</xpath>
@@ -2057,6 +2078,7 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
+          <success>Always</success>
           <xpath>
             /Defs/RecipeDef[
               defName='GrillKabob'
@@ -2105,6 +2127,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Doors Expanded</li>
+      <li>Doors Expanded (Dev)</li>
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
@@ -2457,8 +2480,8 @@
     <mods>
       <li>[O21] Clutter Furniture</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>/Defs/ResearchProjectDef[defName='ComfyTechTierII' or defName='TableDesign']</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ResearchProjectDef[defName='ComfyTechTierII' or defName='TableDesign']/prerequisites</xpath>
       <value>
         <prerequisites>
           <li>MF_ModernFurniture</li>
@@ -2606,6 +2629,18 @@
     </value>
   </Operation>
 
+  <!-- Incorrect casing in mod -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RT's Weapon Pack Reloaded (1.1)</li>
+    </mods>
+    <match Class="PatchOperationSetName">
+      <success>Always</success>
+      <xpath>/Defs/researchProjectDef[defName='RT_WeaponAssemblyTable' or defName='RT_HeavyWeapons']</xpath>
+      <name>ResearchProjectDef</name>
+    </match>
+  </Operation>
+
   <!-- Redundant prerequisites -->
   <Operation Class="PatchOperationRemove">
     <xpath>
@@ -2617,10 +2652,9 @@
       /Defs/ResearchProjectDef[defName='VG_ClothII']/prerequisites/li[text()='ComplexClothing'] |
       /Defs/ResearchProjectDef[defName='Machining']/prerequisites/li[text()='Smithing'] |
       /Defs/ResearchProjectDef[defName='CentralHeating']/prerequisites/li[text()='Plumbing'] |
-      /Defs/ResearchProjectDef[defName='MSRimCodamol']/prerequisites/li[text()='Opium'] |
-      /Defs/ResearchProjectDef[defName='MSMorphine']/prerequisites/li[text()='Opium'] |
+      /Defs/ResearchProjectDef[defName='MSRimCodamol']/prerequisites/li[text()='MSOpium'] |
+      /Defs/ResearchProjectDef[defName='MSMorphine']/prerequisites/li[text()='MSOpium'] |
       /Defs/ResearchProjectDef[defName='Research_AdvancedMedicine']/prerequisites/li[text()='Research_OpimolRefining'] |
-      /Defs/ResearchProjectDef[defName='RT_WeaponAssemblyTable']/prerequisites/li[text()='Machining'] |
       /Defs/ResearchProjectDef[defName='UtilityStructures']/prerequisites/li[text()='Smithing']
     </xpath>
   </Operation>
@@ -2768,5 +2802,19 @@
     <value>
       <li Class="ABrenneke.BronzeAge.StartingWeapon"></li>
     </value>
+  </Operation>
+
+  <!-- Move mud bricks to be available at start -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/RecipeDef[defName='Make_RawMudbricks' or defName='Make_FiberFromWood']/researchPrerequisite</xpath>
+        </li>
+      </operations>
+    </match>
   </Operation>
 </Patch>

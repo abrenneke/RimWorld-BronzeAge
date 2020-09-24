@@ -16,13 +16,20 @@
     <Content Include="Common\Defs\ResearchProjectDefs.xml" />
     <Content Include="Common\Defs\ScenarioDefs.xml" />
     <Content Include="Common\Defs\ThingDefs.xml" />
+    <Content Include="Common\Languages\English\DefInjected\ResearchProjectDef\aparello.xml" />
     <Content Include="Common\Patches\Architect.xml" />
     <Content Include="Common\Patches\BedBalancing.xml" />
-    <Content Include="Common\Patches\RecipeDefs.xml" />
+    <Content Include="Common\Patches\0_RecipeDefs.xml" />
     <Content Include="Common\Patches\Seeds.xml" />
+    <Content Include="Common\Patches\0_ThingDefs.xml" />
     <Content Include="Common\Patches\WeaponBalancing.xml" />
     <Content Include="Common\Patches\Misc.xml" />
     <Content Include="Common\Patches\Research.xml" />
-    <Content Include="Common\Patches\ScenarioDefs.xml" />
+    <Content Include="Common\Patches\0_ScenarioDefs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Languages\English\DefInjected\ThingDef\" />
+    <Folder Include="Common\Languages\English\Keyed\" />
+    <Folder Include="Common\Languages\English\Strings\NameBanks\" />
   </ItemGroup>
 </Project>

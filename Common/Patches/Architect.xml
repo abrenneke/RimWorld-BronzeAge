@@ -5,13 +5,19 @@
     <mods>
       <li>Vanilla Factions Expanded - Settlers</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>/Defs/ThingDef[defName='DoorSaloon']</xpath>
-      <value>
-        <researchPrerequisites>
-          <li>ProjectHeron_Gates</li>
-        </researchPrerequisites>
-      </value>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Doors Expanded</li>
+        <li>Doors Expanded (Dev)</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName='DoorSaloon']</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>ProjectHeron_Gates</li>
+          </researchPrerequisites>
+        </value>
+      </match>
     </match>
   </Operation>
 
