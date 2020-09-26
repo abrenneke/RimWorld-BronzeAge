@@ -95,6 +95,7 @@
     <Compile Include="Patches\Verse\ListerThings_ThingsMatching_AlternateThings.cs" />
     <Compile Include="Patches\Verse\LogMessageQueue_Enqueue_LogLevel.cs" />
     <Compile Include="Patches\Verse\Pawn_GenerateNecessaryName_NoErrorPatch.cs" />
+    <Compile Include="Patches\Verse\ThingFilter_ExposeData_NoNull.cs" />
     <Compile Include="Patches\Verse\ThingOwner_TotalStackCountOfDef_AlternateThings.cs" />
     <Compile Include="Patches\Verse\ThingRequest_Accepts_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\WorkGiver_ConstructDeliverResources_ResourceValidator_AlternateThings.cs" />
