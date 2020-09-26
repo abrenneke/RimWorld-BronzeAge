@@ -44,6 +44,10 @@
       <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2089927321\1.2\Assemblies\DInterests.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DubsMintMenus">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\1446523594\1.2\Assemblies\DubsMintMenus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HugsLib">
       <HintPath>..\packages\UnlimitedHugs.Rimworld.HugsLib.7.2.1\lib\net472\HugsLib.dll</HintPath>
       <Private>False</Private>
@@ -83,6 +87,7 @@
     <Compile Include="ConditionalModPatchAttribute.cs" />
     <Compile Include="EarlyPatchAttribute.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Patches\Mods\ModDubsMintMenus\MainTabWindow_MintArchitect_CacheDesPanels_ActivePanels.cs" />
     <Compile Include="Patches\Mods\HumanResources\ModBaseHumanResources_MapComponentsInitializing.cs" />
     <Compile Include="Patches\Mods\ModUniversalFermenter\CompUniversalFermenter_DoTicks.cs" />
     <Compile Include="Patches\Mods\Rimocracy\StatPart_Governance_Multiplier_ExceptionFix.cs" />
@@ -92,6 +97,7 @@
     <Compile Include="Patches\RimWorld\Game_InitNewGame_WorkDefaults.cs" />
     <Compile Include="Patches\RimWorld\GenConstruct_AmountNeededByOf_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\ItemAvailability_ThingsAvailableAnywhere_AlternateThing.cs" />
+    <Compile Include="Patches\RimWorld\JoyUtility_JoyTickCheckEnd_WarningDefNameLog.cs" />
     <Compile Include="Patches\RimWorld\Pawn_WorkSettings_EnableAndInitialize_CustomPriorities.cs" />
     <Compile Include="Patches\RimWorld\ThoughtUtility_RemovePositiveBedroomThoughts_ErrorFix.cs" />
     <Compile Include="Patches\Verse\ListerThings_ThingsMatching_AlternateThings.cs" />
