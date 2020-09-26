@@ -2305,4 +2305,117 @@
       </operations>
     </match>
   </Operation>
+
+  <!-- Fence balancing -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFence'
+          or @Name='WoodMetalFence'
+          or defName='RGK_WoodFence'
+          ]/costStuffCount
+        </xpath>
+        <value>
+          <costStuffCount>2</costStuffCount>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFenceGate'
+          or @Name='WoodMetalGate'
+          or defName='RGK_Door'
+          ]/costStuffCount
+        </xpath>
+        <value>
+          <costStuffCount>4</costStuffCount>
+        </value>
+      </li>
+      <li Class="PatchOperationRemove">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='MedTimes_Fencing_Wooden' or defName='MedTimes_Gate_Wooden']</xpath> <!-- Ugly -->
+      </li>
+      <li Class="PatchOperationRemove">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFence'
+          or @Name='WoodMetalFence'
+          or defName='RGK_WoodFence'
+          or defName='WoodFenceGate'
+          or @Name='WoodMetalGate'
+          or defName='RGK_Door'
+          ]/costList
+        </xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFence'
+          or @Name='WoodMetalFence'
+          or defName='RGK_WoodFence'
+          ]/statBases/MaxHitPoints
+        </xpath>
+        <value>
+          <MaxHitPoints>50</MaxHitPoints>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFenceGate'
+          or @Name='WoodMetalGate'
+          or defName='RGK_Door'
+          ]/statBases/MaxHitPoints
+        </xpath>
+        <value>
+          <MaxHitPoints>40</MaxHitPoints>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>
+          /Defs/ThingDef[
+          defName='WoodFence'
+          or @Name='WoodMetalFence'
+          or defName='RGK_WoodFence'
+          or defName='WoodFenceGate'
+          or @Name='WoodMetalGate'
+          or defName='RGK_Door'
+          ]/fillPercent
+        </xpath>
+        <value>
+          <fillPercent>0.20</fillPercent>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Metallic beeswax leads to really weird things -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimBees</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[@Name='RB_BeesWaxBase']/stuffProps/categories/li[text()='Metallic']</xpath>
+      <value>
+        <li>Woody</li>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Straw floors use plant scraps -->
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>/Defs/TerrainDef[defName='FloorStraw' or defName='WDStrawFloor']/costList/Hay</xpath>
+    <value>
+      <PlantScraps>4</PlantScraps>
+    </value>
+  </Operation>
 </Patch>

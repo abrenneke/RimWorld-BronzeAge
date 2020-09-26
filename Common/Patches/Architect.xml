@@ -303,4 +303,419 @@
       </match>
     </match>
   </Operation>
+
+  <!-- Floor merge -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='FlagstoneBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>FlagstoneGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='FlagstoneBase']</xpath>
+              <value>
+                <designatorDropdown>FlagstoneGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='TileStoneBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>TileStoneGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='TileStoneBase']</xpath>
+              <value>
+                <designatorDropdown>TileStoneGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDRoughStoneTileBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDRoughStoneTileGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDRoughStoneTileBase']</xpath>
+              <value>
+                <designatorDropdown>WDRoughStoneTileGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDStoneTileBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDStoneTileGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDStoneTileBase']</xpath>
+              <value>
+                <designatorDropdown>WDStoneTileGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneTileBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDCheckStoneTileGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDCheckStoneTileBase']</xpath>
+              <value>
+                <designatorDropdown>WDCheckStoneTileGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneFloorBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDCheckStoneFloorGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDCheckStoneFloorBase']</xpath>
+              <value>
+                <designatorDropdown>WDCheckStoneFloorGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDMosaicStoneFloorBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDMosaicStoneFloorGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDMosaicStoneFloorBase']</xpath>
+              <value>
+                <designatorDropdown>WDMosaicStoneFloorGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDPolishedStoneFloorBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDPolishedStoneFloorGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDPolishedStoneFloorBase']</xpath>
+              <value>
+                <designatorDropdown>WDPolishedStoneFloorGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDStonePlateFloorBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDStonePlateFloorGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDStonePlateFloorBase']</xpath>
+              <value>
+                <designatorDropdown>WDStonePlateFloorGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='FineTileStoneBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>FineTileStoneGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='FineTileStoneBase']</xpath>
+              <value>
+                <designatorDropdown>FineTileStoneGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='Anon2CarpetBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>Anon2CarpetGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='Anon2CarpetBase']</xpath>
+              <value>
+                <designatorDropdown>Anon2CarpetGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='CarpetBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>CarpetGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='CarpetBase']</xpath>
+              <value>
+                <designatorDropdown>CarpetGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDCarpetCheckBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDCarpetCheckGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDCarpetCheckBase']</xpath>
+              <value>
+                <designatorDropdown>WDCarpetCheckGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='WDCheckCarpetFineBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>WDCheckCarpetFineGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='WDCheckCarpetFineBase']</xpath>
+              <value>
+                <designatorDropdown>WDCheckCarpetFineGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/TerrainDef[@Name='CarpetFineBase']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>CarpetFineGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='CarpetFineBase']</xpath>
+              <value>
+                <designatorDropdown>CarpetFineGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>
+          /Defs/TerrainDef[
+          defName='WDGodlTileHex'
+          or defName='WDHexMetalFloor'
+          or defName='WDSilverTileHex'
+          or defName='WDPlasteelTileHex'
+          or defName='WDHexSterileTile'
+          ]
+        </xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>HexagonalTileGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>
+                /Defs/TerrainDef[
+                defName='WDGodlTileHex'
+                or defName='WDHexMetalFloor'
+                or defName='WDSilverTileHex'
+                or defName='WDPlasteelTileHex'
+                or defName='WDHexSterileTile'
+                ]
+              </xpath>
+              <value>
+                <designatorDropdown>HexagonalTileGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>
+          /Defs/TerrainDef[
+          defName='WDMetalCheckTile'
+          or defName='WDSilverCheckTile'
+          or defName='WDGoldCheckTile'
+          or defName='WDPlasteelCheckTile'
+          or defName='WDCheckSterileTile'
+          ]
+        </xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs</xpath>
+              <value>
+                <DesignatorDropdownGroupDef>
+                  <defName>CheckTileGroup</defName>
+                </DesignatorDropdownGroupDef>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>
+                /Defs/TerrainDef[
+                defName='WDMetalCheckTile'
+                or defName='WDSilverCheckTile'
+                or defName='WDGoldCheckTile'
+                or defName='WDPlasteelCheckTile'
+                or defName='WDCheckSterileTile'
+                ]
+              </xpath>
+              <value>
+                <designatorDropdown>CheckTileGroup</designatorDropdown>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Skylights into structure -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Skylights</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name='BasedSkyLight']/designationCategory</xpath>
+          <value>
+            <designationCategory>Structure</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='skylights']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>

@@ -71,6 +71,14 @@
             </operations>
           </match>
         </li>
+        <!-- Bloomery can't make steel -->
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/RecipeDef[defName='Owl_RefineSteel']/recipeUsers/li[text()='Owl_Bloomery']</xpath>
+        </li>
+        <!-- Can't make stuff out of iron ore -->
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName='Owl_Iron']/stuffProps</xpath>
+        </li>
       </operations>
     </match>
   </Operation>

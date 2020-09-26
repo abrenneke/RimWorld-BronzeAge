@@ -2571,6 +2571,7 @@
               or defName='GL_lampE_White'
               or defName='RGK_Street_Lamp_SevenE'
               or defName='GL_Street_Lamp_SevenE_White'
+              or defName='GL_Street_Lamp_White'
             ]
           </xpath>
           <value>
@@ -2813,6 +2814,120 @@
       <operations>
         <li Class="PatchOperationRemove">
           <xpath>/Defs/RecipeDef[defName='Make_RawMudbricks' or defName='Make_FiberFromWood']/researchPrerequisite</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Floor Research -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Ceramics</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[defName='HBBrickFloor']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>PrimitiveCeramics</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef[defName='FiredBrickFloor']/researchPrerequisites</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>PrimitiveCeramics</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef[defName='HBBrickFloor']/costList/N7_FiredBrick</xpath>
+              <value>
+                <N7_FiredBrick>6</N7_FiredBrick>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/TerrainDef[defName='HBBrickFloor']/statBases/WorkToBuild</xpath>
+              <value>
+                <WorkToBuild>900</WorkToBuild>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Rim of Madness - Bones</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[defName='BoneFloor_Ashen' or defName='BoneChinaFloor' or defName='BoneFloor_Tile']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>BoneRefine</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Gloomy Deco</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded - Props and Decor</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/TerrainDef[defName='GloomyDeco_Grass']</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>PlantProps</li>
+              </researchPrerequisites>
+            </value>
+          </match>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>RimBees</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/TerrainDef[@Name='RB_WaxFloorBase' or @Name='RB_WaxTiledFloorBase']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>RB_BasicBeekeeping</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Basic props -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Props and Decor</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[(designatorDropdown='FilthProps' or designatorDropdown='PlantProps') and not(researchPrerequisites)]</xpath>
+          <value>
+            <researchPrerequisites>
+              <li>PropsGroup</li>
+            </researchPrerequisites>
+          </value>
         </li>
       </operations>
     </match>
