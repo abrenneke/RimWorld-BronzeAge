@@ -13,17 +13,20 @@ namespace ABrenneke.BronzeAge
             pawn.SetWorkPriority("Firefighter", 1);
             pawn.SetWorkPriority("Patient", 1);
 
-            // Studying should be priority 2 (if assigned, do this first)
+            // Study and research P1 (if there's research to do, prioritize it)
             pawn.SetWorkPriority("HR_Learn", 1);
+            pawn.SetWorkPriority("Research", 1);
 
-            // Haul+, Basic, and Bed Rest Priority 3
+            // Basic, and Bed Rest Priority 3
             pawn.SetWorkPriority("BasicWorker", 3);
             pawn.SetWorkPriority("PatientBedRest", 3);
-            pawn.SetWorkPriority("HaulingUrgent", 3);
 
-            // Cleaning hauling 4
-            pawn.SetWorkPriority("Cleaning", 4);
-            pawn.SetWorkPriority("Hauling", 4);
+            // Haul+ P1
+            pawn.SetWorkPriority("HaulingUrgent", 1);
+
+            // Cleaning hauling 3
+            pawn.SetWorkPriority("Cleaning", 3);
+            pawn.SetWorkPriority("Hauling", 3);
 
             // Turn off unused ones at beginning
             pawn.SetWorkPriority("Study", 0);
@@ -43,15 +46,19 @@ namespace ABrenneke.BronzeAge
             var used = new HashSet<string>(new[]
             {
                 "Firefighter", 
-                "Patient", 
+                "Patient",
+                "HR_Learn",
+                "Research",
+                "BasicWorker",
+                "PatientBedRest",
+                "HaulingUrgent",
+                "Cleaning",
+                "Hauling",
                 "Study",
                 "Teach",
                 "NuclearWork",
                 "RimefellerCrafting",
                 "RB_BeekeepingWork",
-                "BasicWorker",
-                "PatientBedRest",
-                "HaulingUrgent",
                 "Doctor"
             });
 
