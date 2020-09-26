@@ -1994,6 +1994,12 @@
               or defName='Building_BasicKiln'
               or defName='Building_ElectricKiln'
               ]/comps/li[@Class='Ceramics.CompProperties_Processing']
+              |
+              /Defs/ThingDef[
+              defName='Building_PrimitiveKiln'
+              or defName='Building_BasicKiln'
+              or defName='Building_ElectricKiln'
+              ]/thingClass
             </xpath>
           </li>
           <li Class="PatchOperationAdd">
