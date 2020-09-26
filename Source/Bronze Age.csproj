@@ -85,6 +85,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Patches\Mods\HumanResources\ModBaseHumanResources_MapComponentsInitializing.cs" />
     <Compile Include="Patches\Mods\ModUniversalFermenter\CompUniversalFermenter_DoTicks.cs" />
+    <Compile Include="Patches\Mods\Rimocracy\StatPart_Governance_Multiplier_ExceptionFix.cs" />
     <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsSameCondimentLoverSocial_NoWarning.cs" />
     <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsDifferentCondimentLoverSocial_NoWarning.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_ResearchChanges.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Patches\RimWorld\GenConstruct_AmountNeededByOf_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\ItemAvailability_ThingsAvailableAnywhere_AlternateThing.cs" />
     <Compile Include="Patches\RimWorld\Pawn_WorkSettings_EnableAndInitialize_CustomPriorities.cs" />
+    <Compile Include="Patches\RimWorld\ThoughtUtility_RemovePositiveBedroomThoughts_ErrorFix.cs" />
     <Compile Include="Patches\Verse\ListerThings_ThingsMatching_AlternateThings.cs" />
     <Compile Include="Patches\Verse\LogMessageQueue_Enqueue_LogLevel.cs" />
     <Compile Include="Patches\Verse\Pawn_GenerateNecessaryName_NoErrorPatch.cs" />
