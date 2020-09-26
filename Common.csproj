@@ -16,6 +16,7 @@
     <Content Include="Common\Defs\ResearchProjectDefs.xml" />
     <Content Include="Common\Defs\ScenarioDefs.xml" />
     <Content Include="Common\Defs\ThingDefs.xml" />
+    <Content Include="Common\Languages\English\DefInjected\DesignationCategoryDef\gloomy_deco.xml" />
     <Content Include="Common\Languages\English\DefInjected\ResearchProjectDef\aparello.xml" />
     <Content Include="Common\Patches\Architect.xml" />
     <Content Include="Common\Patches\BedBalancing.xml" />

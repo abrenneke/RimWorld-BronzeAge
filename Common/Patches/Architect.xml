@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- Saloon door requires hinges -->
   <Operation Class="PatchOperationFindMod">
@@ -281,5 +281,26 @@
     <value>
       <designationCategory>Production</designationCategory>
     </value>
+  </Operation>
+
+  <!-- Merge Props and Classic Deco into "Decorations" -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/DesignationCategoryDef[defName='PropsandDecor']</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>/Defs/DesignationCategoryDef[defName='OldStyleDeco']</xpath>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef/designationCategory[text()='PropsandDecor']</xpath>
+            <value>
+              <designationCategory>OldStyleDeco</designationCategory>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/DesignationCategoryDef[defName='PropsandDecor']</xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
   </Operation>
 </Patch>
