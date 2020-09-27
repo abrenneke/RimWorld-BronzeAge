@@ -1323,7 +1323,6 @@
           or defName='Table_interactive_2x2c'
           or defName='VCE_Grill'
           or defName='VCE_DeepFrier'
-          or defName='VCE_CanningMachine'
           or defName='VCE_CondimentPrepTable'
           or defName='VCE_CheesePress'
           or defName='VFE_ArchotechSculpture'
@@ -2664,6 +2663,87 @@
           <li>Gemstones</li>
         </categories>
       </value>
+    </match>
+  </Operation>
+
+  <!-- Smokehouse outside -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Smoked meat</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='SmokeHouse']</xpath>
+      <value>
+        <placeWorkers>
+          <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Duplicate canning -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>VGP Garden Canning</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[
+              defName='VCE_CanningMachine'
+              or defName='VCE_CannedMeat'
+              or defName='VCE_CannedFish'
+              or defName='VCE_CannedProduce'
+              or defName='VCE_CannedAP'
+              ] |
+              /Defs/RecipeDef[
+              defName='VCE_CanEggs'
+              or defName='VCE_CanProduce'
+              or defName='VCE_CanMeats'
+              or defName='VCE_CanFish'
+            </xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Don't can things like smoked meat -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Canning</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Smoked meat</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/RecipeDef[defName='CanMeat']/defaultIngredientFilter/disallowedThingDefs</xpath>
+                <value>
+                  <li>Tam_SmokedMeat</li>
+                  <li>Tam_SmokedHumanMeat</li>
+                  <li>Tam_SmokedInsectMeat</li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/RecipeDef[defName='CanVegetable']/defaultIngredientFilter/disallowedThingDefs</xpath>
+                <value>
+                  <li>Tam_SmokedVeg</li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
     </match>
   </Operation>
 </Patch>
