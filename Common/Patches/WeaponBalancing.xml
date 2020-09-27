@@ -16,7 +16,7 @@
         </li>
         <!-- TEMPORARY, UNBALANCED -->
         <li Class="PatchOperationRemove">
-          <xpath>/Defs/ThingDef[defName='Gun_EABlunderbuss' or defName='Gun_Hand_Cannonr' or defName='Turret_cannon' or @Name='BasecannonBuilding']</xpath>
+          <xpath>/Defs/ThingDef[defName='Gun_EABlunderbuss' or defName='Gun_Hand_Cannonr' or defName='Gun_Hand_Cannon' or defName='Turret_cannon' or @Name='BasecannonBuilding']</xpath>
         </li>
         <li Class="PatchOperationRemove">
           <xpath>/Defs/RecipeDef[defName='Gun_Early_Blunderbuss' or defName='Gun_Hand_Cannonr']</xpath>

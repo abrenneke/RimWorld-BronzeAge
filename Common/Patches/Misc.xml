@@ -95,6 +95,155 @@
     </match>
   </Operation>
 
+   <!-- Late medieval medicine use things other than beer -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Medicines</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>
+            /Defs/ThingDef[defName='MedicineLateMedievalMM']/costList |
+            /Defs/ThingDef[defName='MedicineLateMedievalMM']/recipeMaker
+          </xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <RecipeDef>
+              <defName>MakeMedicineLateMedievalMM</defName>
+              <label>make late medieval medicine</label>
+              <description>create late medieval medicine</description>
+              <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+              <workSkill>Intellectual</workSkill>
+              <workAmount>1000</workAmount>
+              <recipeUsers>
+                <li>CraftingSpot</li>
+                <li>DrugLab</li>
+                <li>MedTimes_CraftingStation</li>
+              </recipeUsers>
+              <researchPrerequisite>LateMedievalMedicine</researchPrerequisite>
+              <skillRequirements>
+                <Crafting>6</Crafting>
+                <Intellectual>8</Intellectual>
+              </skillRequirements>
+              <products>
+                <MedicineLateMedievalMM>1</MedicineLateMedievalMM>
+              </products>
+              <ingredients>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>MedicineEarlyMedievalMM</li>
+                    </thingDefs>
+                  </filter>
+                  <count>2</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Cloth</li>
+                    </thingDefs>
+                  </filter>
+                  <count>5</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Beer</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <fixedIngredientFilter>
+                <thingDefs>
+                  <li>MedicineEarlyMedievalMM</li>
+                  <li>Cloth</li>
+                  <li>Beer</li>
+                </thingDefs>
+              </fixedIngredientFilter>
+              <defaultIngredientFilter>
+                <thingDefs>
+                  <li>MedicineEarlyMedievalMM</li>
+                  <li>Cloth</li>
+                  <li>Beer</li>
+                </thingDefs>
+              </defaultIngredientFilter>
+            </RecipeDef>
+          </value>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>VGP Garden Drinks UF</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/ingredients/li[3]/filter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/fixedIngredientFilter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/defaultIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>rum</li>
+              <li>saki</li>
+              <li>vodka</li>
+              <li>tequila</li>
+              <li>whisky</li>
+              <li>BrownAle</li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Medical Supplements (Continued)</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/ingredients/li[3]/filter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/fixedIngredientFilter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/defaultIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>MSEthanol</li>
+              <li>MSHydrogenPeroxide</li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>RimBees</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/ingredients/li[3]/filter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/fixedIngredientFilter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/defaultIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>RB_Mead</li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Factions Expanded - Settlers</li>
+          </mods>
+          <match Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/ingredients/li[3]/filter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/fixedIngredientFilter/thingDefs |
+              /Defs/RecipeDef[defName='MakeMedicineLateMedievalMM']/defaultIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>Chemshine</li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
   <!-- Config error in PlatypusVenom: Hediff with defName PlatypusVenom has no description! -->
   <Operation Class="PatchOperationFindMod">
     <mods>
@@ -2417,5 +2566,104 @@
     <value>
       <PlantScraps>4</PlantScraps>
     </value>
+  </Operation>
+
+  <!-- Rustic window made out of metallic and stony -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[JPT] Open The Windows</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='SimpleOpenWindow']/stuffCategories</xpath>
+          <value>
+            <li>Metallic</li>
+            <li>Stony</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName='OpenWindow' or defName='LargeOpenWindow']/stuffCategories</xpath>
+          <value>
+            <li>Stony</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Duplicate Cheese -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Medieval Times Unofficial Update</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationRemove">
+                <xpath>
+                  /Defs/ThingDef[defName='MedTimes_MealCheese'] |
+                  /Defs/RecipeDef[defName='MedTimes_CookMealCheese' or defName='MedTimes_CookMealCheeseBulk']
+                </xpath>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>//li/thingDef[text()='MedTimes_MealCheese']</xpath>
+                <value>
+                  <thingDef>VCE_Cheese</thingDef>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>//li[text()='MedTimes_MealCheese']</xpath>
+                <value>
+                  <li>VCE_Cheese</li>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName='VCE_Cheese']/tradeability</xpath>
+                <value>
+                  <tradeability>All</tradeability>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>VGP Garden Gourmet</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationRemove">
+                <xpath>
+                  /Defs/ThingDef[defName='cheese'] |
+                  /Defs/RecipeDef[defName='Makesoycheese' or defName='MakeBulksoycheese' ] |
+                  //li[text()='cheese']
+                </xpath>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Obsidian counts as gemstone -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[K]Extra Stone(w/ Cupro's Textures)</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='BlocksObsidian']/stuffProps</xpath>
+      <value>
+        <categories>
+          <li>Gemstones</li>
+        </categories>
+      </value>
+    </match>
   </Operation>
 </Patch>

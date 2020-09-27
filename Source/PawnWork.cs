@@ -17,6 +17,9 @@ namespace ABrenneke.BronzeAge
             pawn.SetWorkPriority("HR_Learn", 1);
             pawn.SetWorkPriority("Research", 1);
 
+            // Same with governing
+            pawn.SetWorkPriority("Governing", 1);
+
             // Basic, and Bed Rest Priority 3
             pawn.SetWorkPriority("BasicWorker", 3);
             pawn.SetWorkPriority("PatientBedRest", 3);
@@ -49,6 +52,7 @@ namespace ABrenneke.BronzeAge
                 "Patient",
                 "HR_Learn",
                 "Research",
+                "Governing",
                 "BasicWorker",
                 "PatientBedRest",
                 "HaulingUrgent",

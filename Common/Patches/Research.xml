@@ -2786,7 +2786,7 @@
   </Operation>
 
   <!-- Starting weapon knowledge -->
-  <Operation Class="PatchOperationAddModExtension">
+  <!--<Operation Class="PatchOperationAddModExtension">
     <xpath>
       /Defs/ThingDef[
         defName='Weapon_Slingshot_rt'
@@ -2803,7 +2803,7 @@
     <value>
       <li Class="ABrenneke.BronzeAge.StartingWeapon"></li>
     </value>
-  </Operation>
+  </Operation>-->
 
   <!-- Move mud bricks to be available at start -->
   <Operation Class="PatchOperationFindMod">
@@ -2931,5 +2931,85 @@
         </li>
       </operations>
     </match>
+  </Operation>
+
+  <!-- Weapons with recipeMaker.researchPrerequisite but not researchPrerequisites, other fixes for weapon research/training -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Weapons Expanded</li>
+        </mods>
+        <match Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName='VWE_Bow_Long']/weaponTags/li[text()='NeolithicRangedBasic']</xpath>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>RT's Weapon Pack Reloaded (1.1)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ThingDef[defName='MeleeWeapon_Katana']/weaponTags/li[text()='NeolithicMeleeBasic' or text()='ShieldSafeMelee_Neolithic_Basic']</xpath>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[@Name='RT_BaseMeleeWeapon_Sharp_CQB' or @Name='RT_BaseMeleeWeapon_Blunt_CQB']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>RT_Melee</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Medieval Times Unofficial Update</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[@Name='MedTimes_Melee_Rare']/weaponTags</xpath>
+              <value>
+                <li>MedTimes_Complex</li>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>
+                /Defs/ThingDef[
+                @Name='MedTimes_Melee_Nan'
+                or @Name='MedTimes_Ranged_Nan'
+                or defName='MedTimes_Ranged_GrenadesAntioch'
+                or defName='MedTimes_Ranged_GrenadesAntioch_Dud'
+                ]
+              </xpath>
+              <value>
+                <weaponTags>
+                  <li>MedTimes_Complex</li>
+                </weaponTags>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <success>Always</success>
+              <xpath>/Defs/ThingDef[defName='NotBasic']/weaponTags</xpath>
+              <value>
+                <li>MedTimes_Complex</li>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='NotBasic']/weaponTags</xpath>
+        <value>
+          <li>Ultratech</li>
+          <li>VFEClaymore</li>
+          <li>EltexStaff</li>
+        </value>
+      </li>
+    </operations>
   </Operation>
 </Patch>
