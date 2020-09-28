@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- 
+  Mod: 
+  URL: 
+  By: 
+  -->
+
+  <!-- 
+  Mod: Fertile Fields Bulk Kibble
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2044554257
+  By: malkav73
+  -->
+  <RecipeDef>
+    <defName>Make4Kibble</defName>
+    <label>make kibble x4</label>
+    <description>Make bulk animal kibble by combining raw meat and plants.</description>
+    <jobString>Making bulk kibble.</jobString>
+    <workAmount>1350</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+          <thingDefs>
+            <li>Hay</li>
+            <li>PlantScraps</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <products>
+      <Kibble>200</Kibble>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <thingDefs>
+        <li>Hay</li>
+        <li>PlantScraps</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Foods</li>
+      </categories>
+      <disallowedCategories>
+        <li>EggsFertilized</li>
+      </disallowedCategories>
+      <disallowedThingDefs>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <recipeUsers>
+      <li>TableButcher</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- 
+  Mod: Simple Chains: Lumber Patch Collection
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1886111248
+  By: Alex Giustizieri
+  -->
+  <RecipeDef>
+    <defName>Owl_MakeGreenLumber_Patch</defName>
+    <label>make green lumber</label>
+    <description>Make a batch of green lumber using wood logs.</description>
+    <jobString>Making green lumber from wood logs.</jobString>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1200</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0.25</workSkillLearnFactor>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Owl_WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Owl_WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Owl_GreenLumber>20</Owl_GreenLumber>
+    </products>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+</Defs>

@@ -75,6 +75,8 @@
         defName='Bed_Simple'
         or defName='Bedroll'
         or defName='BedrollDouble'
+        or defName='MedTimes_Cot'
+        or defName='MedTimes_CotDouble'
       ]/statBases/BedRestEffectiveness
     </xpath>
     <value>

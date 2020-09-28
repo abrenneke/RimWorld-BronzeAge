@@ -1,0 +1,2325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Mod: Simple Chains: Leather UF Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2109934656
+  By: Dametri
+-->
+<Patch>
+  <!-- Simple Chains: Lumber | Owlchemist.SimpleChains.Lumber-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Leather</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]</xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps</xpath>
+          <value>
+            <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+              <processes>
+                <li>
+                  <thingDef>Leather_Plain</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Plain</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.8</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Bear</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Thick</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>2.4</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Light</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_SoftPelt</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.37</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Bluefur</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_HeavyPelt</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.92</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Lizard</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Scale</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.8</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Bird</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Bird</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.8</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Thrumbo</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Thrumbo</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>3.63</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+                <li>
+                  <thingDef>Leather_Human</thingDef>
+                  <ingredientFilter>
+                    <thingDefs>
+                      <li>Prepared_Hide_Human</li>
+                    </thingDefs>
+                  </ingredientFilter>
+                  <maxCapacity>75</maxCapacity>
+                  <processDays>1.8</processDays>
+                  <usesTemperature>true</usesTemperature>
+                  <temperatureIdeal>
+                    <min>1</min>
+                    <max>99</max>
+                  </temperatureIdeal>
+                  <temperatureSafe>
+                    <min>-50</min>
+                    <max>200</max>
+                  </temperatureSafe>
+                  <graphicSuffix>_full</graphicSuffix>
+                </li>
+              </processes>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/WorkGiverDef[defName = "UF_WorkGiver_TakeProductOutOfUniversalFermenter"]/giverClass</xpath>
+          <value>
+            <giverClass>UniversalFermenter.WorkGiver_TakeProductOutOfUF</giverClass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/WorkGiverDef[defName = "UF_WorkGiver_FillUniversalFermenter"]/giverClass</xpath>
+          <value>
+            <giverClass>UniversalFermenter.WorkGiver_FillUF</giverClass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/JobDef[defName = "FillUniversalFermenter"]/driverClass</xpath>
+          <value>
+            <driverClass>UniversalFermenter.JobDriver_FillUF</driverClass>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/JobDef[defName = "TakeProductOutOfUniversalFermenter"]/driverClass</xpath>
+          <value>
+            <driverClass>UniversalFermenter.JobDriver_TakeProductOutOfUF</driverClass>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+
+          <mods>
+            <li>Alpha Animals</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Night</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Night</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Call of Cthulhu - Cosmic Horrors</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_StarVampire</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_StarVampire</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_MiGo</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_MiGo</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_Chthonian</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Chthonian</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_Cthulhid</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Cthulhid</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_DarkYoung</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_DarkYoung</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>CH_Leather_DeepOne</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_DeepOne</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Dinosauria</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Raptor</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Raptor</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_DinosaurFuzz</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_DinosaurFuzz</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_DinosaurHide</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_DinosaurHide</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_DinosaurSkin</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_DinosaurSkin</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_PterosaurSkin</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_PterosaurSkin</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Theropod</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Theropod</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Sauropod</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Sauropod</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Redhide</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Redhide</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Tyrannosaurus</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Tyrannosaurus</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Spinosaurus</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Spinosaurus</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Bluefuzz</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Bluefuzz</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_ArmoredDino</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_ArmoredDino</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Dragon Mod</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Dragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Dragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_GoldDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_GoldDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_SilverDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_SilverDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_CryoDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_CryoDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_RockDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_RockDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_RoyalDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_RoyalDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_TrueDragon</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_TrueDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Dragon's Descent</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Dragon_Leather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Dragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Rich_Dragon_Leather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_RichDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>True_Dragon_Leather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_TrueDragon</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Fantasy Goblins</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Goblin_Leather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Goblin</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>FishIndustry</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Tailteeth</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Tailteeth</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>[RF] Fishing [1.0]</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>EelLeather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Eel</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>SquidLeather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Squid_Hide</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Flommel [1.0]</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Slimy</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Slimy</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Giraffes</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Giraffe</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Giraffe</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Jurassic Rimworld 1.0</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_SmallDino</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_SmallDino</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_MediumDino</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_MediumDino</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_LargeDino</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_LargeDino</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Indominus</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Indominus</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Indoraptor</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Indoraptor</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>[1.0]Lost Forest</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>LF_LeffyFur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_LeffyFur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Magical Menagerie</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>MM_LightMagicalLeather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_LightMagical</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>MM_HeavyMagicalLeather</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_HeavyMagical</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Martens - Nature's Most Adorable Assassins</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_BeechMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_BeechMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_JapaneseMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_JapaneseMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_NilgiriMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_NilgiriMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_PineMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_PineMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_RimMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_RimMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_SableMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_SableMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ZGF_Leather_YellowMartfur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_YellowMartfur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>MoreMonstergirls - Foxgirl</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Foxgirl</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Foxgirl</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>MoreMonstergirls Enhanced Version 1.0 (And CE + A Dog Said compatibility)</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Cowgirl</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Cowgirl</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Centaur</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Centaur</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Dryad</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Dryad</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Harpy</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Harpy</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_BlackHarpy</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_BlackHarpy</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_FairyForest</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_FairyForest</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_FairyIce</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_FairyIce</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Thrumbomorph</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Thrumbomorph</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Slime</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_SlimeMembrane</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Imp</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Imp</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Dragonoid</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Dragonoid</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+
+
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Rim of Madness - Arachnophobia</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>ROMA_Leather_SpiderGiant</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_SpiderGiant</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Rodents of Unusual Size</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_Rat</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Rat</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Vanilla Animals Expanded — Australia</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>AEXP_Leather_Platypus</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Platypus</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Vanilla Animals Expanded — Ice Sheet</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>AEXP_Leather_Pinniped</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Pinniped</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Vanilla Animals Expanded — Tropical Rainforest</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>AEXP_Leather_Tiger</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_Tiger</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+
+        <li Class="PatchOperationFindMod">
+          <success>Always</success>
+          <mods>
+            <li>Black Widows 2.0</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationAdd">
+                <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+                <value>
+                  <li>
+                    <thingDef>Leather_BlackWidow</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Prepared_Hide_BlackWidow</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>75</maxCapacity>
+                    <processDays>3.03</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <temperatureIdeal>
+                      <min>1</min>
+                      <max>99</max>
+                    </temperatureIdeal>
+                    <temperatureSafe>
+                      <min>-50</min>
+                      <max>200</max>
+                    </temperatureSafe>
+                    <graphicSuffix>_full</graphicSuffix>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+
+      </operations>
+    </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <success>Always</success>
+    <mods>
+      <li>Alpha Animals</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+          <value>
+            <li>
+              <thingDef>AA_Leather_Aerofleet</thingDef>
+              <ingredientFilter>
+                <thingDefs>
+                  <li>Prepared_Hide_Aerofleet</li>
+                </thingDefs>
+              </ingredientFilter>
+              <maxCapacity>75</maxCapacity>
+              <processDays>1.8</processDays>
+              <usesTemperature>true</usesTemperature>
+              <temperatureIdeal>
+                <min>1</min>
+                <max>99</max>
+              </temperatureIdeal>
+              <temperatureSafe>
+                <min>-50</min>
+                <max>200</max>
+              </temperatureSafe>
+              <graphicSuffix>_full</graphicSuffix>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+          <value>
+            <li>
+              <thingDef>AA_ArcticLion_Leather</thingDef>
+              <ingredientFilter>
+                <thingDefs>
+                  <li>Prepared_Hide_ArcticLion</li>
+                </thingDefs>
+              </ingredientFilter>
+              <maxCapacity>75</maxCapacity>
+              <processDays>2.4</processDays>
+              <usesTemperature>true</usesTemperature>
+              <temperatureIdeal>
+                <min>1</min>
+                <max>99</max>
+              </temperatureIdeal>
+              <temperatureSafe>
+                <min>-50</min>
+                <max>200</max>
+              </temperatureSafe>
+              <graphicSuffix>_full</graphicSuffix>
+            </li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+          <value>
+            <li>
+              <thingDef>Leather_Gallatross</thingDef>
+              <ingredientFilter>
+                <thingDefs>
+                  <li>Prepared_Hide_Gallatross</li>
+                </thingDefs>
+              </ingredientFilter>
+              <maxCapacity>75</maxCapacity>
+              <processDays>3.03</processDays>
+              <usesTemperature>true</usesTemperature>
+              <temperatureIdeal>
+                <min>1</min>
+                <max>99</max>
+              </temperatureIdeal>
+              <temperatureSafe>
+                <min>-50</min>
+                <max>200</max>
+              </temperatureSafe>
+              <graphicSuffix>_full</graphicSuffix>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <success>Always</success>
+    <mods>
+      <li>Frilleus</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+          <value>
+            <li>
+              <thingDef>Leather_Frilleus</thingDef>
+              <ingredientFilter>
+                <thingDefs>
+                  <li>Prepared_Hide_Frilleus</li>
+                </thingDefs>
+              </ingredientFilter>
+              <maxCapacity>75</maxCapacity>
+              <processDays>1.5</processDays>
+              <usesTemperature>true</usesTemperature>
+              <temperatureIdeal>
+                <min>1</min>
+                <max>99</max>
+              </temperatureIdeal>
+              <temperatureSafe>
+                <min>-50</min>
+                <max>200</max>
+              </temperatureSafe>
+              <graphicSuffix>_full</graphicSuffix>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <success>Always</success>
+    <mods>
+      <li>Sacred WhiteFox</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>*/ThingDef[defName = "Owl_TanningVat"]/comps/li[@Class="UniversalFermenter.CompProperties_UniversalFermenter"]/processes</xpath>
+          <value>
+            <li>
+              <thingDef>Leather_Whitefox</thingDef>
+              <ingredientFilter>
+                <thingDefs>
+                  <li>Prepared_Hide_Whitefox</li>
+                </thingDefs>
+              </ingredientFilter>
+              <maxCapacity>75</maxCapacity>
+              <processDays>2.05</processDays>
+              <usesTemperature>true</usesTemperature>
+              <temperatureIdeal>
+                <min>1</min>
+                <max>99</max>
+              </temperatureIdeal>
+              <temperatureSafe>
+                <min>-50</min>
+                <max>200</max>
+              </temperatureSafe>
+              <graphicSuffix>_full</graphicSuffix>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

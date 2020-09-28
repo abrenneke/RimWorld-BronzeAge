@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Mod: Simply Bulk Crafting
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2139862969
+  By: Stein
+-->
+<Defs>
+  <RecipeDef>
+    <defName>BurnApparelBulk</defName>
+    <label>burn apparel in bulk</label>
+    <description>Burn unwanted apparel in bulk to completely destroy it.</description>
+    <jobString>Burning apparel in bulk.</jobString>
+    <workAmount>120</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <recipeUsers>
+      <li>ElectricCrematorium</li>
+      <li>Campfire</li>
+      <!-- A lot quicker than trying to patch production buildings -->
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Apparel_ShieldBelt</li>
+        <li>Apparel_SmokepopBelt</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>BurnDrugsBulk</defName>
+    <label>burn drugs in bulk</label>
+    <description>Burn unwanted drugs in bulk to completely destroy them.</description>
+    <jobString>Burning drugs in bulk.</jobString>
+    <workAmount>120</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>BurnDrug</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <conceptLearned>DrugBurning</conceptLearned>
+    <recipeUsers>
+      <li>ElectricCrematorium</li>
+      <li>Campfire</li>
+      <!-- A lot quicker than trying to patch production buildings -->
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Drugs</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Drugs</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_MedicineBulk</defName>
+    <label>make medicine in bulk</label>
+    <description>Make medicine in bulk.</description>
+    <jobString>Making medicine.</jobString>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>875</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>DrugLab</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>9</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+        <li>Neutroamine</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MedicineIndustrial>3</MedicineIndustrial>
+    </products>
+    <researchPrerequisite>MedicineProduction</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>4</Crafting>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_Shell_HighExplosiveBulk</defName>
+    <label>make high-explosive shells in bulk</label>
+    <description>Make high-explosive shells in bulk.</description>
+    <jobString>Making high-explosive shells.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1000</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Shell_HighExplosive>3</Shell_HighExplosive>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_Shell_IncendiaryBulk</defName>
+    <label>make incendiary shells in bulk</label>
+    <description>Make incendiary shells in bulk.</description>
+    <jobString>Making incendiary shells.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1000</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Chemfuel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Shell_Incendiary>3</Shell_Incendiary>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_Shell_EMPBulk</defName>
+    <label>make EMP shells in bulk</label>
+    <description>Make EMP shells in bulk.</description>
+    <jobString>Making EMP shells.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1000</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Shell_EMP>3</Shell_EMP>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealSimpleBulk</defName>
+    <label>cook simple meals in bulk</label>
+    <description>Cook a straightforward meal in bulk from one ingredient.</description>
+    <jobString>Cooking simple meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple>4</MealSimple>
+    </products>
+    <workSkill>Cooking</workSkill>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealFineBulk</defName>
+    <label>cook fine meals in bulk</label>
+    <description>Cook a somewhat complex meal in bulk from a combination of meat and plant ingredients.</description>
+    <jobString>Cooking fine meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealFine>4</MealFine>
+    </products>
+    <skillRequirements>
+      <Cooking>8</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealLavishBulk</defName>
+    <label>cook lavish meals in bulk</label>
+    <description>Cook a very complex meal in bulk from a combination of meat and plant ingredients. Much of the ingredients are wasted.</description>
+    <jobString>Cooking lavish meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealLavish>2</MealLavish>
+    </products>
+    <skillRequirements>
+      <Cooking>10</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealSurvivalBulk</defName>
+    <label>cook packaged survival meals in bulk</label>
+    <description>Prepare a packaged survival meal in bulk from a combination of meat and plant ingredients. Much of the ingredients are wasted in the preservation process.</description>
+    <jobString>Cooking survival meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>0.90</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.90</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSurvivalPack>3</MealSurvivalPack>
+    </products>
+    <skillRequirements>
+      <Cooking>10</Cooking>
+    </skillRequirements>
+    <researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite>
+  </RecipeDef>
+  <!-- Beer -->
+  <RecipeDef>
+    <defName>Make_WortBulk</defName>
+    <label>make wort in bulk</label>
+    <description>Make wort in bulk from hops.</description>
+    <jobString>Making wort.</jobString>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>1250</workAmount> <!-- work amount is +25% longer than original -->
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers> <!-- A lot quicker than trying to patch production buildings -->
+      <li>Brewery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawHops</li>
+          </thingDefs>
+        </filter>
+        <count>75</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RawHops</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Wort>15</Wort>
+    </products>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_StoneBlocksAnyBulk</defName>
+    <label>make any stone blocks in bulk</label>
+    <description>Cut rock chunks into usable stone blocks in bulk.</description>
+    <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <specialProducts>
+      <li>Butchery</li>
+    </specialProducts>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_SandstoneBlocksBulk</defName>
+    <label>make sandstone blocks in bulk</label>
+    <description>Cut sandstone chunks into usable sandstone blocks in bulk.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkSandstone</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkSandstone</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksSandstone>60</BlocksSandstone>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_GraniteBlocksBulk</defName>
+    <label>make granite blocks in bulk</label>
+    <description>Cut granite chunks into usable granite blocks in bulk.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkGranite</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkGranite</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksGranite>60</BlocksGranite>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_LimestoneBlocksBulk</defName>
+    <label>make limestone blocks in bulk</label>
+    <description>Cut limestone chunks into usable limestone blocks in bulk.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkLimestone</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkLimestone</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksLimestone>60</BlocksLimestone>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_SlateBlocksBulk</defName>
+    <label>make slate blocks in bulk</label>
+    <description>Cut slate chunks into usable slate blocks in bulk.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkSlate</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkSlate</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksSlate>60</BlocksSlate>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_MarbleBlocksBulk</defName>
+    <label>make marble blocks in bulk</label>
+    <description>Cut marble chunks into usable marble blocks in bulk.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkMarble</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkMarble</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <BlocksMarble>60</BlocksMarble>
+    </products>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>ExtractMetalFromSlagBulk</defName>
+    <label>smelt metal from slag in bulk</label>
+    <description>Use heat and strong electromagnets to extract useful metal from slag chunks in bulk.</description>
+    <jobString>Smelting metal from slag.</jobString>
+    <workAmount>2000</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ChunkSlagSteel</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <!-- Switched to standard products so we can do "do until you have X"
+    <products>
+      <li>Smelted</li>
+    </products>-->
+    <products>
+      <Steel>60</Steel>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ChunkSlagSteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>SmeltWeaponBulk</defName>
+    <label>smelt weapons in bulk</label>
+    <description>Use heat and strong electromagnets to break down weapons in bulk for useful resources.</description>
+    <jobString>Smelting weapon.</jobString>
+    <workAmount>2000</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <specialProducts>
+      <li>Smelted</li>
+    </specialProducts>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Weapons</li>
+      </categories>
+      <specialFiltersToDisallow>
+        <li>AllowNonSmeltableWeapons</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <forceHiddenSpecialFilters>
+      <li>AllowSmeltable</li>
+    </forceHiddenSpecialFilters>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>DestroyWeaponBulk</defName>
+    <label>destroy weapons in bulk</label>
+    <description>Use heat to destroy unwanted weapons in bulk. This process is faster than smelting, and works on non-smeltable items, but yields no resources.</description>
+    <jobString>Destroying weapon.</jobString>
+    <workAmount>500</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Weapons</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_ChemfuelFromWoodBulk</defName>
+    <label>make chemfuel from wood in bulk</label>
+    <description>Make a batch of chemfuel by extracting and condensing wood gas from logs in bulk.</description>
+    <jobString>Refining chemfuel from wood.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>2500</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>210</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Chemfuel>105</Chemfuel>
+    </products>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_ChemfuelFromCorpse</defName>
+    <label>make chemfuel from corpses</label>
+    <description>Make a batch of chemfuel in by extracting biofuel from a corpse. (Why wait for them to turn into oil?)</description>
+    <jobString>Refining chemfuel from corpse.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>2500</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Corpses</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <thingDefs>
+        <li>Corpse_Human</li>
+      </thingDefs>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+    <products>
+      <Chemfuel>40</Chemfuel>
+    </products>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_ChemfuelFromOrganicsBulk</defName>
+    <label>make chemfuel from organics in bulk</label>
+    <description>Make a batch of chemfuel in bulk by extracting biofuel from organic feedstocks.</description>
+    <jobString>Refining chemfuel from organics.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>3125</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Foods</li>
+            <li>PlantMatter</li>
+          </categories>
+          <disallowedThingDefs>
+            <li>Hay</li>
+          </disallowedThingDefs>
+          <disallowedCategories>
+            <li>FoodMeals</li>
+          </disallowedCategories>
+        </filter>
+        <count>10.5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Foods</li>
+        <li>PlantMatter</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Hay</li>
+      </disallowedThingDefs>
+      <disallowedCategories>
+        <li>FoodMeals</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>MeatRaw</li>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </defaultIngredientFilter>
+    <products>
+      <Chemfuel>105</Chemfuel>
+    </products>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_ComponentIndustrialBulk</defName>
+    <label>make components in bulk</label>
+    <description>Make components in bulk.</description>
+    <jobString>Making component.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>6250</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>FabricationBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>36</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </products>
+    <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_ComponentSpacerBulk</defName>
+    <label>make advanced components in bulk</label>
+    <description>Make advanced components in bulk.</description>
+    <jobString>Making advanced component.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>12500</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>FabricationBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>0.9</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentIndustrial</li>
+        <li>Steel</li>
+        <li>Plasteel</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentSpacer>3</ComponentSpacer>
+    </products>
+    <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>12</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_PatchleatherBulk</defName>
+    <label>make patchleather in bulk</label>
+    <description>Combine various types of leather to create weak patchleather in bulk.</description>
+    <jobString>Making patchleather.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <workAmount>1125</workAmount>
+    <!-- work amount is +25% longer than original -->
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <targetCountAdjustment>150</targetCountAdjustment>
+    <recipeUsers>
+      <li>ElectricTailoringBench</li>
+      <li>HandTailoringBench</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Leathers</li>
+          </categories>
+          <disallowedThingDefs>
+            <li>Leather_Thrumbo</li>
+          </disallowedThingDefs>
+        </filter>
+        <count>150</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Leathers</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Leather_Patch</li>
+        <li>Leather_Human</li>
+      </disallowedThingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Leather_Patch>150</Leather_Patch>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <skillRequirements>
+      <Crafting>6</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_Kibble_Bulk</defName>
+    <label>make kibble in bulk</label>
+    <description>Make animal kibble in bulk by combining raw meat and plants.</description>
+    <jobString>Making kibble.</jobString>
+    <workAmount>562</workAmount>
+    <!-- work amount is: count (per stack) * workAmount / 2.5 -->
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ButcherSpot</li>
+      <li>TableButcher</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+          <thingDefs>
+            <li>Hay</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <products>
+      <Kibble>150</Kibble>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <thingDefs>
+        <li>Hay</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Foods</li>
+      </categories>
+      <disallowedCategories>
+        <li>EggsFertilized</li>
+      </disallowedCategories>
+      <disallowedThingDefs>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Make_Pemmican_Bulk</defName>
+    <label>make pemmican in bulk</label>
+    <description>Make pemmican in bulk, a preserved combination of meat and plant food. It doesn't taste amazing, but lasts a long time without refrigeration.</description>
+    <jobString>Making pemmican.</jobString>
+    <workAmount>875</workAmount>
+    <!-- work amount is: count (per stack) * workAmount / 2.5 -->
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <!-- A lot quicker than trying to patch production buildings -->
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>0.75</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.75</count>
+      </li>
+    </ingredients>
+    <products>
+      <Pemmican>48</Pemmican>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <skillRequirements>
+      <Cooking>8</Cooking>
+    </skillRequirements>
+    <researchPrerequisite>Pemmican</researchPrerequisite>
+  </RecipeDef>
+</Defs>

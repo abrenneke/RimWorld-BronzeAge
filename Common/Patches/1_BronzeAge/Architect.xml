@@ -92,28 +92,6 @@
     </match>
   </Operation>
 
-  <!-- Remove duplicate Fences tab -->
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Architect Expanded - Fences (Tab Patch)</li>
-    </mods>
-    <match Class="PatchOperationSequence">
-      <operations>
-        <li Class="PatchOperationReplace">
-          <success>Always</success>
-          <xpath>//designationCategory[text()='ArchitectExpandedFence']</xpath>
-          <value>
-            <designationCategory>Fences</designationCategory>
-          </value>
-        </li>
-        <li Class="PatchOperationRemove">
-          <success>Always</success>
-          <xpath>/Defs/DesignationCategoryDef[defName='ArchitectExpandedFence']</xpath>
-        </li>
-      </operations>
-    </match>
-  </Operation>
-
   <!-- Merge Ext. Furniture into Furniture -->
   <Operation Class="PatchOperationFindMod">
     <mods>
@@ -714,6 +692,100 @@
         </li>
         <li Class="PatchOperationRemove">
           <xpath>/Defs/DesignationCategoryDef[defName='skylights']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Move Natural Paths into Floors -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Natural Paths</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/TerrainDef[@Name='pathBase']/designationCategory</xpath>
+          <value>
+            <designationCategory>Floors</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='NaturalPaths']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Move Alpha Biomes stuff into respective categories-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Alpha Biomes</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/*/designationCategory[text()='AB_AlphaBiomesBuildings']</xpath>
+          <value>
+            <designationCategory>Structure</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='AB_AlcyoniteSolar']/designationCategory</xpath>
+          <value>
+            <designationCategory>Power</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='AB_AlienComplianceCenter']/designationCategory</xpath>
+          <value>
+            <designationCategory>Misc</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>
+            /Defs/ThingDef[
+            defName='AB_CoreSampleDrill'
+            or defName='AB_PropaneStove'
+            or defName='AB_PropanePump'
+            or defName='AB_TarPump'
+            ]/designationCategory
+          </xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='AB_PropaneHeater']/designationCategory</xpath>
+          <value>
+            <designationCategory>Temperature</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='AB_TrapIED_Tar' or defName='AB_OcularGasSpewer']/designationCategory</xpath>
+          <value>
+            <designationCategory>Security</designationCategory>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/DesignationCategoryDef[defName='AB_AlphaBiomesBuildings']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Book Shelf into production with other human resources things -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>[JPT] Human Resources</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='BookShelf']/designationCategory</xpath>
+          <value>
+            <designationCategory>Production</designationCategory>
+          </value>
         </li>
       </operations>
     </match>

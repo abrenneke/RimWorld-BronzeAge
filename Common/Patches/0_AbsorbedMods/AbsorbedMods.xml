@@ -1,0 +1,1035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Small patch mods which have been absorbed into this mod. All credits to the authors! -->
+<Patch>
+  <!-- 
+  Mod: 
+  URL: 
+  By: 
+  -->
+
+  <!-- 
+  Mod: Alpha Biomes: Materials Compatibility Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2171146252
+  By: Zylle
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Alpha Biomes</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name = "GU_StoneBlocksBase"]/stuffProps/categories</xpath>
+          <value>
+            <li>Stony</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AB_CrystalWood"]/stuffProps/categories</xpath>
+          <value>
+            <li>Woody</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AB_MushroomWoodLog"]/stuffProps/categories</xpath>
+          <value>
+            <li>Woody</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "GU_RedWood"]/stuffProps/categories</xpath>
+          <value>
+            <li>Woody</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName = "AB_AlcyoniteChunk"]/stuffProps/categories</xpath>
+          <value>
+            <li>Metallic</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Alpha Biomes</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Simply More Bridges (Continued)</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          <!-- Deep Water Bridges -->
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="DeepWaterBridgeStoneBase">
+                <defName>DeepWaterBridgeGU_RoseQuartz</defName>
+                <label>rose quartz deep water bridge</label>
+                <color>(120,50,50)</color>
+                <costList>
+                  <Steel>5</Steel>
+                  <GU_BlocksRoseQuartz>17</GU_BlocksRoseQuartz>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="DeepWaterBridgeStoneBase">
+                <defName>DeepWaterBridgeAB_Cragstone</defName>
+                <label>cragstone deep water bridge</label>
+                <color>(36,35,40)</color>
+                <costList>
+                  <Steel>5</Steel>
+                  <AB_BlocksCragstone>17</AB_BlocksCragstone>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="DeepWaterBridgeStoneBase">
+                <defName>DeepWaterBridgeAB_Obsidianstone</defName>
+                <label>obsidian deep water bridge</label>
+                <color>(50,50,50)</color>
+                <costList>
+                  <Steel>5</Steel>
+                  <AB_BlocksObsidian>17</AB_BlocksObsidian>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="DeepWaterBridgeStoneBase">
+                <defName>DeepWaterBridgeAB_Mudstone</defName>
+                <label>mudstone deep water bridge</label>
+                <color>(31,25,21)</color>
+                <costList>
+                  <Steel>5</Steel>
+                  <AB_BlocksMudstone>17</AB_BlocksMudstone>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="DeepWaterBridgeMetalBase">
+                <defName>DeepWaterBridgeAB_Alcyonite</defName>
+                <label>alcyonite deep water bridge</label>
+                <color>(140,30,30)</color>
+                <costList>
+                  <Steel>5</Steel>
+                  <AB_AlcyoniteChunk>15</AB_AlcyoniteChunk>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+
+          <!-- Heavy Bridges -->
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="HeavyBridgeStoneBase">
+                <defName>HeavyBridgeGU_RoseQuartz</defName>
+                <label>rose quartz bridge</label>
+                <color>(120,50,50)</color>
+                <costList>
+                  <Steel>3</Steel>
+                  <GU_BlocksRoseQuartz>10</GU_BlocksRoseQuartz>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="HeavyBridgeStoneBase">
+                <defName>HeavyBridgeAB_Cragstone</defName>
+                <label>cragstone bridge</label>
+                <color>(36,35,40)</color>
+                <costList>
+                  <Steel>3</Steel>
+                  <AB_BlocksCragstone>10</AB_BlocksCragstone>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="HeavyBridgeStoneBase">
+                <defName>HeavyBridgeAB_Obsidianstone</defName>
+                <label>obsidian bridge</label>
+                <color>(50,50,50)</color>
+                <costList>
+                  <Steel>3</Steel>
+                  <AB_BlocksObsidian>10</AB_BlocksObsidian>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="HeavyBridgeStoneBase">
+                <defName>HeavyBridgeAB_Mudstone</defName>
+                <label>mudstone bridge</label>
+                <color>(31,25,21)</color>
+                <costList>
+                  <Steel>3</Steel>
+                  <AB_BlocksMudstone>10</AB_BlocksMudstone>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs</xpath>
+            <value>
+              <TerrainDef ParentName="HeavyBridgeMetalBase">
+                <defName>HeavyBridgeAB_Alcyonite</defName>
+                <label>alcyonite bridge</label>
+                <color>(140,30,30)</color>
+                <costList>
+                  <Steel>3</Steel>
+                  <AB_AlcyoniteChunk>9</AB_AlcyoniteChunk>
+                </costList>
+              </TerrainDef>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Deep Storage MeatHook Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2012152049
+  By: DropbearNinja
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>LWM's Deep Storage</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name='LWM_MeatHook']/building/fixedStorageSettings/filter/categories</xpath>
+          <value>
+            <li>MeatRaw</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name="LWM_MeatHook"]/description</xpath>
+          <value>
+            <description>A tall metal frame with several hooks hanging from chains. A simple crank allows hoisting several hanging things into the air.  A way to store carcasses and the meat they produce.\n\nNote that you can only fit so much into one space, even if you stack them. The frame will only hold so much weight.</description>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Dubs Skylights Glass+Lights Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1610803364
+  By: Maaxar
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Skylights</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Glass+Lights</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          <li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "Glass"]</xpath>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "SkyLightA"]/costList</xpath>
+            <value>
+              <costList>
+                <Glass>1</Glass>
+              </costList>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "SkyLightD"]/costList</xpath>
+            <value>
+              <costList>
+                <Glass>2</Glass>
+              </costList>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "SkyLightB"]/costList</xpath>
+            <value>
+              <costList>
+                <Glass>3</Glass>
+              </costList>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName = "SkyLightC"]/costList</xpath>
+            <value>
+              <costList>
+                <Glass>2</Glass>
+              </costList>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/RecipeDef[defName = "SmeltGlass"]</xpath>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName = "GlassPane"]</xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: VFE Farming - Fertile Fields
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2173498683
+  By: Oreno
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded - Farming</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]/costList</xpath>
+            <match Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]/costList</xpath>
+              <value>
+                <PileofDirt>8</PileofDirt>
+              </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]</xpath>
+              <value>
+                <costList>
+                  <PileofDirt>8</PileofDirt>
+                </costList>
+              </value>
+            </nomatch>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VFE_PlanterBox_Tilable"]/costList</xpath>
+            <match Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_PlanterBox_Tilable"]/costList</xpath>
+              <value>
+                <PileofDirt>1</PileofDirt>
+              </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_PlanterBox_Tilable"]</xpath>
+              <value>
+                <costList>
+                  <PileofDirt>1</PileofDirt>
+                </costList>
+              </value>
+            </nomatch>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VFE_Hydroponics_Tilable"]/costList</xpath>
+            <match Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_Hydroponics_Tilable"]/costList</xpath>
+              <value>
+                <Fertilizer>1</Fertilizer>
+              </value>
+            </match>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_Hydroponics_Tilable"]</xpath>
+              <value>
+                <costList>
+                  <Fertilizer>1</Fertilizer>
+                </costList>
+              </value>
+            </nomatch>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="VFE_PlanterBox" or defName="VFE_Ecosystem" or @Name="VFE_TilableHydroponics_Base" or defName="VFE_Scarecrow" or defName="VFE_AnimalFeeder" or defName="VFE_Sprinkler"]/designationCategory</xpath>
+            <value>
+              <designationCategory>RFF_Farm</designationCategory>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: VFE Farming - VGP Garden Tools
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2173218958
+  By: Oreno
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Farming</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>VGP Garden Tools</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationRemove">
+            <xpath>Defs/ThingDef[defName="Planterbox" or defName="ModularPlanterbox" or defName="ADV_ModularPlanterbox"]</xpath>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>Defs/ThingDef[defName="ModularFlowerbox"]</xpath>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>Defs/ThingDef[defName="ModularHydroponicsBasin" or defName="ADVHydroponicsBasin" or defName="ADVModularHydroponicsBasin"]</xpath>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>Defs/ResearchProjectDef[defName="AdvancedHydroponics" or defName="AdvancedPlanterBox"]</xpath>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>[RF] Fertile Fields [1.0]</li>
+              <li>Fertile Fields [1.1]</li>
+            </mods>
+            <nomatch Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationConditional">
+                  <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]/costList</xpath>
+                  <nomatch Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_PlanterBox"]</xpath>
+                    <value>
+                      <costList>
+                        <VG_PileofDirt>30</VG_PileofDirt>
+                      </costList>
+                    </value>
+                  </nomatch>
+                </li>
+                <li Class="PatchOperationConditional">
+                  <xpath>Defs/ThingDef[defName="VFE_PlanterBox_Tilable"]/costList</xpath>
+                  <nomatch Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_PlanterBox_Tilable"]</xpath>
+                    <value>
+                      <costList>
+                        <VG_PileofDirt>4</VG_PileofDirt>
+                      </costList>
+                    </value>
+                  </nomatch>
+                </li>
+                <li Class="PatchOperationReplace">
+                  <xpath>Defs/ThingDef[defName="VFE_PlanterBox" or defName="VFE_Ecosystem" or @Name="VFE_TilableHydroponics_Base"]/designationCategory</xpath>
+                  <value>
+                    <designationCategory>GardenTools</designationCategory>
+                  </value>
+                </li>
+              </operations>
+            </nomatch>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: VFE Production - Dubs Bad Hygiene
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2172185917
+  By: Oreno
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dubs Bad Hygiene</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded - Production</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace"> <!-- Can't be removed because hardcoded DefOf -->
+            <xpath>Defs/ThingDef[defName="KitchenSink"]</xpath>
+            <value>
+              <ThingDef ParentName="BuildingBase">
+                <defName>KitchenSink</defName>
+                <label>Kitchen Sink (Dummy)</label>
+              </ThingDef>
+            </value>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]/tickerType</xpath>
+            <nomatch Class="PatchOperationAdd">
+              <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]</xpath>
+              <value>
+                <tickerType>Rare</tickerType>
+              </value>
+            </nomatch>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]/thingCategories</xpath>
+            <value>
+              <li>BuildingsHygiene</li>
+            </value>
+          </li>
+          <li Class="PatchOperationSequence">
+            <operations>
+              <li Class="PatchOperationConditional">
+                <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]/building</xpath>
+                <nomatch Class="PatchOperationAdd">
+                  <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]</xpath>
+                  <value>
+                    <building />
+                  </value>
+                </nomatch>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]/building</xpath>
+                <value>
+                  <ai_chillDestination>false</ai_chillDestination>
+                </value>
+              </li>
+            </operations>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VFE_KitchenSinkCabinet"]</xpath>
+            <value>
+              <socialPropernessMatters>true</socialPropernessMatters>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: VPE - No Tilled Soil
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2165594621
+  By: Oreno
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Plants Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/TerrainDef[defName="VCE_TilledSoil"]</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/VanillaPlantsExpanded.TillableTerrainDef</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Vanilla Textures Expanded - List Everything Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2120464299
+  By: Gunseeker
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>List Everything</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/MainButtonDef[defName="TD_List"]</xpath>
+          <value>
+            <iconPath>UI/Buttons/MainButtons/IconListEverything</iconPath>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Balanced Eclipse and Solar Flare
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1254969827
+  By: Neceros
+  -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- SolarFlare -->
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/IncidentDef[defName="SolarFlare"]/baseChance</xpath>
+        <value>
+          <baseChance>0.4</baseChance>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/IncidentDef[defName="SolarFlare"]/minRefireDays</xpath>
+        <value>
+          <minRefireDays>240</minRefireDays>
+        </value>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Realistic Eclipse</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <!-- Realistic Eclipse -->
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="RealEclipse"]/baseChance</xpath>
+              <value>
+                <baseChance>0.6</baseChance>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="RealEclipse"]/minRefireDays</xpath>
+              <value>
+                <minRefireDays>60</minRefireDays>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="RealEclipse"]/durationDays</xpath>
+              <value>
+                <durationDays>
+                  <min>0.15</min>
+                  <max>0.80</max>
+                </durationDays>
+              </value>
+            </li>
+          </operations>
+        </match>
+        <nomatch Class="PatchOperationSequence">
+          <!-- Eclipse -->
+          <success>Always</success>
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="Eclipse"]/baseChance</xpath>
+              <value>
+                <baseChance>0.6</baseChance>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="Eclipse"]/minRefireDays</xpath>
+              <value>
+                <minRefireDays>60</minRefireDays>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>Defs/IncidentDef[defName="Eclipse"]/durationDays</xpath>
+              <value>
+                <durationDays>
+                  <min>0.15</min>
+                  <max>0.80</max>
+                </durationDays>
+              </value>
+            </li>
+          </operations>
+        </nomatch>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- 
+  Mod: Fertile Fields Bulk Kibble
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2044554257
+  By: malkav73
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <nomatch Class="PatchOperationRemove">
+      <xpath>/Defs/RecipeDef[defName='Make4Kibble']</xpath>
+    </nomatch>
+  </Operation>
+
+  <!-- 
+  Mod: Fertile Fields Gravel Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2034640154
+  By: malkav73
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Fertile Fields [1.1]</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/TerrainDef[defName = "RockySoil"]/affordances</xpath>
+      <value>
+        <li>Heavy</li>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Jelly Patch 
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1669758538
+  By: cucumpear
+  -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/ThingDef[defName = "InsectJelly"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>Foods</li>
+      </thingCategories>
+    </value>
+  </Operation>
+
+  <!-- 
+  Mod: Metal Don't Burn
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2022726345
+  By: Neceros
+  -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- No burn -->
+      <li Class="PatchOperationReplace">
+        <xpath>
+          /Defs/ThingDef[defName="Steel" or defName="Plasteel"]/stuffProps/statFactors/Flammability |
+          /Defs/ThingDef[defName="PowerConduit"]/statBases/Flammability
+        </xpath>
+        <value>
+          <Flammability>0.0</Flammability>
+        </value>
+      </li>
+
+      <!-- Little burn -->
+      <li Class="PatchOperationReplace">
+        <xpath>
+          /Defs/ThingDef[defName="Silver" or defName="Gold"]/stuffProps/statFactors/Flammability |
+          /Defs/ThingDef[defName="PowerSwitch"]/statBases/Flammability
+        </xpath>
+        <value>
+          <Flammability>0.015</Flammability>
+        </value>
+      </li>
+
+      <!-- Strong steel please -->
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+        <value>
+          <MaxHitPoints>2</MaxHitPoints>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- 
+  Mod: More Hydroponics + Fertile Fields Patch
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2104798396
+  By: malkav73
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>More Hydroponics 1.0+</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Fertile Fields [1.1]</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>
+                  /Defs/ThingDef[
+                  defName="HydroponicsBasinThree" or
+                  defName="HydroponicsBasinTwo" or
+                  defName="HydroponicsBasinOne"]/designationCategory
+                </xpath>
+                <value>
+                  <designationCategory>RFF_Farm</designationCategory>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="HydroponicsBasinThree"]/costList</xpath>
+                <value>
+                  <Fertilizer>3</Fertilizer>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="HydroponicsBasinTwo"]/costList</xpath>
+                <value>
+                  <Fertilizer>2</Fertilizer>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="HydroponicsBasinOne"]/costList</xpath>
+                <value>
+                  <Fertilizer>1</Fertilizer>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <DesignatorDropdownGroupDef>
+              <defName>MHydroponics</defName>
+            </DesignatorDropdownGroupDef>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+            defName="HydroponicsBasin" or
+            defName="HydroponicsBasinThree" or
+            defName="HydroponicsBasinTwo" or
+            defName="HydroponicsBasinOne"]
+          </xpath>
+          <value>
+            <designatorDropdown>MHydroponics</designatorDropdown>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Natural Paths (Patch for 'Desire Paths')
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2189280710
+  By: RadZerp
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Natural Paths</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Desire Paths</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <!-- Dirt path-->
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="Soil"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>dirtPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="MossyTerrain"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>dirtPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="MarshyTerrain"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>dirtPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="Gravel"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>dirtPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="Mud"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>dirtPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <!-- Sand -->
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="Sand"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>sandPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="SoftSand"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>sandPath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <!-- Ice -->
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="Ice"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>False</disabled>
+                <packedTerrain>icePath</packedTerrain>
+              </li>
+            </value>
+          </li>
+          <!-- Disable Rich Soil-->
+          <li Class="PatchOperationAddModExtension">
+            <xpath>//TerrainDef[defName="SoilRich"]</xpath>
+            <value>
+              <li Class="DesirePaths.DefModExtension_PackedTerrain">
+                <disabled>True</disabled>
+              </li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Simple Chains: Lumber Patch Collection
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1886111248
+  By: Alex Giustizieri
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Lumber</li>
+    </mods>
+    <nomatch Class="PatchOperationRemove">
+      <xpath>/Defs/RecipeDef[defName='Owl_MakeGreenLumber_Patch']</xpath>
+    </nomatch>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Coal Expanded</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>Defs/RecipeDef[defName="Make_CharcoalFromWood"]/ingredients</xpath>
+                <value>
+                  <ingredients>
+                    <li>
+                      <filter>
+                        <thingDefs>
+                          <li>Owl_Firewood</li>
+                        </thingDefs>
+                      </filter>
+                      <count>50</count>
+                    </li>
+                  </ingredients>
+                </value>
+              </li>
+              <li Class="PatchOperationReplace">
+                <xpath>Defs/RecipeDef[defName="Make_CharcoalFromWood"]/fixedIngredientFilter</xpath>
+                <value>
+                  <fixedIngredientFilter>
+                    <thingDefs>
+                      <li>Owl_Firewood</li>
+                    </thingDefs>
+                  </fixedIngredientFilter>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Smoked meat</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Smokepit"]/costList</xpath>
+                <value>
+                  <costList>
+                    <Owl_Firewood>10</Owl_Firewood>
+                  </costList>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Vanilla Furniture Expanded</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+              <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Stone_Campfire"]/costList</xpath>
+                <value>
+                  <costList>
+                    <Owl_Firewood>30</Owl_Firewood>
+                  </costList>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: Where Are Your Shoes? (Vanilla Apparel Expanded)
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=2202853322
+  By: Crudbone
+  -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Apparel Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[defName = "VAE_Footwear_Shoes"]/generateCommonality</xpath>
+          <value>
+            <generateCommonality>1.0</generateCommonality>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>*/ThingDef[defName = "VAE_Footwear_Boots"]/generateCommonality</xpath>
+          <value>
+            <generateCommonality>1.5</generateCommonality>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- 
+  Mod: [WD] Partially-Passable Wind Turbines
+  URL: https://steamcommunity.com/sharedfiles/filedetails/?id=1621527381
+  By: Wemd
+  -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/ThingDef[defName = "WindTurbine"]/size</xpath>
+    <value>
+      <size>(5,2)</size>
+    </value>
+  </Operation>	
+</Patch>

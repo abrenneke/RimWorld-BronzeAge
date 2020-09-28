@@ -10,24 +10,30 @@
     <None Include="Common\Assemblies\BronzeAge.pdb" />
     <None Include="Common\Assemblies\HumanResources.dll" />
     <None Include="Common\Assemblies\HumanResources.pdb" />
-    <None Include="Common\Defs\.gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\Defs\AbsorbedMods.xml" />
+    <Content Include="Common\Defs\AbsorbedMods\BulkStonecutting.xml" />
+    <Content Include="Common\Defs\AbsorbedMods\SimplyBulkCrafting.xml" />
     <Content Include="Common\Defs\RecipeDefs.xml" />
     <Content Include="Common\Defs\ResearchProjectDefs.xml" />
     <Content Include="Common\Defs\ScenarioDefs.xml" />
     <Content Include="Common\Defs\ThingDefs.xml" />
     <Content Include="Common\Languages\English\DefInjected\DesignationCategoryDef\gloomy_deco.xml" />
     <Content Include="Common\Languages\English\DefInjected\ResearchProjectDef\aparello.xml" />
-    <Content Include="Common\Patches\Architect.xml" />
-    <Content Include="Common\Patches\BedBalancing.xml" />
-    <Content Include="Common\Patches\0_RecipeDefs.xml" />
-    <Content Include="Common\Patches\Seeds.xml" />
-    <Content Include="Common\Patches\0_ThingDefs.xml" />
-    <Content Include="Common\Patches\WeaponBalancing.xml" />
-    <Content Include="Common\Patches\Misc.xml" />
-    <Content Include="Common\Patches\Research.xml" />
-    <Content Include="Common\Patches\0_ScenarioDefs.xml" />
+    <Content Include="Common\ModList.xml" />
+    <Content Include="Common\Patches\0_AbsorbedMods\AbsorbedMods.xml" />
+    <Content Include="Common\Patches\0_AbsorbedMods\BulkStonecutting.xml" />
+    <Content Include="Common\Patches\0_AbsorbedMods\EfficientUtilities.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\0_RecipeDefs.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\0_ScenarioDefs.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\0_ThingDefs.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\Architect.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\BedBalancing.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\Misc.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\Research.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\Seeds.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\WeaponBalancing.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Languages\English\DefInjected\ThingDef\" />

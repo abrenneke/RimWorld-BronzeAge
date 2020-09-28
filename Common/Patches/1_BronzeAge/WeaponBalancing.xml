@@ -201,8 +201,20 @@
         <!-- Remove Duplicates -->
         <li Class="PatchOperationRemove">
           <xpath>
-            /Defs/ThingDef[defName='MedTimes_Ranged_Longbow' or defName='MedTimes_Ranged_Musket' or defName='MedTimes_Ranged_Longbow_Nan' or defName='MedTimes_Ranged_Musket_Nan'] |
-            //li[text()='MedTimes_Ranged_Longbow' or text()='MedTimes_Ranged_Musket']
+            /Defs/ThingDef[
+            defName='MedTimes_Ranged_Longbow'
+            or defName='MedTimes_Ranged_Musket'
+            or defName='MedTimes_Ranged_Longbow_Nan'
+            or defName='MedTimes_Ranged_Musket_Nan'
+            or defName='MedTimes_Ranged_Arbalest'
+            or defName='Medieval_Bolt_Arbalest'
+            or defName='MedTimes_Ranged_Arbalest_Nan'
+            ] |
+            //li[
+            text()='MedTimes_Ranged_Longbow'
+            or text()='MedTimes_Ranged_Musket'
+            or text()='MedTimes_Ranged_Arbalest'
+            ]
           </xpath>
         </li>
         <!-- One-Handed Crossbow -->

@@ -1379,14 +1379,6 @@
           </xpath>
         </li>
         <li Class="PatchOperationReplace">
-          <xpath>/Defs/ThingDef[defName='MedTimes_FoodPrepStation']/researchPrerequisites</xpath>
-          <value>
-            <researchPrerequisites>
-              <li>Pemmican</li>
-            </researchPrerequisites>
-          </value>
-        </li>
-        <li Class="PatchOperationReplace">
           <xpath>/Defs/ThingDef[defName='MedTimes_Icebox' or defName='MedTimes_IceCreationStation' or defName='MedTimes_IceboxFancy']/researchPrerequisites</xpath>
           <value>
             <researchPrerequisites>
@@ -1424,13 +1416,26 @@
         <mods>
           <li>GloomyFurniture</li>
         </mods>
-        <match Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName='RGK_Fireplace' or defName='RGK_FireplaceE' or defName='GL_FlowerWall']</xpath>
-          <value>
-            <researchPrerequisites>
-              <li>StoneStructures</li>
-            </researchPrerequisites>
-          </value>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName='RGK_Fireplace' or defName='GL_FlowerWall']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>StoneStructures</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+            <li Class="PatchOperationAdd">
+              <xpath>/Defs/ThingDef[defName='RGK_FireplaceE']</xpath>
+              <value>
+                <researchPrerequisites>
+                  <li>StoneStructures</li>
+                  <li>Electricity</li>
+                </researchPrerequisites>
+              </value>
+            </li>
+          </operations>
         </match>
       </li>
       <li Class="PatchOperationFindMod">

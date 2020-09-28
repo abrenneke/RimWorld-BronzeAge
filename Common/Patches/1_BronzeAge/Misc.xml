@@ -489,6 +489,61 @@
     </match>
   </Operation>
 
+  <!-- Bulk fiber creation -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ceramics</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Simple Chains: Lumber</li>
+      </mods>
+      <match Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+            <value>
+              <RecipeDef ParentName="MakeStoneBlocksBase">
+                <defName>Make_FiberFromWoodBulk</defName>
+                <label>Break down plant fibers in bulk</label>
+                <description>Break down wood into loose plant fibers.</description>
+                <jobString>Breaking down plant fibers in bulk.</jobString>
+                <ingredients>
+                  <li>
+                    <filter>
+                      <thingDefs>
+                        <li>WoodLog</li>
+                      </thingDefs>
+                    </filter>
+                    <count>10</count>
+                  </li>
+                </ingredients>
+                <allowMixingIngredients>true</allowMixingIngredients>
+                <fixedIngredientFilter>
+                  <thingDefs>
+                    <li>WoodLog</li>
+                  </thingDefs>
+                </fixedIngredientFilter>
+                <workAmount>2400</workAmount>
+                <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+                <effectWorking>CutStone</effectWorking>
+                <soundWorking>Recipe_MakeWoodPlanks_Hand</soundWorking>
+                <targetCountAdjustment>100</targetCountAdjustment>
+                <recipeUsers Inherit="false">
+                  <li>CraftingSpot</li>
+                </recipeUsers>
+                <products>
+                  <N7_PlantFiber>120</N7_PlantFiber>
+                </products>
+              </RecipeDef>
+            </value>
+          </li>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
   <!-- Fiber to plant scraps -->
   <Operation Class="PatchOperationFindMod">
     <mods>
@@ -499,7 +554,7 @@
         <li>Fertile Fields [1.1]</li>
       </mods>
       <match Class="PatchOperationReplace">
-        <xpath>/Defs/RecipeDef[defName="Make_FiberFromWood"]/products/N7_PlantFiber</xpath>
+        <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/products/N7_PlantFiber</xpath>
         <value>
           <PlantScraps>30</PlantScraps>
         </value>
@@ -1212,7 +1267,6 @@
           or defName='MedTimes_Shrine_RandomNumberGod'
           or defName='MedTimes_GodKingThrone'
           or defName='MedTimes_StreetLamp'
-          or defName='MedTimes_FoodPrepStation'
           or defName='MedTimes_BlacksmithForge'
           or defName='MedTimes_BlacksmithForgeTierTwo'
           or defName='MedTimes_FueledSmelter'
@@ -2976,7 +3030,6 @@
           <xpath>
             /Defs/ThingDef[
             defName='MedTimes_CraftingStation'
-            or defName='MedTimes_FoodPrepStation'
             or defName='MedTimes_BlacksmithForge'
             or defName='MedTimes_Desk'
             or defName='MedTimes_ArtisanStation'
@@ -2987,6 +3040,187 @@
           </xpath>
         </li>
       </operations>
+    </match>
+  </Operation>
+
+  <!-- Remove other scenarios -->
+  <Operation Class="PatchOperationRemove">
+    <success>Always</success>
+    <xpath>
+      /Defs/ScenarioDef[
+      defName!='BronzeAgeTribe'
+      and defName!='Crashlanded'
+      and defName!='Tutorial'
+      ]
+    </xpath>
+  </Operation>
+
+  <!-- Cot use plant scraps -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Fertile Fields [1.1]</li>
+      </mods>
+      <match Class="PatchOperationSetName">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='MedTimes_Cot' or defName='MedTimes_Cot']/costList/Hay</xpath>
+        <name>PlantScraps</name>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Fire place slightly more efficient -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>GloomyFurniture</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName='RGK_Fireplace']/comps/li[@Class='CompProperties_Refuelable']/fuelConsumptionRate</xpath>
+      <value>
+        <fuelConsumptionRate>8.0</fuelConsumptionRate>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Break down plant fibers at carpenter's trestle -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Lumber</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Ceramics</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']</xpath>
+            <value>
+              <defaultIngredientFilter>
+                <thingDefs></thingDefs>
+              </defaultIngredientFilter>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/ingredients/li[1]/filter/thingDefs |
+              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs |
+              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs
+            </xpath>
+            <value>
+              <li>Owl_WoodLog</li>
+              <li>Owl_GreenLumber</li>
+              <li>Owl_Firewood</li>
+            </value>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>VGP Vegetable Garden</li>
+            </mods>
+            <match Class="PatchOperationAdd">
+              <xpath>
+                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/ingredients/li[1]/filter/thingDefs |
+                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs |
+                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs
+              </xpath>
+              <value>
+                <li>RawIronwood</li>
+                <li>VG_IronWoodLog</li>
+                <li>GreenIronwoodLumber</li>
+              </value>
+            </match>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>Fertile Fields [1.1]</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood']/recipeUsers</xpath>
+                  <value>
+                    <li>Owl_CarpentersTrestle</li>
+                  </value>
+                </li>
+              </operations>
+            </match>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Some Medieval Times balance -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_StoneHearth']/comps/li[@Class='CompProperties_Refuelable']/fuelConsumptionRate</xpath>
+          <value>
+            <fuelConsumptionRate>8.0</fuelConsumptionRate>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_StoneHearth']/comps/li[@Class='CompProperties_Refuelable']/fuelCapacity</xpath>
+          <value>
+            <fuelCapacity>75</fuelCapacity>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='MedTimes_MedStool']/costStuffCount</xpath>
+          <value>
+            <costStuffCount>30</costStuffCount> <!-- More beautiful than basic stool, costs more -->
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Remove medieval times food prep station - doesn't do anything useful right now -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>VGP Garden Gourmet</li>
+      </mods>
+      <match Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Cooking Expanded</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>
+                /Defs/ThingDef[defName='MedTimes_FoodPrepStation'] |
+                //li[text()='MedTimes_FoodPrepStation']
+              </xpath>
+            </li>
+          </operations>
+        </match>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Fixes SetColor on Thing without CompColorable MedTimes_WoodenPlates48821 -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[@Name='MedTimes_ArmourBase']/comps</xpath>
+      <value>
+        <li>
+          <compClass>CompColorable</compClass>
+        </li>
+      </value>
     </match>
   </Operation>
 </Patch>
