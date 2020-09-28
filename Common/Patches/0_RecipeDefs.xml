@@ -82,4 +82,90 @@
       </operations>
     </match>
   </Operation>
+
+  <!-- Random Seeds -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <RecipeDef>
+          <defName>FindSeedsInPlantMatter</defName>
+          <label>find seeds</label>
+          <description>Find new plant seeds by sifting through spare plant matter. The plants must be researched. Skilled growers can find seeds faster.</description>
+          <jobString>Finding seeds</jobString>
+          <workSpeedStat>PlantWorkSpeed</workSpeedStat>
+          <effectWorking>Harvest</effectWorking>
+          <workSkill>Plants</workSkill>
+          <workAmount>600</workAmount>
+          <recipeUsers>
+            <li>PlantProcessingTable</li>
+            <li>CraftingSpot</li>
+          </recipeUsers>
+          <ingredients>
+            <li>
+              <filter>
+                <thingDefs>
+                  <li>PlantScraps</li>
+                  <li>RottedMush</li>
+                </thingDefs>
+              </filter>
+              <count>50</count>
+            </li>
+          </ingredients>
+          <fixedIngredientFilter>
+            <thingDefs>
+              <li>PlantScraps</li>
+              <li>RottedMush</li>
+            </thingDefs>
+          </fixedIngredientFilter>
+          <products>
+            <RandomSeed>3</RandomSeed>
+          </products>
+          <skillRequirements>
+            <Plants>4</Plants>
+          </skillRequirements>
+        </RecipeDef>
+        <RecipeDef>
+          <defName>FindSeedsInPlantMatterBulk</defName>
+          <label>find many seeds</label>
+          <description>Find a lot of new plant seeds by sifting through spare plant matter. The plants must be researched. Skilled growers can find seeds faster.</description>
+          <jobString>Finding many seeds</jobString>
+          <workSpeedStat>PlantWorkSpeed</workSpeedStat>
+          <effectWorking>Harvest</effectWorking>
+          <workSkill>Plants</workSkill>
+          <workAmount>2400</workAmount>
+          <recipeUsers>
+            <li>PlantProcessingTable</li>
+            <li>CraftingSpot</li>
+          </recipeUsers>
+          <ingredients>
+            <li>
+              <filter>
+                <thingDefs>
+                  <li>PlantScraps</li>
+                  <li>RottedMush</li>
+                </thingDefs>
+              </filter>
+              <count>200</count>
+            </li>
+          </ingredients>
+          <fixedIngredientFilter>
+            <thingDefs>
+              <li>PlantScraps</li>
+              <li>RottedMush</li>
+            </thingDefs>
+          </fixedIngredientFilter>
+          <products>
+            <RandomSeed>12</RandomSeed>
+          </products>
+          <skillRequirements>
+            <Plants>6</Plants>
+          </skillRequirements>
+        </RecipeDef>
+      </value>
+    </match>
+  </Operation>
 </Patch>
