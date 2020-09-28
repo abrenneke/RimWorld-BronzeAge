@@ -85,6 +85,7 @@
     <Compile Include="Alternates.cs" />
     <Compile Include="BronzeAgeMod.cs" />
     <Compile Include="ConditionalModPatchAttribute.cs" />
+    <Compile Include="Defs.cs" />
     <Compile Include="EarlyPatchAttribute.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Patches\Mods\ModDubsMintMenus\MainTabWindow_MintArchitect_CacheDesPanels_ActivePanels.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Patches\RimWorld\Game_InitNewGame_ResearchChanges.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_WorkDefaults.cs" />
     <Compile Include="Patches\RimWorld\GenConstruct_AmountNeededByOf_AlternateThings.cs" />
+    <Compile Include="Patches\RimWorld\GenRecipe_MakeRecipeProducts_SeedsPleaseRandomSeeds.cs" />
     <Compile Include="Patches\RimWorld\ItemAvailability_ThingsAvailableAnywhere_AlternateThing.cs" />
     <Compile Include="Patches\RimWorld\JoyUtility_JoyTickCheckEnd_WarningDefNameLog.cs" />
     <Compile Include="Patches\RimWorld\Pawn_WorkSettings_EnableAndInitialize_CustomPriorities.cs" />

@@ -354,4 +354,69 @@
       </value>
     </match>
   </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <ThingDef>
+          <defName>RandomSeed</defName>
+          <label>random seed</label>
+          <thingClass>Thing</thingClass>
+          <category>Item</category>
+          <description>A random plant seed at the current technology level or appropriate biome.</description>
+          <graphicData>
+            <texPath>Things/Item/Seeds/Seeds</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+          </graphicData>
+          <useHitPoints>true</useHitPoints>
+          <altitudeLayer>Item</altitudeLayer>
+          <statBases>
+            <MaxHitPoints>1</MaxHitPoints>
+            <DeteriorationRate>10</DeteriorationRate>
+          </statBases>
+        </ThingDef>
+        <RecipeDef>
+          <defName>FindSeedsInPlantMatter</defName>
+          <label>find seeds</label>
+          <description>Find new plant seeds by sifting through spare plant matter. The plants must be researched or naturally spawn in the current biome in order to find seeds. Skilled growers can find seeds faster.</description>
+          <jobString>Finding seeds</jobString>
+          <workSpeedStat>PlantWorkSpeed</workSpeedStat>
+          <effectWorking>Harvest</effectWorking>
+          <workSkill>Plants</workSkill>
+          <workAmount>600</workAmount>
+          <recipeUsers>
+            <li>PlantProcessingTable</li>
+            <li>CraftingSpot</li>
+          </recipeUsers>
+          <ingredients>
+            <li>
+              <filter>
+                <thingDefs>
+                  <li>PlantScraps</li>
+                  <li>RottedMush</li>
+                </thingDefs>
+              </filter>
+              <count>50</count>
+            </li>
+          </ingredients>
+          <fixedIngredientFilter>
+            <thingDefs>
+              <li>PlantScraps</li>
+              <li>RottedMush</li>
+            </thingDefs>
+          </fixedIngredientFilter>
+          <products>
+            <RandomSeed>3</RandomSeed>
+          </products>
+          <skillRequirements>
+            <Plants>4</Plants>
+          </skillRequirements>
+        </RecipeDef>
+      </value>
+    </match>
+  </Operation>
 </Patch>
