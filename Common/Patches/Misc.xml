@@ -2681,6 +2681,21 @@
     </match>
   </Operation>
 
+  <!-- Bloomery outside -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Steel</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='Owl_Bloomery']</xpath>
+      <value>
+        <placeWorkers>
+          <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+      </value>
+    </match>
+  </Operation>
+
   <!-- Duplicate canning -->
   <Operation Class="PatchOperationFindMod">
     <mods>
