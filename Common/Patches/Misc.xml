@@ -2760,6 +2760,32 @@
                   <li>Tam_SmokedVeg</li>
                 </value>
               </li>
+              <li Class="PatchOperationAdd">
+                <xpath>
+                  /Defs/RecipeDef[
+                  defName='Tam_SmokeMeat150'
+                  or defName='Tam_SmokeMeat75'
+                  or defName='Tam_SmokeMeat40'
+                  or defName='Tam_SmokeMeat10'
+                  ]/defaultIngredientFilter/disallowedThingDefs
+                </xpath>
+                <value>
+                  <li>CannedMeat</li>
+                </value>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>
+                  /Defs/RecipeDef[
+                  defName='Tam_SmokeVeg150'
+                  or defName='Tam_SmokeVeg75'
+                  or defName='Tam_SmokeVeg40'
+                  or defName='Tam_SmokeVeg10'
+                  ]/defaultIngredientFilter/disallowedThingDefs
+                </xpath>
+                <value>
+                  <li>CannedVeg</li>
+                </value>
+              </li>
             </operations>
           </match>
         </li>
