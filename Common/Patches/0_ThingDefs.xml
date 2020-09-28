@@ -35,107 +35,6 @@
             </value>
           </li>
           <li Class="PatchOperationAdd">
-            <xpath>/Defs</xpath>
-            <value>
-              <ThingDef ParentName="ResourceVerbBase">
-                <defName>RawIronwood</defName>
-                <label>ironwood log</label>
-                <description>Wood from the ironwood tree. Ironwood is stronger and more beautiful than normal wood. Useful for building structures and weapons.</description>
-                <graphicData>
-                  <texPath>Things/Item/IronWoodLog</texPath>
-                  <graphicClass>Graphic_StackCount</graphicClass>
-                </graphicData>
-                <equippedAngleOffset>-20</equippedAngleOffset>
-                <soundInteract>Wood_Drop</soundInteract>
-                <soundDrop>Wood_Drop</soundDrop>
-                <statBases>
-                  <MarketValue>1.2</MarketValue>
-                  <MaxHitPoints>150</MaxHitPoints>
-                  <Mass>0.4</Mass>
-                  <Flammability>1.0</Flammability>
-                  <DeteriorationRate>0.35</DeteriorationRate>
-                </statBases>
-                <thingCategories>
-                  <li>ResourcesRaw</li>
-                </thingCategories>
-                <stuffProps>
-                  <stuffAdjective>log</stuffAdjective>
-                  <categories>
-                    <li>RawWoody</li>
-                  </categories>
-                  <commonality>1.00</commonality>
-                  <color>(86,62,44)</color>
-                  <appearance>Planks</appearance>
-                  <constructEffect>ConstructWood</constructEffect>
-                  <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
-                  <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
-                  <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
-                  <statFactors>
-                    <MaxHitPoints>0.50</MaxHitPoints>
-                    <Beauty>0.7</Beauty>
-                    <Flammability>1</Flammability>
-                    <WorkToMake>2.0</WorkToMake>
-                    <WorkToBuild>2.0</WorkToBuild>
-                    <DoorOpenSpeed>1.5</DoorOpenSpeed>
-                  </statFactors>
-                </stuffProps>
-                <tools>
-                  <li>
-                    <label>log</label>
-                    <capacities>
-                      <li>Blunt</li>
-                    </capacities>
-                    <power>10</power>
-                    <cooldownTime>2</cooldownTime>
-                  </li>
-                </tools>
-              </ThingDef>
-              <ThingDef ParentName="ResourceBase">
-                <defName>GreenIronwoodLumber</defName>
-                <label>green ironwood lumber</label>
-                <description>This ironwood lumber has been cut from logs, but has yet to be dried out in a controlled environment.</description>
-                <graphicData>
-                  <texPath>Things/Item/Resource/Lumber_Any</texPath>
-                  <graphicClass>Graphic_StackCount</graphicClass>
-                  <color>(90,80,53)</color>
-                </graphicData>
-                <soundInteract>Wood_Drop</soundInteract>
-                <soundDrop>Wood_Drop</soundDrop>
-                <statBases>
-                  <MarketValue>1.4</MarketValue>
-                  <MaxHitPoints>150</MaxHitPoints>
-                  <Mass>0.4</Mass>
-                  <Flammability>1.0</Flammability>
-                  <DeteriorationRate>0.35</DeteriorationRate>
-                </statBases>
-                <thingCategories>
-                  <li>ResourcesRaw</li>
-                </thingCategories>
-                <stuffProps>
-                  <stuffAdjective>rough ironwood</stuffAdjective>
-                  <categories>
-                    <li>Woody</li>
-                  </categories>
-                  <commonality>1.00</commonality>
-                  <color>(90,80,53)</color>
-                  <appearance>Planks</appearance>
-                  <constructEffect>ConstructWood</constructEffect>
-                  <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
-                  <soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
-                  <soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
-                  <statFactors>
-                    <MaxHitPoints>0.60</MaxHitPoints>
-                    <Beauty>0.9</Beauty>
-                    <Flammability>0.9</Flammability>
-                    <WorkToMake>1.5</WorkToMake>
-                    <WorkToBuild>1.5</WorkToBuild>
-                    <DoorOpenSpeed>1.3</DoorOpenSpeed>
-                  </statFactors>
-                </stuffProps>
-              </ThingDef>
-            </value>
-          </li>
-          <li Class="PatchOperationAdd">
             <xpath>/Defs/ThingDef[defName='Owl_WoodDryingRack']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes</xpath>
             <value>
               <li>
@@ -183,85 +82,21 @@
               <harvestedThingDef>RawIronwood</harvestedThingDef>
             </value>
           </li>
-          <li Class="PatchOperationAdd">
-            <xpath>/Defs</xpath>
-            <value>
-              <RecipeDef>
-                <defName>MakeGreenIronwoodLumber</defName>
-                <label>make green ironwood lumber</label>
-                <description>Make a batch of green ironwood lumber using ironwood logs.</description>
-                <jobString>Making green ironwood lumber from ironwood logs.</jobString>
-                <effectWorking>CutStone</effectWorking>
-                <soundWorking>Recipe_Machining</soundWorking>
-                <workAmount>400</workAmount>
-                <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-                <workSkill>Crafting</workSkill>
-                <workSkillLearnFactor>0.25</workSkillLearnFactor>
-                <targetCountAdjustment>20</targetCountAdjustment>
-                <allowMixingIngredients>false</allowMixingIngredients>
-                <ingredients>
-                  <li>
-                    <filter>
-                      <thingDefs>
-                        <li>RawIronwood</li>
-                      </thingDefs>
-                    </filter>
-                    <count>20</count>
-                  </li>
-                </ingredients>
-                <fixedIngredientFilter>
-                  <thingDefs>
-                    <li>RawIronwood</li>
-                  </thingDefs>
-                </fixedIngredientFilter>
-                <products>
-                  <GreenIronwoodLumber>20</GreenIronwoodLumber>
-                </products>
-                <recipeUsers>
-                  <li>Owl_CarpentersTrestle</li>
-                  <li>TableMachining</li>
-                </recipeUsers>
-              </RecipeDef>
-              <RecipeDef>
-                <defName>MakeGreenIronwoodLumber_Slow</defName>
-                <label>make green ironwood lumber</label>
-                <description>Make a batch of green ironwood lumber using ironwood logs.</description>
-                <jobString>Making green ironwood lumber from ironwood logs.</jobString>
-                <effectWorking>CutStone</effectWorking>
-                <soundWorking>Recipe_Machining</soundWorking>
-                <workAmount>1200</workAmount>
-                <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-                <workSkill>Crafting</workSkill>
-                <workSkillLearnFactor>0.25</workSkillLearnFactor>
-                <targetCountAdjustment>20</targetCountAdjustment>
-                <allowMixingIngredients>false</allowMixingIngredients>
-                <ingredients>
-                  <li>
-                    <filter>
-                      <thingDefs>
-                        <li>RawIronwood</li>
-                      </thingDefs>
-                    </filter>
-                    <count>20</count>
-                  </li>
-                </ingredients>
-                <fixedIngredientFilter>
-                  <thingDefs>
-                    <li>RawIronwood</li>
-                  </thingDefs>
-                </fixedIngredientFilter>
-                <products>
-                  <Owl_GreenLumber>20</Owl_GreenLumber>
-                </products>
-                <recipeUsers>
-                  <li>CraftingSpot</li>
-                </recipeUsers>
-              </RecipeDef>
-            </value>
-          </li>
         </operations>
       </match>
+      <nomatch Class="PatchOperationRemove">
+        <xpath>
+          /Defs/ThingDef[defName='RawIronwood' or defName='GreenIronwoodLumber'] |
+          /Defs/RecipeDef[defName='MakeGreenIronwoodLumber_Slow' or defName='MakeGreenIronwoodLumber']
+        </xpath>
+      </nomatch>
     </match>
+    <nomatch Class="PatchOperationRemove">
+      <xpath>
+        /Defs/ThingDef[defName='RawIronwood' or defName='GreenIronwoodLumber'] |
+        /Defs/RecipeDef[defName='MakeGreenIronwoodLumber_Slow' or defName='MakeGreenIronwoodLumber']
+      </xpath>
+    </nomatch>
   </Operation>
 
   <!-- Log Walls -->
@@ -269,90 +104,9 @@
     <mods>
       <li>Simple Chains: Lumber</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>/Defs</xpath>
-      <value>
-        <ThingDef ParentName="BuildingBase" Name="Wall">
-          <defName>LogWall</defName>
-          <label>log wall</label>
-          <description>An impassable wall made of cut logs. Gives a homey feel, but uses a lot of material.</description>
-          <thingClass>Building</thingClass>
-          <category>Building</category>
-          <graphicData>
-            <texPath>Things/Building/Linked/LogWall</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <linkType>Basic</linkType>
-            <linkFlags>
-              <li>Wall</li>
-              <li>Rock</li>
-            </linkFlags>
-            <damageData>
-              <cornerTL>Damage/Corner</cornerTL>
-              <cornerTR>Damage/Corner</cornerTR>
-              <cornerBL>Damage/Corner</cornerBL>
-              <cornerBR>Damage/Corner</cornerBR>
-              <edgeTop>Damage/Edge</edgeTop>
-              <edgeBot>Damage/Edge</edgeBot>
-              <edgeLeft>Damage/Edge</edgeLeft>
-              <edgeRight>Damage/Edge</edgeRight>
-            </damageData>
-          </graphicData>
-          <uiIconPath>Things/Building/Linked/LogWall_MenuIcon</uiIconPath>
-          <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
-            <WorkToBuild>135</WorkToBuild>
-            <Flammability>1.0</Flammability>
-            <MeditationFocusStrength>0.22</MeditationFocusStrength>
-          </statBases>
-          <costStuffCount>7</costStuffCount>
-          <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-          <altitudeLayer>Building</altitudeLayer>
-          <passability>Impassable</passability>
-          <blockWind>true</blockWind>
-          <castEdgeShadows>true</castEdgeShadows>
-          <fillPercent>1</fillPercent>
-          <coversFloor>true</coversFloor>
-          <placingDraggableDimensions>1</placingDraggableDimensions>
-          <tickerType>Never</tickerType>
-          <rotatable>false</rotatable>
-          <selectable>true</selectable>
-          <neverMultiSelect>true</neverMultiSelect>
-          <useStuffTerrainAffordance>false</useStuffTerrainAffordance>
-          <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-          <holdsRoof>true</holdsRoof>
-          <designationCategory>Structure</designationCategory>
-          <staticSunShadowHeight>1.0</staticSunShadowHeight>
-          <blockLight>true</blockLight>
-          <canOverlapZones>false</canOverlapZones>
-          <fertility>0</fertility>
-          <stuffCategories>
-            <li>RawWoody</li>
-          </stuffCategories>
-          <building>
-            <isInert>true</isInert>
-            <ai_chillDestination>false</ai_chillDestination>
-            <blueprintGraphicData>
-              <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-            </blueprintGraphicData>
-          </building>
-          <comps>
-            <li Class="CompProperties_MeditationFocus">
-              <statDef>MeditationFocusStrength</statDef>
-              <focusTypes>
-                <li>Minimal</li>
-              </focusTypes>
-            </li>
-          </comps>
-          <damageMultipliers>
-            <li>
-              <damageDef>Bomb</damageDef>
-              <multiplier>2</multiplier>
-            </li>
-          </damageMultipliers>
-          <designationHotKey>Misc3</designationHotKey>
-        </ThingDef>
-      </value>
-    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='LogWall']</xpath>
+    </nomatch>
   </Operation>
 
   <!-- Random Seeds -->
@@ -360,27 +114,8 @@
     <mods>
       <li>SeedsPlease</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>/Defs</xpath>
-      <value>
-        <ThingDef>
-          <defName>RandomSeed</defName>
-          <label>random seed</label>
-          <thingClass>Thing</thingClass>
-          <category>Item</category>
-          <description>A random plant seed at the current technology level or appropriate biome.</description>
-          <graphicData>
-            <texPath>Things/Item/Seeds/Seeds</texPath>
-            <graphicClass>Graphic_StackCount</graphicClass>
-          </graphicData>
-          <useHitPoints>true</useHitPoints>
-          <altitudeLayer>Item</altitudeLayer>
-          <statBases>
-            <MaxHitPoints>1</MaxHitPoints>
-            <DeteriorationRate>10</DeteriorationRate>
-          </statBases>
-        </ThingDef>
-      </value>
-    </match>
+    <nomatch Class="PatchOperationRemove">
+      <xpath>/Defs/ThingDef[defName='RandomSeed']</xpath>
+    </nomatch>
   </Operation>
 </Patch>

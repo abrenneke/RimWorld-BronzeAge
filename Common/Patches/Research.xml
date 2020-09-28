@@ -770,6 +770,40 @@
               <baseCost>750</baseCost>
             </value>
           </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>Communicable Diseases [1.2]</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationReplace">
+                  <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/researchPrerequisite</xpath>
+                  <value>
+                    <researchPrerequisite>
+                      <li>EarlyMedievalMedicine</li>
+                    </researchPrerequisite>
+                  </value>
+                </li>
+                <li Class="PatchOperationFindMod">
+                  <mods>
+                    <li>Medieval Times Unofficial Update</li>
+                  </mods>
+                  <match Class="PatchOperationAdd">
+                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/recipeUsers</xpath>
+                    <value>
+                      <li>MedTimes_TailoringStation</li>
+                    </value>
+                  </match>
+                  <nomatch Class="PatchOperationAdd">
+                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/recipeUsers</xpath>
+                    <value>
+                      <li>CraftingSpot</li>
+                    </value>
+                  </nomatch>
+                </li>
+              </operations>
+            </match>
+          </li>
         </operations>
       </match>
     </match>
@@ -1356,7 +1390,8 @@
           <xpath>/Defs/ThingDef[defName='MedTimes_Icebox' or defName='MedTimes_IceCreationStation' or defName='MedTimes_IceboxFancy']/researchPrerequisites</xpath>
           <value>
             <researchPrerequisites>
-              <li>IronWorking</li>
+              <li>Pemmican</li>
+              <li>MF_BasicFurniture</li>
             </researchPrerequisites>
           </value>
         </li>
@@ -2996,5 +3031,35 @@
         </value>
       </li>
     </operations>
+  </Operation>
+
+  <!-- Basic storage -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Furniture Expanded</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>
+              /Defs/ThingDef[
+              defName='MedTimes_StoragePallet'
+              or defName='MedTimes_CombatStandPlaced'
+              or defName='MedTimes_StoragePotPlaced'
+              ]
+            </xpath>
+            <value>
+              <researchPrerequisites>
+                <li>MF_BasicFurniture</li>
+              </researchPrerequisites>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
   </Operation>
 </Patch>

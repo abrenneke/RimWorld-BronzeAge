@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using JetBrains.Annotations;
+using RimWorld;
 using SeedsPlease;
 using Verse;
 
@@ -68,6 +69,7 @@ namespace ABrenneke.BronzeAge.Patches.RimWorld
 
                 if (seedDef != null)
                 {
+                    Messages.Message($"{worker.LabelIndefinite()} found {stackCount} {seedDef.plant.label} seeds", worker, MessageTypeDefOf.TaskCompletion, false);
                     var seed = ThingMaker.MakeThing(seedDef);
                     seed.stackCount = stackCount;
 

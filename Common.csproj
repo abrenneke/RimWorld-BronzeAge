@@ -13,6 +13,7 @@
     <None Include="Common\Defs\.gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\Defs\RecipeDefs.xml" />
     <Content Include="Common\Defs\ResearchProjectDefs.xml" />
     <Content Include="Common\Defs\ScenarioDefs.xml" />
     <Content Include="Common\Defs\ThingDefs.xml" />

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Defs>
+  <!-- Create wrought iron -->
+  <RecipeDef>
+    <defName>RefineIron</defName>
+    <label>refine iron ore</label>
+    <description>Make a batch of wrought iron from raw iron ore.</description>
+    <jobString>Refining iron ore.</jobString>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <workAmount>800</workAmount>
+    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <workSkillLearnFactor>0.25</workSkillLearnFactor>
+    <targetCountAdjustment>15</targetCountAdjustment>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs />
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Owl_Iron</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Owl_Iron</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <WroughtIron>15</WroughtIron>
+    </products>
+    <recipeUsers>
+      <li>Owl_Bloomery</li>
+      <li>ElectricSmelter</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- Random Seeds -->
+  <RecipeDef>
+    <defName>FindSeedsInPlantMatter</defName>
+    <label>find seeds</label>
+    <description>Find new plant seeds by sifting through spare plant matter. The plants must be researched. Skilled growers can find seeds faster.</description>
+    <jobString>Finding seeds</jobString>
+    <workSpeedStat>PlantWorkSpeed</workSpeedStat>
+    <effectWorking>Harvest</effectWorking>
+    <workSkill>Plants</workSkill>
+    <workAmount>600</workAmount>
+    <recipeUsers>
+      <li>PlantProcessingTable</li>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PlantScraps</li>
+            <li>RottedMush</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PlantScraps</li>
+        <li>RottedMush</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RandomSeed>3</RandomSeed>
+    </products>
+    <skillRequirements>
+      <Plants>4</Plants>
+    </skillRequirements>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>FindSeedsInPlantMatterBulk</defName>
+    <label>find many seeds</label>
+    <description>Find a lot of new plant seeds by sifting through spare plant matter. The plants must be researched. Skilled growers can find seeds faster.</description>
+    <jobString>Finding many seeds</jobString>
+    <workSpeedStat>PlantWorkSpeed</workSpeedStat>
+    <effectWorking>Harvest</effectWorking>
+    <workSkill>Plants</workSkill>
+    <workAmount>2400</workAmount>
+    <recipeUsers>
+      <li>PlantProcessingTable</li>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PlantScraps</li>
+            <li>RottedMush</li>
+          </thingDefs>
+        </filter>
+        <count>200</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PlantScraps</li>
+        <li>RottedMush</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RandomSeed>12</RandomSeed>
+    </products>
+    <skillRequirements>
+      <Plants>6</Plants>
+    </skillRequirements>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MakeGreenIronwoodLumber</defName>
+    <label>make green ironwood lumber</label>
+    <description>Make a batch of green ironwood lumber using ironwood logs.</description>
+    <jobString>Making green ironwood lumber from ironwood logs.</jobString>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>400</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0.25</workSkillLearnFactor>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawIronwood</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RawIronwood</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <GreenIronwoodLumber>20</GreenIronwoodLumber>
+    </products>
+    <recipeUsers>
+      <li>Owl_CarpentersTrestle</li>
+      <li>TableMachining</li>
+    </recipeUsers>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>MakeGreenIronwoodLumber_Slow</defName>
+    <label>make green ironwood lumber</label>
+    <description>Make a batch of green ironwood lumber using ironwood logs.</description>
+    <jobString>Making green ironwood lumber from ironwood logs.</jobString>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1200</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>0.25</workSkillLearnFactor>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawIronwood</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RawIronwood</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Owl_GreenLumber>20</Owl_GreenLumber>
+    </products>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+</Defs>
