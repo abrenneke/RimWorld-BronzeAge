@@ -15,9 +15,9 @@ As per the name, Bronze Age is a survival-style modpack tailored around epic col
 ### Core Mods
 Bronze Age is generally balanced around these core mods:
 
-* **Simple Chains** - Steel, leather, and lumber must all be processed before being used
+* **Simple Chains** - Steel, leather, and lumber must all be processed before being used!
 * **Human Resources** - A pawn learning a research only means the one pawn knows it - they must then share that knowledge with others. Weapons cannot be used until researched, and trained with!
-* **Hygiene** - Hygiene and water needs from Dubs Bad Hygiene add additional survival needs
+* **Hygiene** - Hygiene and water needs from Dubs Bad Hygiene add additional survival needs!
 * **SeedsPlease** - You can't plant anything! You must find or buy seeds to plant crops!
 
 Other mods are also designed around, but the whole list doesn't need to be here. You can find the full mod list on the [GitHub Wiki][1].
@@ -46,7 +46,7 @@ That said, patching the performance of both mods and RimWorld is one of the goal
 
 #### Q: Can I add mod [X] for myself?
 Probably! Try adding the mod, and see if any errors pop up. Sometimes errors are harmless, other times compatibility needs to be added manually.
-If you fine a mod that is incompatible, please report it to the [GitHub issue tracker][1] so that compatibility can be added, even if the mod is not part
+If you find a mod that is incompatible, please report it to the [GitHub issue tracker][1] so that compatibility can be added, even if the mod is not part
 of the Bronze Age pack.
 
 Try to keep Bronze Age at or near the very bottom of your mod load order. Think of Bronze Age as "gift-wrapping" the rest of your mods.
@@ -91,7 +91,7 @@ A number of small patch mods have been directly integrated into this mod, to imp
 1. [TODO]
 
 ## Additional Notes
-If you are a modder and you wish for your mod to not be in this pack, I may publically shame you for such a silly decision, but will remove the mod without argument.
+If you are a modder and you wish for your mod to not be in this pack, I may publicly shame you for such a silly decision, but will remove the mod without argument.
 
 This mod, all code specifically for it and all assets created specifically for it, is released into the public domain, where applicable. See [UNLICENSE][1]
 
