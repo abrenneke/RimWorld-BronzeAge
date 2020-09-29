@@ -1,3 +1,4 @@
+
 ### [Bronze Age Logo]
 # Bronze Age
 Stranded alone on the RimWorld, with nothing on your back, and no knowledge in your mind. You're surrounded by trees, rocks, and bugs. You must start your own civilization from scratch, relearning all of history and surviving using your own wits.
@@ -7,7 +8,7 @@ Starting around the agricultural revolution in human history, when we first star
 ## What Is This Mod?
 Bronze Age is both a mod pack and a "mod glue" mod. RimWorld has hundreds of amazing mods, but because it has so many, they can tend to step on each others' feet, not be balanced against each other, duplicate functionality, or simply not work together at all.
 
-Bronze Age takes these mods and smashes them together with a bit of grease, fixing all of the incompatibilities along the way. The goal is for all mods to run smoothly together, feel great together, and create the best modded RimWorld experience possible. If you have heard of "Feed the Beast" for Minecraft, Bronze age takes a similar, if slightly more opinionated, approach.
+Bronze Age takes these mods and smashes them together with a bit of grease, fixing all of the incompatibilities along the way. There are many thousands of lines of patches for everything in this pack. The goal is for all mods to run smoothly together, feel great together, and create the best modded RimWorld experience possible. If you have heard of "Feed the Beast" for Minecraft, Bronze age takes a similar, if slightly more opinionated, approach.
 
 As per the name, Bronze Age is a survival-style modpack tailored around epic colonies that start in the Neolithic era. Starting with almost no research, your colonists must research their way up the completely revamped, massive, tech tree. With almost every facet of the game changed by one mod or another, your old RimWorld strategies may not work any more. Colonists have far more needs, personalities, and dangers, and keeping them alive can be far harder than in vanilla RimWorld.
 
@@ -75,10 +76,19 @@ Sure, changing any configuration setting to suit your needs should be fine. Bron
 #### Q: I don't like [X] decision that was made!
 Alright! Open an issue on the [GitHub issue tracker][1] and I'm happy to discuss it!
 
+#### Q: Couldn't you have done this with many small patch mods?
+To a lesser extent, yes, however the amount of work to create and maintain the excessive number of patch mods would not have been worth the effort. By ensuring the Bronze Age runs last, it can be sure to fix incompatibilities without any problems. If you would like to take any of these patches into your own mods, feel free to. Also let me know, so I can remove the patch from this mod!
+
 ## Credits
 This mod pack could not have been created without the amazing efforts of so many RimWorld modders. I take absolutely no credit for anything they have made which ends up in this pack.
 
-Modders whose mods appear in this pack: [TODO]
+Modders whose mods appear in this pack (alphabetically):
+
+1. [TODO]
+
+A number of small patch mods have been directly integrated into this mod, to improve loading speed and reduce the number of mods in the mods list. The integrated patches are:
+
+1. [TODO]
 
 ## Additional Notes
 If you are a modder and you wish for your mod to not be in this pack, I may publically shame you for such a silly decision, but will remove the mod without argument.
