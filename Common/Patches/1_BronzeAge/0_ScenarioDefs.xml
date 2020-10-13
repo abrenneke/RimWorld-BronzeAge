@@ -28,6 +28,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <match Class="PatchOperationReplace">
       <xpath>/Defs/ScenarioDef[defName='BronzeAgeTribe']/scenario/parts/li[def='ScatterThingsNearPlayerStart' and thingDef='WoodLog']/thingDef</xpath>

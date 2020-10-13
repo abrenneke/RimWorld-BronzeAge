@@ -25,14 +25,18 @@
     <Content Include="Common\Patches\0_AbsorbedMods\AbsorbedMods.xml" />
     <Content Include="Common\Patches\0_AbsorbedMods\BulkStonecutting.xml" />
     <Content Include="Common\Patches\0_AbsorbedMods\EfficientUtilities.xml" />
+    <Content Include="Common\Patches\0_AbsorbedMods\SimpleChainsLeatherAdditionalPatch.xml" />
+    <Content Include="Common\Patches\0_AbsorbedMods\SimpleChainsLeatherUFPatch.xml" />
     <Content Include="Common\Patches\1_BronzeAge\0_RecipeDefs.xml" />
     <Content Include="Common\Patches\1_BronzeAge\0_ScenarioDefs.xml" />
     <Content Include="Common\Patches\1_BronzeAge\0_ThingDefs.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\1_VCEFermenter.xml" />
     <Content Include="Common\Patches\1_BronzeAge\Architect.xml" />
     <Content Include="Common\Patches\1_BronzeAge\BedBalancing.xml" />
     <Content Include="Common\Patches\1_BronzeAge\Misc.xml" />
     <Content Include="Common\Patches\1_BronzeAge\Research.xml" />
     <Content Include="Common\Patches\1_BronzeAge\Seeds.xml" />
+    <Content Include="Common\Patches\1_BronzeAge\1_SmokedMeatFermenter.xml" />
     <Content Include="Common\Patches\1_BronzeAge\WeaponBalancing.xml" />
   </ItemGroup>
   <ItemGroup>

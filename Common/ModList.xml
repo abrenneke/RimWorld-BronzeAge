@@ -1,6 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
-<Mods>
-  <Mod>
-    <li></li>
-  </Mod>
-</Mods>
+<ModsConfig>
+  <Mods>
+    <li>
+      <name></name>
+      <id></id>
+      <workshopUrl></workshopUrl>
+      <type></type>
+    </li>
+    <li>
+      <name>Harmony</name>
+      <id>brrainz.harmony</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</workshopUrl>
+      <type>Required</type>
+    </li>
+    <li>
+      <name>Startup impact</name>
+      <id>automatic.startupimpact</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1684944322</workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>HugsLib</name>
+      <id>unlimitedhugs.hugslib</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</workshopUrl>
+      <type>Required</type>
+    </li>
+    <li>
+      <name>Animal Collab Project Vanilla-Style</name>
+      <id>acpteam.acpvanillastyle</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2208467668</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>BetterSliders</name>
+      <id>sirrandoo.bettersliders</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2218078784</workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>BIRD UP! All-in-one</name>
+      <id>alex.birdup.allinone</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2088146194</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Better Baricades</name>
+      <id>better.barricades</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2008507327</workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>Biomes! Core</name>
+      <id>biomesteam.biomescore</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Biomes! Islands</name>
+      <id>biomesteam.biomesislands</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Biomes! Islands: Extra Islands</name>
+      <id>biomesteam.extraislands</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Alpha Biomes</name>
+      <id>sarg.alphabiomes</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[KV] RimFridge</name>
+      <id>rimfridge.kv.rw</id>
+      <workshopUrl></workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>Rimworld Search Agency</name>
+      <id>storage.search.rsa</id>
+      <workshopUrl></workshopUrl>
+      <type>Core</type>
+    </li>
+    <li>
+      <name>LWM's Deep Storage</name>
+      <id>lwm.deepstorage</id>
+      <workshopUrl></workshopUrl>
+      <type>Core</type>
+    </li>
+    <li>
+      <name>Dubs Skylights</name>
+      <id>dubwise.dubsskylights</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Glass+Lights</name>
+      <id>nanoce.glasslights</id>
+      <workshopUrl></workshopUrl>
+      <type>Core</type>
+    </li>
+    <li>
+      <name>Enhanced Combat Sounds</name>
+      <id>arekan.enhancedcombatsounds</id>
+      <workshopUrl></workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>Fantastic Flora</name>
+      <id>redrusfijorn.fantasticflora</id>
+      <workshopUrl></workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Locks</name>
+      <id>avius.locks</id>
+      <workshopUrl></workshopUrl>
+      <type>Core</type>
+    </li>
+    <li>
+      <name>Dubs Mint Minimap</name>
+      <id>dubwise.dubsmintminimap</id>
+      <workshopUrl></workshopUrl>
+      <type>Optional</type>
+    </li>
+    <li>
+      <name>Stuffed Floors</name>
+      <id>fluffy.stuffedfloors</id>
+      <workshopUrl></workshopUrl>
+      <type>Core</type>
+    </li>
+    <li>
+      <name>Floors Are Light!</name>
+      <id>lurmey.floorsarelight</id>
+      <workshopUrl></workshopUrl>
+      <type></type>
+    </li>
+  </Mods>
+  <IncompatibleMods>
+
+  </IncompatibleMods>
+</ModsConfig>

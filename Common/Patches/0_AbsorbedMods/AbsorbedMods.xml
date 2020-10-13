@@ -913,6 +913,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <nomatch Class="PatchOperationRemove">
       <xpath>/Defs/RecipeDef[defName='Owl_MakeGreenLumber_Patch']</xpath>

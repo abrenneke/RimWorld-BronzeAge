@@ -1,18 +1,17 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using HarmonyLib;
 using JetBrains.Annotations;
 using RimWorld;
-using SeedsPlease;
 using Verse;
 
 namespace ABrenneke.BronzeAge.Patches.RimWorld
 {
-    [HarmonyPatch(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts)), UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+    [ConditionalModPatch("notfood.seedsplease", typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts))]
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public static class GenRecipe_MakeRecipeProducts_SeedsPleaseRandomSeeds
     {
-        private static IList<SeedDef>? allSeedDefs;
+        private static IList<Def>? allSeedDefs;
 
         public static IEnumerable<Thing?> Postfix(IEnumerable<Thing> recipeProducts, Pawn worker)
         {
@@ -27,9 +26,9 @@ namespace ABrenneke.BronzeAge.Patches.RimWorld
                 var stackCount = thing.stackCount;
                 thing.Destroy();
 
-                allSeedDefs ??= DefDatabase<ThingDef>.AllDefsListForReading.OfType<SeedDef>().ToList();
+                allSeedDefs ??= DefDatabase<ThingDef>.AllDefsListForReading.Where(d => d.GetType() == typeof(SeedsPlease.SeedDef)).Cast<Def>().ToList();
 
-                var possibleSeeds = allSeedDefs.Where(def => def.sources.Any(plantThing =>
+                var possibleSeeds = allSeedDefs.Where(def => ((SeedsPlease.SeedDef)def).sources.Any(plantThing =>
                 {
                     if (plantThing == null)
                         return false;
@@ -65,7 +64,7 @@ namespace ABrenneke.BronzeAge.Patches.RimWorld
                     return allowed;
                 }));
 
-                var seedDef = possibleSeeds.RandomElementWithFallback();
+                var seedDef = (SeedsPlease.SeedDef?)possibleSeeds.RandomElementWithFallback();
 
                 if (seedDef != null)
                 {

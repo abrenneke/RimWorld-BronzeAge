@@ -451,7 +451,7 @@
           <li Class="PatchOperationReplace">
             <xpath>Defs/RecipeDef[defName="Make_FiberFromWood"]/products/N7_PlantFiber</xpath>
             <value>
-              <N7_PlantFiber>20</N7_PlantFiber>
+              <N7_PlantFiber>30</N7_PlantFiber>
             </value>
           </li>
           <li Class="PatchOperationReplace">
@@ -497,48 +497,50 @@
     <match Class="PatchOperationFindMod">
       <mods>
         <li>Simple Chains: Lumber</li>
+        <li>Simple Chains: Lumber UF</li>
       </mods>
       <match Class="PatchOperationAdd">
         <xpath>/Defs</xpath>
         <value>
-          <li Class="PatchOperationAdd">
-            <xpath>/Defs</xpath>
-            <value>
-              <RecipeDef ParentName="MakeStoneBlocksBase">
-                <defName>Make_FiberFromWoodBulk</defName>
-                <label>Break down plant fibers in bulk</label>
-                <description>Break down wood into loose plant fibers.</description>
-                <jobString>Breaking down plant fibers in bulk.</jobString>
-                <ingredients>
-                  <li>
-                    <filter>
-                      <thingDefs>
-                        <li>WoodLog</li>
-                      </thingDefs>
-                    </filter>
-                    <count>10</count>
-                  </li>
-                </ingredients>
-                <allowMixingIngredients>true</allowMixingIngredients>
-                <fixedIngredientFilter>
+          <RecipeDef ParentName="MakeStoneBlocksBase">
+            <defName>Make_FiberFromWoodBulk</defName>
+            <label>Break down plant fibers in bulk</label>
+            <description>Break down wood into loose plant fibers.</description>
+            <jobString>Breaking down plant fibers in bulk.</jobString>
+            <ingredients>
+              <li>
+                <filter>
                   <thingDefs>
                     <li>WoodLog</li>
                   </thingDefs>
-                </fixedIngredientFilter>
-                <workAmount>2400</workAmount>
-                <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-                <effectWorking>CutStone</effectWorking>
-                <soundWorking>Recipe_MakeWoodPlanks_Hand</soundWorking>
-                <targetCountAdjustment>100</targetCountAdjustment>
-                <recipeUsers Inherit="false">
-                  <li>CraftingSpot</li>
-                </recipeUsers>
-                <products>
-                  <N7_PlantFiber>120</N7_PlantFiber>
-                </products>
-              </RecipeDef>
-            </value>
-          </li>
+                </filter>
+                <count>40</count>
+              </li>
+            </ingredients>
+            <allowMixingIngredients>true</allowMixingIngredients>
+            <fixedIngredientFilter>
+              <thingDefs>
+                <li>WoodLog</li>
+              </thingDefs>
+            </fixedIngredientFilter>
+            <workAmount>2400</workAmount>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <workSkillLearnFactor>0.25</workSkillLearnFactor>
+            <effectWorking>CutStone</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <targetCountAdjustment>100</targetCountAdjustment>
+            <recipeUsers Inherit="false">
+              <li>Owl_CarpentersTrestle</li>
+              <li>TableMachining</li>
+            </recipeUsers>
+            <products>
+              <N7_PlantFiber>120</N7_PlantFiber>
+            </products>
+            <skillRequirements>
+              <Crafting>6</Crafting>
+            </skillRequirements>
+          </RecipeDef>
         </value>
       </match>
     </match>
@@ -553,11 +555,18 @@
       <mods>
         <li>Fertile Fields [1.1]</li>
       </mods>
-      <match Class="PatchOperationReplace">
-        <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/products/N7_PlantFiber</xpath>
-        <value>
-          <PlantScraps>30</PlantScraps>
-        </value>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationSetName">
+            <success>Always</success>
+            <xpath>//N7_PlantFiber</xpath>
+            <name>PlantScraps</name>
+          </li>
+          <li Class="PatchOperationRemove">
+            <success>Always</success>
+            <xpath>/Defs/ThingDef[defName='N7_PlantFiber']</xpath>
+          </li>
+        </operations>
       </match>
     </match>
   </Operation>
@@ -570,6 +579,7 @@
     <match Class="PatchOperationFindMod">
       <mods>
         <li>Simple Chains: Lumber</li>
+        <li>Simple Chains: Lumber UF</li>
       </mods>
       <match Class="PatchOperationAdd">
         <xpath>//li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs[li[text()='Owl_Firewood']]</xpath>
@@ -687,6 +697,7 @@
         <li Class="PatchOperationFindMod">
           <mods>
             <li>Simple Chains: Lumber</li>
+            <li>Simple Chains: Lumber UF</li>
           </mods>
           <match Class="PatchOperationReplace">
             <xpath>
@@ -813,12 +824,6 @@
               /Defs/RecipeDef[
                 defName='DryFruit'
                 or defName='BakeMeatPie'
-                or defName='MedTimes_CookMealDriedAgaveFruit'
-                or defName='MedTimes_CookMealDriedAgaveFruitBulk'
-                or defName='MedTimes_CookMealDriedBerries'
-                or defName='MedTimes_CookMealDriedBerriesBulk'
-                or defName='MedTimes_CookMealJerkedMeats'
-                or defName='MedTimes_CookMealJerkedMeatsBulk'
                 or defName='DryFruit'
               ]/recipeUsers
             </xpath>
@@ -828,6 +833,26 @@
                 <li>ElectricOven</li>
                 <li>Smokepit</li>
                 <li>SmokeHouse</li>
+                <li>MedTimes_StoneHearth</li>
+              </recipeUsers>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[
+              defName='MedTimes_CookMealDriedAgaveFruit'
+              or defName='MedTimes_CookMealDriedAgaveFruitBulk'
+              or defName='MedTimes_CookMealDriedBerries'
+              or defName='MedTimes_CookMealDriedBerriesBulk'
+              or defName='MedTimes_CookMealJerkedMeats'
+              or defName='MedTimes_CookMealJerkedMeatsBulk'
+              ]/recipeUsers
+            </xpath>
+            <value>
+              <recipeUsers>
+                <li>Oven</li>
+                <li>ElectricOven</li>
+                <li>Smokepit</li>
                 <li>MedTimes_StoneHearth</li>
               </recipeUsers>
             </value>
@@ -1523,6 +1548,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
@@ -2023,6 +2049,7 @@
     <match Class="PatchOperationFindMod">
       <mods>
         <li>Simple Chains: Lumber</li>
+        <li>Simple Chains: Lumber UF</li>
       </mods>
       <match Class="PatchOperationSequence">
         <operations>
@@ -2080,6 +2107,7 @@
                   <max>100</max>
                 </temperatureIdeal>
                 <graphicSuffix>_full_mud_bricks</graphicSuffix>
+                <processType>Multiple</processType>
               </li>
             </value>
           </li>
@@ -2094,32 +2122,6 @@
     </match>
   </Operation>
 
-  <!-- Fix drying rack breaking by temperature -->
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Simple Chains: Lumber</li>
-    </mods>
-    <match Class="PatchOperationFindMod">
-      <mods>
-        <li>[SYR] Universal Fermenter</li>
-      </mods>
-      <match Class="PatchOperationAdd">
-        <xpath>/Defs/ThingDef[defName='Owl_WoodDryingRack']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes/li[thingDef='WoodLog']</xpath>
-        <value>
-          <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
-          <temperatureSafe>
-            <min>-100</min>
-            <max>100</max>
-          </temperatureSafe>
-          <temperatureIdeal>
-            <min>0</min>
-            <max>100</max>
-          </temperatureIdeal>
-        </value>
-      </match>
-    </match>
-  </Operation>
-
   <!-- Well can be made out of wood logs - helps first day -->
   <Operation Class="PatchOperationFindMod">
     <mods>
@@ -2128,6 +2130,7 @@
     <match Class="PatchOperationFindMod">
       <mods>
         <li>Simple Chains: Lumber</li>
+        <li>Simple Chains: Lumber UF</li>
       </mods>
       <match Class="PatchOperationSequence">
         <operations>
@@ -2202,6 +2205,8 @@
               or defName='Building_BasicKiln'
               or defName='Building_ElectricKiln'
               ]/thingClass
+              |
+              /Defs/WorkGiverDef[defName='LoadKiln' or defName='UnloadKiln']
             </xpath>
           </li>
           <li Class="PatchOperationAdd">
@@ -2226,6 +2231,7 @@
                     <temperatureIdeal>-100~100</temperatureIdeal>
                     <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
                     <efficiency>0.75</efficiency>
+                    <processType>MultipleMixed</processType>
                   </li>
                 </processes>
               </li>
@@ -2253,6 +2259,7 @@
                     <temperatureIdeal>-100~100</temperatureIdeal>
                     <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
                     <efficiency>1</efficiency>
+                    <processType>MultipleMixed</processType>
                   </li>
                 </processes>
               </li>
@@ -2280,22 +2287,22 @@
                     <temperatureIdeal>-100~100</temperatureIdeal>
                     <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
                     <efficiency>1</efficiency>
+                    <processType>MultipleMixed</processType>
                   </li>
                 </processes>
               </li>
             </value>
           </li>
-          <!-- Need to patch universal fermenter to support consumeFuelOnlyWhenUsed -->
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[defName='Building_PrimitiveKiln']/comps/li[@Class='CompProperties_Refuelable']/fuelConsumptionRate</xpath>
+            <xpath>/Defs/ThingDef[defName='Building_PrimitiveKiln']/comps/li[@Class='CompProperties_Refuelable']/consumeFuelOnlyWhenUsed</xpath>
             <value>
-              <fuelConsumptionRate>10</fuelConsumptionRate>
+              <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
             </value>
           </li>
           <li Class="PatchOperationReplace">
-            <xpath>/Defs/ThingDef[defName='Building_BasicKiln']/comps/li[@Class='CompProperties_Refuelable']/fuelConsumptionRate</xpath>
+            <xpath>/Defs/ThingDef[defName='Building_BasicKiln']/comps/li[@Class='CompProperties_Refuelable']/consumeFuelOnlyWhenUsed</xpath>
             <value>
-              <fuelConsumptionRate>5</fuelConsumptionRate>
+              <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
             </value>
           </li>
         </operations>
@@ -2459,6 +2466,11 @@
             <operations>
               <li Class="PatchOperationRemove">
                 <xpath>/Defs/ThingDef[defName='VCE_Salt']</xpath>
+              </li>
+              <li Class="PatchOperationSetName">
+                <success>Always</success>
+                <xpath>//VCE_Salt</xpath>
+                <name>ChunkSalt</name>
               </li>
             </operations>
           </match>
@@ -2776,6 +2788,7 @@
               or defName='VCE_CanMeats'
               or defName='VCE_CanFish'
               or defName='VCE_CanAlienFish'
+              or defName='VCE_CanFruit'
               ]
             </xpath>
           </li>
@@ -2814,31 +2827,62 @@
                   <li>Tam_SmokedVeg</li>
                 </value>
               </li>
-              <li Class="PatchOperationAdd">
-                <xpath>
-                  /Defs/RecipeDef[
-                  defName='Tam_SmokeMeat150'
-                  or defName='Tam_SmokeMeat75'
-                  or defName='Tam_SmokeMeat40'
-                  or defName='Tam_SmokeMeat10'
-                  ]/defaultIngredientFilter/disallowedThingDefs
-                </xpath>
-                <value>
-                  <li>CannedMeat</li>
-                </value>
-              </li>
-              <li Class="PatchOperationAdd">
-                <xpath>
-                  /Defs/RecipeDef[
-                  defName='Tam_SmokeVeg150'
-                  or defName='Tam_SmokeVeg75'
-                  or defName='Tam_SmokeVeg40'
-                  or defName='Tam_SmokeVeg10'
-                  ]/defaultIngredientFilter/disallowedThingDefs
-                </xpath>
-                <value>
-                  <li>CannedVeg</li>
-                </value>
+              <li Class="PatchOperationConditional">
+                <xpath>/Defs/ThingDef[defName='SmokeHouse']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']</xpath>
+                <match Class="PatchOperationSequence">
+                  <operations>
+                    <li Class="PatchOperationAdd">
+                      <xpath>
+                        /Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps/li[
+                          @Class='UniversalFermenter.CompProperties_UniversalFermenter'
+                        ]/processes/li[thingDef='Tam_SmokedMeat']/ingredientFilter/disallowedThingDefs
+                      </xpath>
+                      <value>
+                        <li>CannedMeat</li>
+                      </value>
+                    </li>
+                    <li Class="PatchOperationAdd">
+                      <xpath>
+                        /Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps/li[
+                        @Class='UniversalFermenter.CompProperties_UniversalFermenter'
+                        ]/processes/li[thingDef='Tam_SmokedVeg']/ingredientFilter/disallowedThingDefs
+                      </xpath>
+                      <value>
+                        <li>CannedVeg</li>
+                      </value>
+                    </li>
+                  </operations>
+                </match>
+                <nomatch Class="PatchOperationSequence">
+                  <operations>
+                    <li Class="PatchOperationAdd">
+                      <xpath>
+                        /Defs/RecipeDef[
+                        defName='Tam_SmokeMeat150'
+                        or defName='Tam_SmokeMeat75'
+                        or defName='Tam_SmokeMeat40'
+                        or defName='Tam_SmokeMeat10'
+                        ]/defaultIngredientFilter/disallowedThingDefs
+                      </xpath>
+                      <value>
+                        <li>CannedMeat</li>
+                      </value>
+                    </li>
+                    <li Class="PatchOperationAdd">
+                      <xpath>
+                        /Defs/RecipeDef[
+                        defName='Tam_SmokeVeg150'
+                        or defName='Tam_SmokeVeg75'
+                        or defName='Tam_SmokeVeg40'
+                        or defName='Tam_SmokeVeg10'
+                        ]/defaultIngredientFilter/disallowedThingDefs
+                      </xpath>
+                      <value>
+                        <li>CannedVeg</li>
+                      </value>
+                    </li>
+                  </operations>
+                </nomatch>
               </li>
             </operations>
           </match>
@@ -2954,18 +2998,35 @@
       <mods>
         <li>VGP Garden Gourmet</li>
       </mods>
-      <match Class="PatchOperationAdd">
-        <xpath>
-          /Defs/RecipeDef[
-          defName='Tam_SmokeMeat10'
-          or defName='Tam_SmokeMeat40'
-          or defName='Tam_SmokeMeat75'
-          or defName='Tam_SmokeMeat150'
-          ]/defaultIngredientFilter/disallowedThingDefs
-        </xpath>
-        <value>
-          <li>Rawtofu</li>
-        </value>
+      <match Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationAdd">
+              <xpath>
+                /Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps/li[
+                @Class='UniversalFermenter.CompProperties_UniversalFermenter'
+                ]/processes/li[thingDef='Tam_SmokedMeat']/ingredientFilter/disallowedThingDefs
+              </xpath>
+              <value>
+                <li>Rawtofu</li>
+              </value>
+            </li>
+          </operations>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>
+            /Defs/RecipeDef[
+            defName='Tam_SmokeMeat10'
+            or defName='Tam_SmokeMeat40'
+            or defName='Tam_SmokeMeat75'
+            or defName='Tam_SmokeMeat150'
+            ]/defaultIngredientFilter/disallowedThingDefs
+          </xpath>
+          <value>
+            <li>Rawtofu</li>
+          </value>
+        </nomatch>
       </match>
     </match>
   </Operation>
@@ -3066,7 +3127,7 @@
       </mods>
       <match Class="PatchOperationSetName">
         <success>Always</success>
-        <xpath>/Defs/ThingDef[defName='MedTimes_Cot' or defName='MedTimes_Cot']/costList/Hay</xpath>
+        <xpath>/Defs/ThingDef[defName='MedTimes_Cot' or defName='MedTimes_CotDouble']/costList/Hay</xpath>
         <name>PlantScraps</name>
       </match>
     </match>
@@ -3089,6 +3150,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <match Class="PatchOperationFindMod">
       <mods>
@@ -3107,8 +3169,7 @@
           <li Class="PatchOperationAdd">
             <xpath>
               /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/ingredients/li[1]/filter/thingDefs |
-              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs |
-              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs
+              /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs
             </xpath>
             <value>
               <li>Owl_WoodLog</li>
@@ -3116,21 +3177,36 @@
               <li>Owl_Firewood</li>
             </value>
           </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs</xpath>
+            <value>
+              <li>Owl_WoodLog</li>
+            </value>
+          </li>
           <li Class="PatchOperationFindMod">
             <mods>
               <li>VGP Vegetable Garden</li>
             </mods>
-            <match Class="PatchOperationAdd">
-              <xpath>
-                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/ingredients/li[1]/filter/thingDefs |
-                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs |
-                /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs
-              </xpath>
-              <value>
-                <li>RawIronwood</li>
-                <li>VG_IronWoodLog</li>
-                <li>GreenIronwoodLumber</li>
-              </value>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>
+                    /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/ingredients/li[1]/filter/thingDefs |
+                    /Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/fixedIngredientFilter/thingDefs
+                  </xpath>
+                  <value>
+                    <li>RawIronwood</li>
+                    <li>VG_IronWoodLog</li>
+                    <li>GreenIronwoodLumber</li>
+                  </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood' or defName='Make_FiberFromWoodBulk']/defaultIngredientFilter/thingDefs</xpath>
+                  <value>
+                    <li>RawIronwood</li>
+                  </value>
+                </li>
+              </operations>
             </match>
           </li>
           <li Class="PatchOperationFindMod">
@@ -3143,6 +3219,7 @@
                   <xpath>/Defs/RecipeDef[defName='Make_FiberFromWood']/recipeUsers</xpath>
                   <value>
                     <li>Owl_CarpentersTrestle</li>
+                    <li>TableMachining</li>
                   </value>
                 </li>
               </operations>
@@ -3222,5 +3299,210 @@
         </li>
       </value>
     </match>
+  </Operation>
+
+  <!-- TEMPORAY remove ConstructDeliverResourcesToTurrets -->
+  <Operation Class="PatchOperationRemove">
+    <success>Always</success>
+    <xpath>/Defs/WorkGiverDef[defName='ConstructDeliverResourcesToTurrets' or defName='DeliverResourcesToTurrets']</xpath>
+  </Operation>
+
+  <!-- Don't use seeds for making mud bricks by default -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Ceramics</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <success>Always</success>
+            <xpath>/Defs/RecipeDef[defName='Make_RawMudbricks' and not(defaultIngredientFilter)]</xpath>
+            <value>
+              <defaultIngredientFilter>
+                <thingDefs>
+                  <li>N7_RawClay</li>
+                </thingDefs>
+                <categories>
+                  <li>PlantMatter</li>
+                </categories>
+                <disallowedCategories>
+                  <li>SeedsCategory</li>
+                </disallowedCategories>
+              </defaultIngredientFilter>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Simple Chains Lumber UF patch for firewood liquor -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Lumber UF</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Simple Chains: Leather</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>
+              /Defs/RecipeDef[defName='Owl_MakeTanningLiquorFromWood']/ingredients/li[1]/filter/thingDefs/li[1] |
+              /Defs/RecipeDef[defName='Owl_MakeTanningLiquorFromWood']/fixedIngredientFilter/thingDefs/li[1]
+            </xpath>
+            <value>
+              <li>Owl_WoodLog</li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Prefer "deep" variants of the storage containers, rename them -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName='DeepWardrobeA' or defName='DeepWardrobeB']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ThingDef[defName='WardrobeA' or defName='WardrobeB']</xpath>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='DeepWardrobeA' or defName='DeepWardrobeB']/label</xpath>
+              <value>
+                <label>wardrobe</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>/Defs/ThingDef[(defName='DeepWardrobeA' or defName='DeepWardrobeB')]/comps/li[@Class='LWM.DeepStorage.Properties' and overlayType='None']/overlayType</xpath>
+              <value>
+                <overlayType>CountOfStacksPerCell</overlayType>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>//linkableFacilities/li[.='WardrobeA']</xpath>
+              <value>
+                <li>DeepWardrobeA</li>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>//linkableFacilities/li[.='WardrobeB']</xpath>
+              <value>
+                <li>DeepWardrobeB</li>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName='RKGWineRackBDeep' or defName='RGK_DeepManger' or defName='RGK_DeepDogBowl']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ThingDef[defName='RKGWineRackB' or defName='RGK_Manger' or defName='RGK_DogBowl']</xpath>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='RKGWineRackBDeep']/label</xpath>
+              <value>
+                <label>wine rack</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='RGK_DeepManger']/label</xpath>
+              <value>
+                <label>manger</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='RGK_DeepDogBowl']/label</xpath>
+              <value>
+                <label>bowl</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>/Defs/ThingDef[defName='RKGWineRackBDeep' or defName='RGK_DeepManger' or defName='RGK_DeepDogBowl']/comps/li[@Class='LWM.DeepStorage.Properties' and overlayType='None']/overlayType</xpath>
+              <value>
+                <overlayType>SumOfAllItems</overlayType>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName='GL_DeepShelf' or defName='GL_DeepLocker']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationRemove">
+              <xpath>/Defs/ThingDef[defName='GL_Shelf' or defName='GL_Locker']</xpath>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='GL_DeepShelf']/label</xpath>
+              <value>
+                <label>wine rack</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='GL_DeepLocker']/label</xpath>
+              <value>
+                <label>locker</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>/Defs/ThingDef[defName='GL_DeepShelf' or defName='GL_DeepLocker']/comps/li[@Class='LWM.DeepStorage.Properties' and overlayType='None']/overlayType</xpath>
+              <value>
+                <overlayType>SumOfAllItems</overlayType>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName='GloomyDeco_Deep_Storage_Cart' or defName='GloomyDeco_DeepBox']</xpath>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='GloomyDeco_Deep_Storage_Cart']/label</xpath>
+              <value>
+                <label>storage cart</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ThingDef[defName='GloomyDeco_DeepBox']/label</xpath>
+              <value>
+                <label>simple box</label>
+              </value>
+            </li>
+            <li Class="PatchOperationReplace">
+              <success>Always</success>
+              <xpath>/Defs/ThingDef[defName='GloomyDeco_Deep_Storage_Cart' or defName='GloomyDeco_DeepBox']/comps/li[@Class='LWM.DeepStorage.Properties' and overlayType='None']/overlayType</xpath>
+              <value>
+                <overlayType>SumOfAllItems</overlayType>
+              </value>
+            </li>
+          </operations>
+        </match>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='sixdd_DeepShelfSingle']/label</xpath>
+        <value>
+          <label>single shelf</label>
+        </value>
+      </li>
+    </operations>
   </Operation>
 </Patch>

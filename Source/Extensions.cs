@@ -98,42 +98,42 @@ namespace ABrenneke.BronzeAge
         public static void Deconstruct<T>(this IEnumerable<T> seq, out T first, out T second, out T third, out T fourth, out T fifth, out IEnumerable<T> rest)
             => (first, second, third, fourth, (fifth, rest)) = seq;
 
-        public static Func<S, T> CreateGetter<S, T>(this FieldInfo field)
+        public static IEnumerable<CodeInstruction> ReplaceInstructions(this IEnumerable<CodeInstruction> input, IList<Tuple<OpCode, object>> findInstructions, IEnumerable<CodeInstruction> replacement)
         {
-            string methodName = field.ReflectedType.FullName + ".get_" + field.Name;
-            DynamicMethod setterMethod = new DynamicMethod(methodName, typeof(T), new Type[1] { typeof(S) }, true);
-            ILGenerator gen = setterMethod.GetILGenerator();
-            if (field.IsStatic)
+            var inputList = input.ToList();
+            var replacementInstructions = replacement.ToList();
+            for (var i = 0; i < inputList.Count; i++)
             {
-                gen.Emit(OpCodes.Ldsfld, field);
+                var inInstruction = inputList[i];
+                if (inputList.HasSequence(i, findInstructions))
+                {
+                    foreach (var replacementInstruction in replacementInstructions)
+                    {
+                        yield return replacementInstruction;
+                    }
+
+                    i += findInstructions.Count;
+                }
+                else
+                {
+                    yield return inInstruction;
+                }
             }
-            else
-            {
-                gen.Emit(OpCodes.Ldarg_0);
-                gen.Emit(OpCodes.Ldfld, field);
-            }
-            gen.Emit(OpCodes.Ret);
-            return (Func<S, T>)setterMethod.CreateDelegate(typeof(Func<S, T>));
         }
 
-        public static Action<S, T> CreateSetter<S,T>(this FieldInfo field)
+        public static bool HasSequence(this IList<CodeInstruction> instructions, int startPosition, IList<Tuple<OpCode, object>> findInstructions)
         {
-            string methodName = field.ReflectedType.FullName+".set_"+field.Name;
-            DynamicMethod setterMethod = new DynamicMethod(methodName, null, new Type[2]{typeof(S),typeof(T)},true);
-            ILGenerator gen = setterMethod.GetILGenerator();
-            if (field.IsStatic)
+            if (instructions.Count - startPosition < findInstructions.Count)
+                return false;
+
+            for (int i = startPosition, j = 0; i < instructions.Count; i++, j++)
             {
-                gen.Emit(OpCodes.Ldarg_1);
-                gen.Emit(OpCodes.Stsfld, field);
+                var (opCode, operand) = findInstructions[j];
+                if (!instructions[i].Is(opCode, operand))
+                    return false;
             }
-            else
-            {
-                gen.Emit(OpCodes.Ldarg_0);
-                gen.Emit(OpCodes.Ldarg_1);
-                gen.Emit(OpCodes.Stfld, field);
-            }
-            gen.Emit(OpCodes.Ret);
-            return (Action<S, T>)setterMethod.CreateDelegate(typeof(Action<S, T>));
+
+            return true;
         }
     }
 }

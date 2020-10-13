@@ -14,7 +14,7 @@ namespace ABrenneke.BronzeAge
             pawn.SetWorkPriority("Patient", 1);
 
             // Study and research P1 (if there's research to do, prioritize it)
-            pawn.SetWorkPriority("HR_Learn", 1);
+            pawn.SetWorkPriority("Study", 1);
             pawn.SetWorkPriority("Research", 1);
 
             // Same with governing
@@ -32,7 +32,6 @@ namespace ABrenneke.BronzeAge
             pawn.SetWorkPriority("Hauling", 3);
 
             // Turn off unused ones at beginning
-            pawn.SetWorkPriority("Study", 0);
             pawn.SetWorkPriority("Teach", 0);
             pawn.SetWorkPriority("NuclearWork", 0);
             pawn.SetWorkPriority("RimefellerCrafting", 0);
@@ -50,7 +49,6 @@ namespace ABrenneke.BronzeAge
             {
                 "Firefighter", 
                 "Patient",
-                "HR_Learn",
                 "Research",
                 "Governing",
                 "BasicWorker",

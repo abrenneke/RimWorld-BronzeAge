@@ -11,7 +11,7 @@
     <AssemblyName>BronzeAge</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <nullable>enable</nullable>
     <NullableReferenceTypes>true</NullableReferenceTypes>
   </PropertyGroup>
@@ -53,7 +53,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HumanResources">
-      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\2119687603\Assemblies\HumanResources.dll</HintPath>
+      <HintPath>..\..\HumanResources\1.2\Assemblies\HumanResources.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Interests and Callings">
@@ -62,6 +62,10 @@
     </Reference>
     <Reference Include="MedicalInfo">
       <HintPath>..\..\..\..\..\temp\MedicalInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PickUpAndHaul">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\1279012058\1.1\Assemblies\PickUpAndHaul.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Seeds">
@@ -108,6 +112,7 @@
     <Compile Include="Patches\RimWorld\ThoughtUtility_RemovePositiveBedroomThoughts_ErrorFix.cs" />
     <Compile Include="Patches\Verse\ListerThings_ThingsMatching_AlternateThings.cs" />
     <Compile Include="Patches\Verse\LogMessageQueue_Enqueue_LogLevel.cs" />
+    <Compile Include="Patches\Verse\Log_Error_IgnoreMessages.cs" />
     <Compile Include="Patches\Verse\Log_Warning_IgnoreMessages.cs" />
     <Compile Include="Patches\Verse\Pawn_GenerateNecessaryName_NoErrorPatch.cs" />
     <Compile Include="Patches\Verse\ThingFilter_ExposeData_NoNull.cs" />

@@ -286,7 +286,7 @@
   <Operation Class="PatchOperationSequence">
     <operations>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='FlagstoneBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='FlagstoneBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -307,7 +307,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='TileStoneBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='TileStoneBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -328,7 +328,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDRoughStoneTileBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDRoughStoneTileBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -349,7 +349,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDStoneTileBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDStoneTileBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -370,7 +370,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneTileBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneTileBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -391,7 +391,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneFloorBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDCheckStoneFloorBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -412,7 +412,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDMosaicStoneFloorBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDMosaicStoneFloorBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -433,7 +433,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDPolishedStoneFloorBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDPolishedStoneFloorBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -454,7 +454,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDStonePlateFloorBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDStonePlateFloorBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -475,7 +475,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='FineTileStoneBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='FineTileStoneBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -496,7 +496,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='Anon2CarpetBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='Anon2CarpetBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -517,7 +517,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='CarpetBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='CarpetBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -538,7 +538,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDCarpetCheckBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDCarpetCheckBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -559,7 +559,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='WDCheckCarpetFineBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='WDCheckCarpetFineBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -580,7 +580,7 @@
         </match>
       </li>
       <li Class="PatchOperationConditional">
-        <xpath>/Defs/TerrainDef[@Name='CarpetFineBase']</xpath>
+        <xpath>/Defs/TerrainDef[@Name='CarpetFineBase' and not(designatorDropdown)]</xpath>
         <match Class="PatchOperationSequence">
           <operations>
             <li Class="PatchOperationAdd">
@@ -603,11 +603,12 @@
       <li Class="PatchOperationConditional">
         <xpath>
           /Defs/TerrainDef[
-          defName='WDGodlTileHex'
+          (defName='WDGodlTileHex'
           or defName='WDHexMetalFloor'
           or defName='WDSilverTileHex'
           or defName='WDPlasteelTileHex'
-          or defName='WDHexSterileTile'
+          or defName='WDHexSterileTile')
+          and not(designatorDropdown)
           ]
         </xpath>
         <match Class="PatchOperationSequence">
@@ -640,11 +641,12 @@
       <li Class="PatchOperationConditional">
         <xpath>
           /Defs/TerrainDef[
-          defName='WDMetalCheckTile'
+          (defName='WDMetalCheckTile'
           or defName='WDSilverCheckTile'
           or defName='WDGoldCheckTile'
           or defName='WDPlasteelCheckTile'
-          or defName='WDCheckSterileTile'
+          or defName='WDCheckSterileTile')
+          and not(designatorDropdown)
           ]
         </xpath>
         <match Class="PatchOperationSequence">

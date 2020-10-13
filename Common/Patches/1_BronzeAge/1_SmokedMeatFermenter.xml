@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Smoked meat</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>[SYR] Universal Fermenter</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps</xpath>
+            <value>
+              <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+                <showProductIcon>true</showProductIcon>
+                <processes>
+                  <li>
+                    <thingDef>Tam_SmokedMeat</thingDef>
+                    <ingredientFilter>
+                      <categories>
+                        <li>MeatRaw</li>
+                      </categories>
+                      <disallowedThingDefs>
+                        <li>Meat_Human</li>
+                        <li>Meat_Megaspider</li>
+                        <li>Tam_SmokedMeat</li>
+                        <li>Tam_SmokedHumanMeat</li>
+                        <li>Tam_SmokedInsectMeat</li>
+                      </disallowedThingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>150</maxCapacity>
+                    <processDays>1</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <temperatureIdeal>-200~200</temperatureIdeal>
+                    <temperatureSafe>-200~200</temperatureSafe>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>MultipleMixed</processType>
+                  </li>
+                  <li>
+                    <thingDef>Tam_SmokedVeg</thingDef>
+                    <ingredientFilter>
+                      <categories>
+                        <li>PlantFoodRaw</li>
+                      </categories>
+                      <disallowedThingDefs>
+                        <li>Tam_SmokedMeat</li>
+                        <li>Tam_SmokedHumanMeat</li>
+                        <li>Tam_SmokedInsectMeat</li>
+                        <li>Tam_SmokedVeg</li>
+                      </disallowedThingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>150</maxCapacity>
+                    <processDays>1</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <temperatureIdeal>-200~200</temperatureIdeal>
+                    <temperatureSafe>-200~200</temperatureSafe>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>MultipleMixed</processType>
+                  </li>
+                  <li>
+                    <thingDef>Tam_SmokedHumanMeat</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Meat_Human</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>150</maxCapacity>
+                    <processDays>1</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <temperatureIdeal>-200~200</temperatureIdeal>
+                    <temperatureSafe>-200~200</temperatureSafe>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>MultipleMixed</processType>
+                  </li>
+                  <li>
+                    <thingDef>Tam_SmokedInsectMeat</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Meat_Megaspider</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <maxCapacity>150</maxCapacity>
+                    <processDays>1</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <temperatureIdeal>-200~200</temperatureIdeal>
+                    <temperatureSafe>-200~200</temperatureSafe>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>MultipleMixed</processType>
+                  </li>
+                </processes>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='Smokepit']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes/li/maxCapacity</xpath>
+            <value>
+              <maxCapacity>30</maxCapacity>
+            </value>
+          </li>
+          <li Class="PatchOperationAdd">
+            <success>Always</success>
+            <xpath>/Defs/ThingDef[defName='SmokeHouse' and not(tickerType)]</xpath>
+            <value>
+              <tickerType>Rare</tickerType>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/RecipeDef[
+              defName='Tam_SmokeInsectMeat150'
+              or defName='Tam_SmokeInsectMeat75'
+              or defName='Tam_SmokeInsectMeat40'
+              or defName='Tam_SmokeInsectMeat10'
+              or defName='Tam_SmokeMeat150'
+              or defName='Tam_SmokeMeat75'
+              or defName='Tam_SmokeMeat40'
+              or defName='Tam_SmokeMeat10'
+              or defName='Tam_SmokeVeg150'
+              or defName='Tam_SmokeVeg75'
+              or defName='Tam_SmokeVeg40'
+              or defName='Tam_SmokeVeg10'
+              or defName='Tam_SmokeHumanMeat150'
+              or defName='Tam_SmokeHumanMeat75'
+              or defName='Tam_SmokeHumanMeat40'
+              or defName='Tam_SmokeHumanMeat10'
+              ] |
+              //li[.='Tam_SmokeInsectMeat150' or .='Tam_SmokeInsectMeat75' or .='Tam_SmokeInsectMeat40' or .='Tam_SmokeInsectMeat10'
+              or .='Tam_SmokeMeat150' or .='Tam_SmokeMeat75' or .='Tam_SmokeMeat40' or .='Tam_SmokeMeat10'
+              or .='Tam_SmokeVeg150' or .='Tam_SmokeVeg75' or .='Tam_SmokeVeg40' or .='Tam_SmokeVeg10'
+              or .='Tam_SmokeHumanMeat150' or .='Tam_SmokeHumanMeat75' or .='Tam_SmokeHumanMeat40' or .='Tam_SmokeHumanMeat10']
+            </xpath>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>Medieval Times Unofficial Update</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <order>Prepend</order>
+                  <xpath>/Defs/ThingDef[defName='SmokeHouse' or defName='Smokepit']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes</xpath>
+                  <value>
+                    <li>
+                      <thingDef>MedTimes_MealDriedAgave</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>RawAgave</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <maxCapacity>150</maxCapacity>
+                      <processDays>0.5</processDays>
+                      <usesTemperature>false</usesTemperature>
+                      <temperatureIdeal>-200~200</temperatureIdeal>
+                      <temperatureSafe>-200~200</temperatureSafe>
+                      <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                      <processType>MultipleMixed</processType>
+                    </li>
+                    <li>
+                      <thingDef>MedTimes_MealDriedBerries</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>RawBerries</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <maxCapacity>150</maxCapacity>
+                      <processDays>0.5</processDays>
+                      <usesTemperature>false</usesTemperature>
+                      <temperatureIdeal>-200~200</temperatureIdeal>
+                      <temperatureSafe>-200~200</temperatureSafe>
+                      <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                      <processType>MultipleMixed</processType>
+                    </li>
+                  </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                  <xpath>/Defs/ThingDef[defName='Smokepit']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes/li/maxCapacity</xpath>
+                  <value>
+                    <maxCapacity>30</maxCapacity>
+                  </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                  <success>Always</success>
+                  <xpath>
+                    /Defs/RecipeDef[
+                    defName='MedTimes_CookMealDriedBerries'
+                    or defName='MedTimes_CookMealDriedBerriesBulk'
+                    or defName='MedTimes_CookMealDriedAgaveFruit'
+                    or defName='MedTimes_CookMealDriedAgaveFruitBulk'
+                    ]/recipeUsers/li[.='Smokepit' or .='SmokeHouse']
+                  </xpath>
+                </li>
+              </operations>
+            </match>
+          </li>
+          <li Class="PatchOperationRemove">
+            <success>Always</success>
+            <xpath>/Defs/RecipeDef[defName='DryFruit']/recipeUsers/li[.='Smokepit' or .='SmokeHouse']</xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+</Patch>

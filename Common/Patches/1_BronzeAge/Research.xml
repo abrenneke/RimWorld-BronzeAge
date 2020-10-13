@@ -199,6 +199,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName='Owl_Bloomery']</xpath>
@@ -777,7 +778,8 @@
             <match Class="PatchOperationSequence">
               <operations>
                 <li Class="PatchOperationReplace">
-                  <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/researchPrerequisite</xpath>
+                  <success>Always</success>
+                  <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask' or defName='PPE_Gloves_Basic']/recipeMaker/researchPrerequisite</xpath>
                   <value>
                     <researchPrerequisite>
                       <li>EarlyMedievalMedicine</li>
@@ -789,13 +791,15 @@
                     <li>Medieval Times Unofficial Update</li>
                   </mods>
                   <match Class="PatchOperationAdd">
-                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/recipeUsers</xpath>
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask' or defName='PPE_Gloves_Basic']/recipeMaker/recipeUsers</xpath>
                     <value>
                       <li>MedTimes_TailoringStation</li>
                     </value>
                   </match>
                   <nomatch Class="PatchOperationAdd">
-                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask']/recipeMaker/recipeUsers</xpath>
+                    <success>Always</success>
+                    <xpath>/Defs/ThingDef[defName='Apparel_PlagueDoctorMask' or defName='PPE_Gloves_Basic']/recipeMaker/recipeUsers</xpath>
                     <value>
                       <li>CraftingSpot</li>
                     </value>
@@ -2489,7 +2493,8 @@
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName='Politics_WritingSpot']</xpath>
+          <success>Always</success>
+          <xpath>/Defs/ThingDef[defName='Politics_WritingSpot' and not(researchPrerequisites)]</xpath>
           <value>
             <researchPrerequisites>
               <li>PoliticsPolemicsTech</li>
@@ -2809,26 +2814,6 @@
       </li>
     </operations>
   </Operation>
-
-  <!-- Starting weapon knowledge -->
-  <!--<Operation Class="PatchOperationAddModExtension">
-    <xpath>
-      /Defs/ThingDef[
-        defName='Weapon_Slingshot_rt'
-        or defName='Bow_Short'
-        or defName='Beer'
-        or defName='WoodLog'
-        or defName='Owl_WoodLog'
-        or defName='MeleeWeapon_Knife'
-        or defName='MeleeWeapon_Club'
-        or defName='RTFTJ_Neo_Shovel'
-        or defName='RTFTJ_Neo_Pick'
-      ]
-    </xpath>
-    <value>
-      <li Class="ABrenneke.BronzeAge.StartingWeapon"></li>
-    </value>
-  </Operation>-->
 
   <!-- Move mud bricks to be available at start -->
   <Operation Class="PatchOperationFindMod">

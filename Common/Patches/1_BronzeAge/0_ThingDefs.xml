@@ -3,6 +3,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <match Class="PatchOperationFindMod">
       <mods>
@@ -73,6 +74,7 @@
                   <max>100</max>
                 </temperatureIdeal>
                 <graphicSuffix>_full</graphicSuffix>
+                <processType>Multiple</processType>
               </li>
             </value>
           </li>
@@ -92,6 +94,7 @@
       </nomatch>
     </match>
     <nomatch Class="PatchOperationRemove">
+      <success>Always</success>
       <xpath>
         /Defs/ThingDef[defName='RawIronwood' or defName='GreenIronwoodLumber'] |
         /Defs/RecipeDef[defName='MakeGreenIronwoodLumber_Slow' or defName='MakeGreenIronwoodLumber']
@@ -103,6 +106,7 @@
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Simple Chains: Lumber</li>
+      <li>Simple Chains: Lumber UF</li>
     </mods>
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName='LogWall']</xpath>

@@ -2,7 +2,7 @@
 
 namespace ABrenneke.BronzeAge.Patches.Mods.ModUniversalFermenter
 {
-    [ModPatch("syrchalis.universalfermenter", "UniversalFermenter.CompUniversalFermenter", "DoTicks")]
+    /*[ModPatch("syrchalis.universalfermenter", "UniversalFermenter.CompUniversalFermenter", "DoTicks")]
     public static class CompUniversalFermenter_DoTicks
     {
         public static void Postfix(object __instance)
@@ -17,5 +17,5 @@ namespace ABrenneke.BronzeAge.Patches.Mods.ModUniversalFermenter
             //     comp.ProgressTicks = 16000000;
             // }
         }
-    }
+    }*/
 }

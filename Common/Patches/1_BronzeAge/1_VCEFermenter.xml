@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded - Stews</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>[SYR] Universal Fermenter</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VCE_StewPot']/comps</xpath>
+            <value>
+              <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+                <showProductIcon>false</showProductIcon>
+                <processes>
+                  <li>
+                    <thingDef>VCE_CookedStewSimple</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedStewSimple</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                  <li>
+                    <thingDef>VCE_CookedStewFine</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedStewFine</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                  <li>
+                    <thingDef>VCE_CookedStewLavish</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedStewLavish</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                </processes>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='VCE_StewPot']/comps/li[@Class='ItemProcessor.CompProperties_ItemProcessor'] |
+              /Defs/ThingDef[defName='VCE_StewPot']/thingClass
+            </xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded - Sushi</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>[SYR] Universal Fermenter</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VCE_SoyFermenter']/comps</xpath>
+            <value>
+              <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+                <showProductIcon>false</showProductIcon>
+                <processes>
+                  <li>
+                    <thingDef>VCE_SoySauce</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_RawSoybean</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>0.5</efficiency>
+                    <maxCapacity>30</maxCapacity>
+                    <processDays>8</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <ruinedPerDegreePerHour>2.5</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <qualityDays>(8, 12, 23, 30, 36, 40, 68)</qualityDays>
+                    <temperatureSafe>0~48</temperatureSafe>
+                    <temperatureIdeal>20~30</temperatureIdeal>
+                  </li>
+                </processes>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='VCE_SoyFermenter']/comps/li[@Class='ItemProcessor.CompProperties_ItemProcessor'] |
+              /Defs/ThingDef[defName='VCE_SoyFermenter']/thingClass
+            </xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>[SYR] Universal Fermenter</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VCE_CheesePress']/comps</xpath>
+            <value>
+              <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+                <showProductIcon>false</showProductIcon>
+                <processes>
+                  <li>
+                    <thingDef>VCE_Cheese</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>Milk</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>0.5</efficiency>
+                    <maxCapacity>30</maxCapacity>
+                    <processDays>10</processDays>
+                    <usesTemperature>true</usesTemperature>
+                    <ruinedPerDegreePerHour>0.5</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <qualityDays>(3, 15, 25, 35, 40, 45, 75)</qualityDays>
+                    <temperatureSafe>0~20</temperatureSafe>
+                    <temperatureIdeal>10~15</temperatureIdeal>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                </processes>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>Alpha Animals</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/ThingDef[defName='VCE_CheesePress']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes</xpath>
+                  <value>
+                    <li>
+                      <thingDef>VCE_BlueCheese</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>AA_BlueMilk</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <efficiency>0.5</efficiency>
+                      <maxCapacity>30</maxCapacity>
+                      <processDays>10</processDays>
+                      <usesTemperature>true</usesTemperature>
+                      <ruinedPerDegreePerHour>0.5</ruinedPerDegreePerHour>
+                      <processType>Single</processType>
+                      <qualityDays>(3, 15, 25, 35, 40, 45, 75)</qualityDays>
+                      <temperatureSafe>0~20</temperatureSafe>
+                      <temperatureIdeal>10~15</temperatureIdeal>
+                      <graphicSuffix>Full</graphicSuffix>
+                    </li>
+                    <li>
+                      <thingDef>VCE_GowCheese</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>AA_GowMilk</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <efficiency>0.5</efficiency>
+                      <maxCapacity>30</maxCapacity>
+                      <processDays>10</processDays>
+                      <usesTemperature>true</usesTemperature>
+                      <ruinedPerDegreePerHour>0.5</ruinedPerDegreePerHour>
+                      <processType>Single</processType>
+                      <qualityDays>(3, 15, 25, 35, 40, 45, 75)</qualityDays>
+                      <temperatureSafe>0~20</temperatureSafe>
+                      <temperatureIdeal>10~15</temperatureIdeal>
+                      <graphicSuffix>Full</graphicSuffix>
+                    </li>
+                  </value>
+                </li>
+              </operations>
+            </match>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>RimBees</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/ThingDef[defName='VCE_CheesePress']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes</xpath>
+                  <value>
+                    <li>
+                      <thingDef>VCE_BeeCheese</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>RB_BeeMilk</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <efficiency>0.5</efficiency>
+                      <maxCapacity>30</maxCapacity>
+                      <processDays>10</processDays>
+                      <usesTemperature>true</usesTemperature>
+                      <ruinedPerDegreePerHour>0.5</ruinedPerDegreePerHour>
+                      <processType>Single</processType>
+                      <qualityDays>(10, 15, 25, 35, 40, 45, 75)</qualityDays>
+                      <temperatureSafe>0~20</temperatureSafe>
+                      <temperatureIdeal>10~15</temperatureIdeal>
+                      <graphicSuffix>Full</graphicSuffix>
+                    </li>
+                  </value>
+                </li>
+              </operations>
+            </match>
+          </li>
+          <li Class="PatchOperationFindMod">
+            <mods>
+              <li>Vanilla Factions Expanded - Insectoids</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+              <operations>
+                <li Class="PatchOperationAdd">
+                  <xpath>/Defs/ThingDef[defName='VCE_CheesePress']/comps/li[@Class='UniversalFermenter.CompProperties_UniversalFermenter']/processes</xpath>
+                  <value>
+                    <li>
+                      <thingDef>VCE_InsectCheese</thingDef>
+                      <ingredientFilter>
+                        <thingDefs>
+                          <li>VFEI_InsectMilk</li>
+                        </thingDefs>
+                      </ingredientFilter>
+                      <efficiency>0.5</efficiency>
+                      <maxCapacity>30</maxCapacity>
+                      <processDays>10</processDays>
+                      <usesTemperature>true</usesTemperature>
+                      <ruinedPerDegreePerHour>0.5</ruinedPerDegreePerHour>
+                      <processType>Single</processType>
+                      <qualityDays>(10, 15, 25, 35, 40, 45, 75)</qualityDays>
+                      <temperatureSafe>0~20</temperatureSafe>
+                      <temperatureIdeal>10~15</temperatureIdeal>
+                      <graphicSuffix>Full</graphicSuffix>
+                    </li>
+                  </value>
+                </li>
+              </operations>
+            </match>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='VCE_CheesePress']/comps/li[@Class='ItemProcessor.CompProperties_ItemProcessor'] |
+              /Defs/ThingDef[defName='VCE_CheesePress']/thingClass
+            </xpath>
+          </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName='VCE_ElectricPot']/comps</xpath>
+            <value>
+              <li Class="UniversalFermenter.CompProperties_UniversalFermenter">
+                <showProductIcon>false</showProductIcon>
+                <processes>
+                  <li>
+                    <thingDef>VCE_CookedSoupSimple</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedSoupSimple</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                  <li>
+                    <thingDef>VCE_CookedSoupFine</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedSoupFine</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                  <li>
+                    <thingDef>VCE_CookedSoupLavish</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedSoupLavish</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                  <li>
+                    <thingDef>VCE_CookedSoupGourmet</thingDef>
+                    <ingredientFilter>
+                      <thingDefs>
+                        <li>VCE_UncookedSoupGourmet</li>
+                      </thingDefs>
+                    </ingredientFilter>
+                    <efficiency>10</efficiency>
+                    <maxCapacity>1</maxCapacity>
+                    <processDays>3</processDays>
+                    <usesTemperature>false</usesTemperature>
+                    <ruinedPerDegreePerHour>0</ruinedPerDegreePerHour>
+                    <processType>Single</processType>
+                    <graphicSuffix>Full</graphicSuffix>
+                  </li>
+                </processes>
+              </li>
+            </value>
+          </li>
+          <li Class="PatchOperationRemove">
+            <xpath>
+              /Defs/ThingDef[defName='VCE_ElectricPot']/comps/li[@Class='ItemProcessor.CompProperties_ItemProcessor'] |
+              /Defs/ThingDef[defName='VCE_ElectricPot']/thingClass
+            </xpath>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+</Patch>
