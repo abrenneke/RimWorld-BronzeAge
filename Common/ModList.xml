@@ -1,12 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModsConfig>
   <Mods>
-    <li>
-      <name></name>
-      <id></id>
-      <workshopUrl></workshopUrl>
-      <type></type>
-    </li>
     <li>
       <name>Harmony</name>
       <id>brrainz.harmony</id>
@@ -14,16 +8,22 @@
       <type>Required</type>
     </li>
     <li>
+      <name>RimWorld</name>
+      <id>ludeon.rimworld</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=N/A</workshopUrl>
+      <type>Required</type>
+    </li>
+    <li>
+      <name>RimWorld</name>
+      <id>ludeon.rimworld.royalty</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=N/A</workshopUrl>
+      <type>Required</type>
+    </li>
+    <li>
       <name>Startup impact</name>
       <id>automatic.startupimpact</id>
       <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1684944322</workshopUrl>
       <type>Optional</type>
-    </li>
-    <li>
-      <name>HugsLib</name>
-      <id>unlimitedhugs.hugslib</id>
-      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</workshopUrl>
-      <type>Required</type>
     </li>
     <li>
       <name>Animal Collab Project Vanilla-Style</name>
@@ -36,6 +36,12 @@
       <id>sirrandoo.bettersliders</id>
       <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2218078784</workshopUrl>
       <type>Optional</type>
+    </li>
+    <li>
+      <name>HugsLib</name>
+      <id>unlimitedhugs.hugslib</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</workshopUrl>
+      <type>Required</type>
     </li>
     <li>
       <name>BIRD UP! All-in-one</name>
@@ -52,95 +58,1989 @@
     <li>
       <name>Biomes! Core</name>
       <id>biomesteam.biomescore</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2038000893</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>Biomes! Islands</name>
       <id>biomesteam.biomesislands</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2038001322</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>Biomes! Islands: Extra Islands</name>
       <id>biomesteam.extraislands</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2101199443</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>Alpha Biomes</name>
       <id>sarg.alphabiomes</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1841354677</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>[KV] RimFridge</name>
       <id>rimfridge.kv.rw</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1180721235</workshopUrl>
       <type>Optional</type>
     </li>
     <li>
       <name>Rimworld Search Agency</name>
       <id>storage.search.rsa</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=726479594</workshopUrl>
       <type>Core</type>
     </li>
     <li>
       <name>LWM's Deep Storage</name>
       <id>lwm.deepstorage</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1617282896</workshopUrl>
       <type>Core</type>
     </li>
     <li>
       <name>Dubs Skylights</name>
       <id>dubwise.dubsskylights</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=833899765</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>Glass+Lights</name>
       <id>nanoce.glasslights</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=826153738</workshopUrl>
       <type>Core</type>
     </li>
     <li>
       <name>Enhanced Combat Sounds</name>
       <id>arekan.enhancedcombatsounds</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2095586726</workshopUrl>
       <type>Optional</type>
     </li>
     <li>
       <name>Fantastic Flora</name>
       <id>redrusfijorn.fantasticflora</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1772606627</workshopUrl>
       <type>Recommended</type>
     </li>
     <li>
       <name>Locks</name>
       <id>avius.locks</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1157085076</workshopUrl>
       <type>Core</type>
     </li>
     <li>
       <name>Dubs Mint Minimap</name>
       <id>dubwise.dubsmintminimap</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1662119905</workshopUrl>
       <type>Optional</type>
     </li>
     <li>
       <name>Stuffed Floors</name>
       <id>fluffy.stuffedfloors</id>
-      <workshopUrl></workshopUrl>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=853043503</workshopUrl>
       <type>Core</type>
     </li>
     <li>
       <name>Floors Are Light!</name>
       <id>lurmey.floorsarelight</id>
-      <workshopUrl></workshopUrl>
-      <type></type>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2135411568</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Foundations</name>
+      <id>lurmey.foundations</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2133918278</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Props and Decor</name>
+      <id>vanillaexpanded.vfepropsanddecor</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2102143149</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[D] Thermodynamics - Core</name>
+      <id>dame.thermocore</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2110964897</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[D] Thermodynamics - Hot Meals</name>
+      <id>dame.hotmeals</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2110968173</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Functional Vanilla Expanded Props</name>
+      <id>primus.functionalprops</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2103216991</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Jobs of Opportunity (While You're Up)</name>
+      <id>codeoptimist.jobsofopportunity</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2034960453</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Medieval Times Unofficial Update</name>
+      <id>vindar.medievaltimes</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2018388116</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Mod Medicine Patch</name>
+      <id>antaioz.modmedicinepatch</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1430084631</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Planning</name>
+      <id>com.github.alandariva.moreplanning</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=881100382</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Turret Extensions</name>
+      <id>xeonovadan.turretextensions</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1496122245</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Vanilla Turrets 1.1</name>
+      <id>paradox.morevanillaturrets</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009766414</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Vanilla Turrets - Turret Extensions Patch (continued)</name>
+      <id>teflonjim.xeonovadan.mvt.tx</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2034220378</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>NamesGalore</name>
+      <id>wit.namesgalore</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2017130910</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Misc. Robots</name>
+      <id>haplo.miscellaneous.robots</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=724602224</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Pick Up And Haul</name>
+      <id>mehni.pickupandhaul</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1279012058</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Allow Tool</name>
+      <id>unlimitedhugs.allowtool</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=761421485</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Release Animals into Wild</name>
+      <id>hodlhodl.releaseanimals</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1754692524</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Restricted Storage</name>
+      <id>lwm.restrictedstorage</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2015159617</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Right Tool: Rebalanced</name>
+      <id>ruyan.tools</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1702013658</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Rim of Madness - Bones</name>
+      <id>sihv.rombones</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1180573408</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Roof Support 1.1</name>
+      <id>match.roofsupport</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1553179450</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Slow Starvation</name>
+      <id>beast.slowstarvation</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2068523117</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Spidercamp's Dog Pack</name>
+      <id>spidercamp.spidercampdogpack</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1256708879</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Squad UI Tweaks</name>
+      <id>drumad.squaduitweaks</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1455382219</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded</name>
+      <id>vanillaexpanded.vfecore</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1718190143</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Farming</name>
+      <id>vanillaexpanded.vfefarming</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1957158779</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Dubs Bad Hygiene</name>
+      <id>dubwise.dubsbadhygiene</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=836308268</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VFE Farming - Dubs Bad Hygiene</name>
+      <id>oreno.vfefarming.dubsbadhygiene</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2171392490</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[SYR] Universal Fermenter</name>
+      <id>syrchalis.universalfermenter</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2073225100</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Vegetable Garden</name>
+      <id>dismarzero.vgp.vgpvegetablegarden</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007061826</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Tools</name>
+      <id>dismarzero.vgp.vgpgardentools</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063961</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Fertile Fields [1.1]</name>
+      <id>jamaicancastle.rf.fertilefields</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2012735237</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Arid Shrubland</name>
+      <id>vanillaexpanded.vaeas</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1836900626</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Australia</name>
+      <id>vanillaexpanded.vaeau</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1963681588</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Ice Sheet</name>
+      <id>vanillaexpanded.vaeis</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1895364782</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Tropical Swamp</name>
+      <id>vanillaexpanded.vaets</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1907283935</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Boreal Forest</name>
+      <id>vanillaexpanded.vaebf</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1895364938</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Cats and Dogs</name>
+      <id>vanillaexpanded.vaecd</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1823540489</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Extreme Desert</name>
+      <id>vanillaexpanded.vaeed</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1849184079</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Desert</name>
+      <id>vanillaexpanded.vaed</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1849183875</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Tundra</name>
+      <id>vanillaexpanded.vaet</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1895364585</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Animals Expanded — Tropical Rainforest</name>
+      <id>vanillaexpanded.vaetr</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1907283872</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Expanded Framework</name>
+      <id>oskarpotocki.vanillafactionsexpanded.core</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023507013</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Factions Expanded - Insectoids</name>
+      <id>oskarpotocki.vfe.insectoid</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2149755445</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ReGrowth - Wasteland</name>
+      <id>regrowth.botr.wasteland</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2122461695</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Power</name>
+      <id>vanillaexpanded.vfepower</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2062943477</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Production</name>
+      <id>vanillaexpanded.vfeproduction</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1880253632</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>GreenRim</name>
+      <id>brunin.greenrim</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1939945822</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Fishing Expanded</name>
+      <id>vanillaexpanded.vcef</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1914064942</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Plants Expanded</name>
+      <id>vanillaexpanded.vplantse</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2134308522</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Textures Expanded</name>
+      <id>vanillaexpanded.vtexe</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016436324</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>List Everything</name>
+      <id>uuugggg.listeverything</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1706669545</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>What's Missing?</name>
+      <id>revolus.whatsmissing</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2073082747</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Animals Logic</name>
+      <id>oblitus.animalslogic</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1098354593</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Wild Reproduction</name>
+      <id>dninemfive.wildreproduction</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2236146674</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[1.1]DraggableCorners</name>
+      <id>bob.draggablecornerss</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2014036648</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Ceramics</name>
+      <id>n7huntsman.ceramics</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1833163132</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[JPT] Fertile Fields Makeover</name>
+      <id>jpt.fertilefieldsmakeover</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1653937715</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[JPT] Human Resources</name>
+      <id>jpt.humanresources</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2119687603</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Beautiful Outdoors</name>
+      <id>meltup.beautifuloutdoors</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2011794898</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[JPT] Open The Windows</name>
+      <id>jpt.openthewindows</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1971860929</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>GloomyFurniture</name>
+      <id>solaris.furniturebase</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1558635181</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Gloomy Extra - Kitchen</name>
+      <id>semo583.gloomyhextrahuhkitchen</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1730938407</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Gloomy Deco</name>
+      <id>dalrae.gloomydeco</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1865654125</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Gloomy Vanilla Overhaul</name>
+      <id>zymex.gloomyvanillaoverhaul</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1883678698</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Hospitality</name>
+      <id>orion.hospitality</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=753498552</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Spacer Module</name>
+      <id>vanillaexpanded.vfespacer</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2028381079</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Medical Module</name>
+      <id>vanillaexpanded.vfemedical</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1718191613</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Security</name>
+      <id>vanillaexpanded.vfesecurity</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1845154007</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Cooking Expanded</name>
+      <id>vanillaexpanded.vcooke</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2134308519</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Furniture Expanded - Art</name>
+      <id>vanillaexpanded.vfeart</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1968134023</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[JPT] Soft Warm Beds</name>
+      <id>jpt.softwarmbeds</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1713295858</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[Ods] Mens Hair </name>
+      <id>ods.hair.mens</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1508171889</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[SF] Priority treatment 1.1</name>
+      <id>shotgunfrenzy.prioritytreatment</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2012586738</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Nocturnal Animals</name>
+      <id>xeonovadan.nocturnalanimals</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2004368312</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Profitable Weapons</name>
+      <id>xeonovadan.profitableweapons</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1386385125</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Visible Pants</name>
+      <id>xeonovadan.visiblepants</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=926698084</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>D9 Framework</name>
+      <id>dninemfive.d9framework</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2037445541</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Additional Joy Objects - Misc</name>
+      <id>dninemfive.ajo.misc</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2068703292</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Children, school and learning</name>
+      <id>dylan.csl</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1541438230</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Age Matters Updated [1.0][1.1][1.2]</name>
+      <id>troopersmith1.agemattersupdated</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2010940147</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Better Pawn Control</name>
+      <id>voult.betterpawncontrol</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1541460369</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Alpha Animals</name>
+      <id>sarg.alphaanimals</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1541721856</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Animal Medical Bed</name>
+      <id>neceros.animalmedicalbed</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016958187</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Assuming a spherical cow</name>
+      <id>zylle.sphericalcows</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2239228952</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Animal Tab</name>
+      <id>fluffy.animaltab</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=712141500</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Animal Variety Coats</name>
+      <id>cucumpear.azrael.varietycoats</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1511926373</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Desynchronized: Tales and News (Continued)</name>
+      <id>mlie.desynchronized</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=UNKNOWN</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>A Dog Said... Animal Prosthetics</name>
+      <id>spoonshortage.adogsaidanimalprosthetics</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=746425621</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Dormitories Not Barracks</name>
+      <id>8z.dormitoriesnotbarracks</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2253550390</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Erin's Mountain Animals</name>
+      <id>erin.mountain</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2250773505</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[Vee]Apparel Retextuer</name>
+      <id>lat.apparelretextuer</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2043267356</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Animals are fun</name>
+      <id>revolus.animalsarefun</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2108362126</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Material Weaves</name>
+      <id>poet.metallicweaves</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2243707252</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Apparello 2</name>
+      <id>shinzy.apparello</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=728381322</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ToolBox</name>
+      <id>nif.toolbox</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016186459</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Architect Expanded - Fences</name>
+      <id>nif.architectexpanded.fences</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2050680665</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Automatic Night Owl</name>
+      <id>ben.automaticnightowl</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2056012179</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Backup Power</name>
+      <id>fluffy.backuppower</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2084493662</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Bad Can Be Good</name>
+      <id>neceros.badcanbegood</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2025857053</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Veinminer R1.1</name>
+      <id>ogliss.toastehs.veinminer</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1541978411</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Beautiful Bodies</name>
+      <id>mireia.bodies</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2068281501</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Gear Up And Go</name>
+      <id>uuugggg.gearupandgo</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1316142788</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Use Minified Buildings</name>
+      <id>dhultgren.useminifiedbuildings</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2185809028</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Begone, Message!</name>
+      <id>lbmaian.begonemessage</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1951637504</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Best Mix (Continued)</name>
+      <id>mlie.bestmix</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2195986094</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Blood and stains</name>
+      <id>goudaquiche.bloodandstains</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2075683887</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Blueprints</name>
+      <id>fluffy.blueprints</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=708455313</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Bo's Milkable Animals</name>
+      <id>bos.milkableanimals</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=841092540</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Brrr and Phew (Continued)</name>
+      <id>mlie.brrandphew</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2195938471</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Bury On The Spot</name>
+      <id>dhultgren.buryonthespot</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2180356108</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>CM Color Coded Mood Bar [1.1+]</name>
+      <id>crashm.colorcodedmoodbar.11</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2006605356</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Camera+</name>
+      <id>brrainz.cameraplus</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=867467808</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Careful Raids</name>
+      <id>brrainz.carefulraids</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=864601386</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Ceiling Light</name>
+      <id>francini.cl11</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2017041639</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Ceiling Lights</name>
+      <id>neceros.ceilinglights</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2014652560</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Characteristic</name>
+      <id>sielfyr.characteristic</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2157725900</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Cleaning Priority (Continued)</name>
+      <id>mlie.cleaningpriority</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2018316486</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Colony Manager</name>
+      <id>fluffy.colonymanager</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=715565262</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Combat Shields</name>
+      <id>n7huntsman.combatshields</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1588616696</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Common Ailments (Continued)</name>
+      <id>mlie.commonailments</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2194968364</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Common Sense</name>
+      <id>avilmask.commonsense</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1561769193</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Communicable Diseases [1.2]</name>
+      <id>onegative.communicablediseases</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016577520</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Concrete Walls</name>
+      <id>porohkun.concretewalls</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=795240891</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Cut plants before building</name>
+      <id>tammybee.cutplantsbeforebuilding</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1539025677</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Death Rattle Continued [1.2]</name>
+      <id>troopersmith1.deathrattle</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2206107940</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Deconstruct First</name>
+      <id>fozzy107.deconstructhfirst</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1567338829</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Defensive Positions</name>
+      <id>unlimitedhugs.defensivepositions</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=761219125</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Extended Human Body Simulation</name>
+      <id>ogliss.mythos.extendedhumanbodysimulation</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2174247669</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Door Mat</name>
+      <id>dracoix.doormat.r12a</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1505423207</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Dress Patients</name>
+      <id>eagle0600.dresspatients</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1667901146</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Dubs Mint Menus</name>
+      <id>dubwise.dubsmintmenus</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1446523594</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Dubs Performance Analyzer</name>
+      <id>dubwise.dubsperformanceanalyzer</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2038874626</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Early Firearms mod</name>
+      <id>asierus24.eafa</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2010039702</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Enemy Self Preservation</name>
+      <id>murmur.enemyselfpreservation</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2006638530</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Erin's Critter Collection</name>
+      <id>erin.critters</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2090705625</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Expanded Incidents (Continued)</name>
+      <id>mlie.expandedincidents</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2039064466</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Expanded Roofing</name>
+      <id>wit.expandedroofing</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2026595894</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Retextured Interaction Spots Project</name>
+      <id>poet.retexturedspots</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2121663243</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Faction Resources</name>
+      <id>murmur.factionresources</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2006644524</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Faster Aging</name>
+      <id>verdiss.fasteraging</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1850802618</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Fences And Floors (Continued)</name>
+      <id>mlie.fencesandfloors</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2012420113</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Follow Me</name>
+      <id>fluffy.followme</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=715759739</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Giddy-up! Core</name>
+      <id>roolo.giddyupcore</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1216999901</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Giddy-up! Battle Mounts</name>
+      <id>roolo.giddyupbattlemounts</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1217001091</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Giddy-up! Caravan</name>
+      <id>roolo.giddyupcaravan</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1253251478</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Giddy-up! Ride and Roll</name>
+      <id>roolo.giddyuprideandroll</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1331961995</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Go Explore!</name>
+      <id>albion.goexplore</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1814100216</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Heat Map</name>
+      <id>falconne.heatmap</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=947972722</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Hospitals Extended</name>
+      <id>zymex.hospitalsextended</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2121326566</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Houseplants</name>
+      <id>elkyelky.houseplants</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2188000240</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Inspiration Tweaks</name>
+      <id>catachat.inspirationtweaks</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2117570018</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Interaction Bubbles</name>
+      <id>jaxe.bubbles</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1516158345</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Gemstones</name>
+      <id>zylle.gemstones</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2000801414</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Jewelry</name>
+      <id>kikohi.jewelry</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2020964421</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>UNKNOWN</name>
+      <id>darkflame7749.jobhinhbar</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=UNKNOWN</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Keep Bed Ownership</name>
+      <id>dhultgren.keepbedownership</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2130184293</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Kura's Extra Gems</name>
+      <id>kura.extragems</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1339121712</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Labels on Floor</name>
+      <id>falconne.labelsonfloor</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1408863965</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Level Up!</name>
+      <id>krafs.levelup</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1701592470</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Little Storage 2</name>
+      <id>sixdd.littlestorage2</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2166580060</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Medical Supplements (Continued)</name>
+      <id>mlie.medicalsupplements</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2195037369</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Medical Tab</name>
+      <id>fluffy.medicaltab</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=715565817</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Medicine Expanded</name>
+      <id>neceros.medicineexpanded</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2049984501</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Medieval Medicines</name>
+      <id>nunahuralshamikh.medmed</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2109206579</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Misc. Training</name>
+      <id>haplo.miscellaneous.training</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=717575199</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Mixed Stone Blocks</name>
+      <id>nerdwonder.mixedblock</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2076686656</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Furniture [1.1 + 1.2]</name>
+      <id>wofl.morefurnitureupdated</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2018490850</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Hydroponics 1.0+</name>
+      <id>red.morehydroponics.1</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2042872320</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Records - Interaction</name>
+      <id>tammybee.morerecords.interaction</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2144051413</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>More Vanilla Biomes</name>
+      <id>zylle.morevanillabiomes</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1931453053</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Natural Paths</name>
+      <id>radzerp.naturalpaths</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2008833499</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Desire Paths</name>
+      <id>fluffy.desirepaths</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2072410063</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[O21] Toolbox</name>
+      <id>neronix17.toolbox</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1660622094</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Achtung!</name>
+      <id>brrainz.achtung</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=730936602</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>LWM DS for Gloomy Furniture and Deco</name>
+      <id>ahndemi.lwmdsforgfd</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2037264293</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Netrve's DeepStorage GUI</name>
+      <id>netrve.dsgui</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2169841018</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>No Quests Without Comms</name>
+      <id>ebae.noquestswithoutcomms</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2136753617</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>P-Music</name>
+      <id>peppsen.pmusic</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=725130005</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Palisades</name>
+      <id>n7huntsman.palisades</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1547782284</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Pawn Badge Fan Fork</name>
+      <id>saucypigeon.pawnbadge</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2112663412</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Planetside Politics plus Religions</name>
+      <id>legendaryminuteman.pppr</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1747493072</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Please Haul Perishables</name>
+      <id>jelly.pleasehaulperishables</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2073818889</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Facial Stuff 1.1</name>
+      <id>killface.facialstuff</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818322128</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>EdB Prepare Carefully</name>
+      <id>edb.preparecarefully</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=735106432</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Psychology (unofficial 1.1/1.2) </name>
+      <id>community.psychology.unofficialupdate</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016263135</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Quality Of Building</name>
+      <id>sdknm2.qualityofbuilding</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2101676323</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Quarry 1.1</name>
+      <id>ogliss.thewhitecrayon.quarry</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007576583</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RT Fuse</name>
+      <id>ratys.rtfuse</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=728314182</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Room Sense</name>
+      <id>falconne.roomsense</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1355637255</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RT's Weapon Pack Reloaded (1.1)</name>
+      <id>oddball.reloaded</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2008908318</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Settlement Descriptions</name>
+      <id>dninemfive.settlementdescription</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2240524945</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Ranged DPS</name>
+      <id>pausbrak.rangeddps</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2132037199</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ReGrowth - Boreal Expansion</name>
+      <id>regrowth.botr.borealexpansion</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2106597000</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ReGrowth - Cold Bog Expansion</name>
+      <id>regrowth.botr.coldbogexpansion</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2182111148</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Mod Manager</name>
+      <id>fluffy.modmanager</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1507748539</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ReGrowth - Tundra Expansion</name>
+      <id>regrowth.botr.tundraexpansion</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2107412614</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ReGrowth - Wasteland - Animal Addon</name>
+      <id>regrowth.botr.wastelandfauna</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2208033686</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Electric Stonecutting Table</name>
+      <id>cocaine.electricstonecuttingtable</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1649368867</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Expanded Prosthetics and Organ Engineering</name>
+      <id>ykara.epoe</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=725956940</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Rimatomics</name>
+      <id>dubwise.rimatomics</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1127530465</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Rimefeller</name>
+      <id>dubwise.rimefeller</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1321849735</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[WD] Reinforced Doors</name>
+      <id>wemd.reinforceddoors</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1857597307</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RePowerReborn</name>
+      <id>ebonjaeger.repowerreborn</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1845531445</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RePower Patch Pack</name>
+      <id>mlie.repower.patchpack</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1836577627</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Realistic Planets - Fan Update</name>
+      <id>saucypigeon.realisticplanets</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009542732</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimHUD</name>
+      <id>jaxe.rimhud</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1508850027</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Recipe icons</name>
+      <id>automatic.recipeicons</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1616643195</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Relations Tab</name>
+      <id>fluffy.relationstab</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=709317151</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Replace Stuff</name>
+      <id>uuugggg.replacestuff</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1372003680</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimBees</name>
+      <id>sarg.rimbees</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1558161673</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimWorld - Heat statistics</name>
+      <id>helldragger.rimworldheatstatistics</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2165849348</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Rimocracy</name>
+      <id>garwel.rimocracy</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2159080853</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RunAndGun</name>
+      <id>roolo.runandgun</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1204108550</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Seasonal Weather (Reupload)</name>
+      <id>mlie.seasonalweather</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2045114229</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>SeedsPlease</name>
+      <id>notfood.seedsplease</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=935732834</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>SeedsPlease: All-In-One Megapatch</name>
+      <id>shadow.spaiomegapatch</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2139417581</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Share The Load</name>
+      <id>uuugggg.sharetheload</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1356838246</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Shoo!</name>
+      <id>jamaicancastle.shoo</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1307441653</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Chains: Lumber UF</name>
+      <id>owlchemist.simplechains.lumber</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=UNKNOWN</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Smoked meat</name>
+      <id>dismarzero.vgp.smokedmeat</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1542364782</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Chains: Steel</name>
+      <id>owlchemist.simplechains.steel</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1702668415</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Stockpile Presets (Continued)</name>
+      <id>mlie.simplestockpilepresets</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2189006791</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple sidearms</name>
+      <id>petetimessix.simplesidearms</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=927155256</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Smart Medicine</name>
+      <id>uuugggg.smartmedicine</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1309994319</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Smart Speed</name>
+      <id>sarg.smartspeed</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1504723424</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Smarter Construction</name>
+      <id>dhultgren.smarterconstruction</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2202185773</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Snap Out!</name>
+      <id>weilbyte.snapout</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1319782555</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Stabilize</name>
+      <id>linkolas.stabilize</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023407836</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Statue of Animal</name>
+      <id>tammybee.statueofanimal</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1629099614</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Tab-sorting</name>
+      <id>mlie.tabsorting</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2138635288</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Tabletop Trove - Additional Joy Objects and Decor</name>
+      <id>soulfulpumpkin.tabletoptrove</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1961528842</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Therapy</name>
+      <id>orion.therapy</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1076950211</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>TradeHelper</name>
+      <id>timmyliang.tradehelper</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2113372560</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimTraits - General Traits</name>
+      <id>sierra.rtgt</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2206957172</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimTraits - Vanilla Trait Colours</name>
+      <id>sierra.rtvtc</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2244594116</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>De-generalize Work</name>
+      <id>alias.degeneralizework</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2011655761</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Tribal Signal Fire (Continued)</name>
+      <id>mlie.tribalsignalfire</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2026582975</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Cooking Expanded - Stews</name>
+      <id>vanillaexpanded.vcookestews</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2134312965</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Cooking Expanded - Sushi</name>
+      <id>vanillaexpanded.vcookesushi</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2158539170</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Drinks UF</name>
+      <id>dismarzero.vgp.vgpgardendrinksuf</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2167582651</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Xtra Trees and Flowers</name>
+      <id>dismarzero.vgp.xtratreesandflowers</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007064094</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Soylent Production</name>
+      <id>dismarzero.vgp.vgpsoylentproduction</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063605</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Factions Expanded - Settlers</name>
+      <id>oskarpotocki.vanillafactionsexpanded.settlersmodule</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2052918119</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Weapons Expanded</name>
+      <id>vanillaexpanded.vwe</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1814383360</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Weapons Expanded - Quickdraw</name>
+      <id>vanillaexpanded.vweq</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1906780517</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Medicine</name>
+      <id>dismarzero.vgp.vgpgardenmedicine</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063140</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Canning</name>
+      <id>dismarzero.vgp.vgpgardencanning</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007062033</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Apparel Expanded</name>
+      <id>vanillaexpanded.vappe</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1814987817</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Dyes</name>
+      <id>dismarzero.vgp.vgpgardendyes</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007062688</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Dyes Expanded</name>
+      <id>dismarzero.vgp.vgpgardendyesexpanded</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007062822</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Resources</name>
+      <id>dismarzero.vgp.vgpgardenresources</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063451</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP More Veggies</name>
+      <id>dismarzero.vgp.vgpmoreveggies</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063278</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Hair Expanded</name>
+      <id>vanillaexpanded.vhe</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1888705256</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Three Sisters Plants</name>
+      <id>dismarzero.vgp.vgpthreesistersplants</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007063848</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Armour Expanded</name>
+      <id>vanillaexpanded.varme</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1814988282</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Gourmet</name>
+      <id>dismarzero.vgp.vgpgardengourmet</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007062982</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Awesome Inventory</name>
+      <id>notooshabby.awesomeinventory</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2050289408</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>VGP Garden Fabrics</name>
+      <id>dismarzero.vgp.vgpgardenfabrics</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2007062162</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Pharmacist</name>
+      <id>fluffy.pharmacist</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1365242717</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Textures Expanded - Mod Expansion</name>
+      <id>codyspring.vtexeme</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2032079102</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Weapons Expanded - Laser</name>
+      <id>vanillaexpanded.vwel</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1989352844</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Events Expanded</name>
+      <id>vanillaexpanded.vee</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1938420742</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Factions Expanded - Medieval</name>
+      <id>oskarpotocki.vanillafactionsexpanded.medievalmodule</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023513450</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Hair Expanded - Beards</name>
+      <id>vanillaexpanded.vhe.beards</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2187520791</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Plants Expanded - Succulents</name>
+      <id>vanillaexpanded.vplantsesucculents</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2198652536</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Storytellers Expanded - Empress Evil</name>
+      <id>vse.empressevil</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2149702528</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Storytellers Expanded - Perry Persistent</name>
+      <id>vse.perrypersistent</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2149702069</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Variety Matters</name>
+      <id>cozarkian.varietymatters</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2207657844</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Various Space Ship Chunk (Continued)</name>
+      <id>mlie.variousspaceshipchunk</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2014616487</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Wall Light</name>
+      <id>murmur.walllight</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1423699208</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Weapon Condition Matters, and so does Quality</name>
+      <id>xaviien.weaponconditionmattersandsodoesquality</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1734018911</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Where Are Your Shoes? (Vanilla Apparel Expanded)</name>
+      <id>crudbone.ways</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2202853322</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Won hair_men</name>
+      <id>won.hair</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1879950403</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Won hair_women </name>
+      <id>won2.hair</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1886150617</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Work Tab</name>
+      <id>fluffy.worktab</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=725219116</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Yayo's Combat 3</name>
+      <id>com.yayo.combat3</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2038409475</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[1.1] Cupro's Stones</name>
+      <id>ogliss.cupro.cuprosstones</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2018621294</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[D] Interests Framework</name>
+      <id>dame.interestsframework</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2089927321</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[D] Interests</name>
+      <id>dame.interests</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2089938084</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Chains: Leather</name>
+      <id>owlchemist.simplechains.leather</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1713884017</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Realistic Rooms</name>
+      <id>crlsniper.realisticrooms</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=848972794</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[FSF] Filth Vanishes With Rain And Time</name>
+      <id>frozensnowfox.filthvanisheswithrainandtime</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1508341791</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[KV] Path Avoid</name>
+      <id>pathavoid.kv.rw</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1180719857</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[KV] Trading Spot</name>
+      <id>tradingspot.kv.rw</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1180719658</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[K]Extra Stone(w/ Cupro's Textures)</name>
+      <id>kura.extrastonecupro</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1540276792</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[O21] Clutter Furniture</name>
+      <id>neronix17.clutterfurniture</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2056740389</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ED-Embrasures</name>
+      <id>jaxxa.ed.embrasures</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=722085442</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[O21] Clutter Structures</name>
+      <id>neronix17.clutterstructures</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2008681009</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[RF] Etched Stone Walls (Continued)</name>
+      <id>mlie.etchedstonewalls</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2015371021</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[RF] Rumor Has It.... (Continued)</name>
+      <id>mlie.rfrumorhasit</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2013940581</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[RF] Tribal Pawn Names (Continued)</name>
+      <id>mlie.rftribalpawnnames</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2016453798</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[SYR] Harvest Yield</name>
+      <id>syrchalis.harvestyieldpatch</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1461790308</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[SYR] Set Up Camp</name>
+      <id>syrchalis.setupcamp</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1470065926</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[T] MoreFloors</name>
+      <id>telkir.tmods.morefloors</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1543561093</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[WD] Expanded Floors</name>
+      <id>wemd.expandedfloors</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1817862464</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[WD] Realistic Darkness (Light)</name>
+      <id>wemd.realisticdarknesslight</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1555355332</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[WD] Simple Coal</name>
+      <id>wemd.simplecoal</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1619943968</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Adrenaline! (Continued)</name>
+      <id>mlie.xndadrenaline</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2037728879</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Memorable Auroras</name>
+      <id>xeonovadan.memorableauroras</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1437612522</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Doors Expanded (Dev)</name>
+      <id>jecrell.doorsexpanded</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2195733555</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Locks (DoorsExpanded)</name>
+      <id>avius.locksdoorsexpanded</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1346609640</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Execution Mod</name>
+      <id>yuno.execution</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2186151886</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>H.C_AnimalReskins_Complete</name>
+      <id>hc.animalreskins.complete</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2146766912</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Insulation (Continued)</name>
+      <id>mlie.insulation</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2196454890</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Misc. Craftable Robots</name>
+      <id>leion247658.miscvhcraftablehrobots</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1409512356</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Misc. Craftable Robots Retexture</name>
+      <id>gloriousyuri.mcrretexture</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2140349611</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>ResearchPal</name>
+      <id>notfood.researchpal</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=UNKNOWN</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RimSeasoning</name>
+      <id>tikubonn.rimseasoning</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2212032458</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>RuntimeGC</name>
+      <id>user19990313.runtimegc</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2228430510</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Simple Slavery [1.1]</name>
+      <id>syl.simpleslavery</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2144935009</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Undraft After Tucking</name>
+      <id>madarauchiha.undraftaftertucking</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2157495459</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Vanilla Books Expanded</name>
+      <id>vanillaexpanded.vbookse</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2193152410</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>WanderJoinsPlus</name>
+      <id>ogliss.wanderjoinsplus</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2177016016</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>[XND] Proper Shotguns</name>
+      <id>xeonovadan.propershotguns</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1438488634</workshopUrl>
+      <type>Recommended</type>
+    </li>
+    <li>
+      <name>Bronze Age</name>
+      <id>abrenneke.bronzeage</id>
+      <workshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=UNKNOWN</workshopUrl>
+      <type>Recommended</type>
     </li>
   </Mods>
-  <IncompatibleMods>
-
-  </IncompatibleMods>
+  <IncompatibleMods></IncompatibleMods>
 </ModsConfig>

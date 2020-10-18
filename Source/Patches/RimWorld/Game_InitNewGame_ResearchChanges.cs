@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace ABrenneke.BronzeAge.Patches.RimWorld
@@ -7,12 +9,14 @@ namespace ABrenneke.BronzeAge.Patches.RimWorld
     [ConditionalModPatch("jpt.humanresources", typeof(Game), "InitNewGame")]
     public static class Game_InitNewGame_ResearchChanges
     {
+        private static AccessTools.FieldRef<ResearchManager, Dictionary<ResearchProjectDef, float>> progress = AccessTools.FieldRefAccess<ResearchManager, Dictionary<ResearchProjectDef, float>>("progress");
+
         public static void Postfix()
         {
             // Clear current research
             var pawns = Find.World.PlayerPawnsForStoryteller.Where(p => p.IsColonist).ToList();
             var researchManager = Find.ResearchManager;
-            var currentResearch = researchManager.GetPrivate<Dictionary<ResearchProjectDef, float>>("progress");
+            var currentResearch = progress(researchManager);
 
             foreach (var key in currentResearch.Keys.ToList()
                 .Where(key => currentResearch[key] > 0))

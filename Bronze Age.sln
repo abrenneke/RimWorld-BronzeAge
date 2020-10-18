@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bronze Age", "Source\Bronze
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common.csproj", "{72E45314-FA8C-4D2E-92E3-AAE070EE0A0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModListGen", "ModListGen\ModListGen.csproj", "{A02CFB73-0492-4F53-B528-FFE20277E8B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModListGen", "ModListGen\ModListGen.csproj", "{A02CFB73-0492-4F53-B528-FFE20277E8B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84BA1F36-FF4F-44CD-AE0A-FD556B730EF4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

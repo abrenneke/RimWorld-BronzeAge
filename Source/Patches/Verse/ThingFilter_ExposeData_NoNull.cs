@@ -27,7 +27,7 @@ namespace ABrenneke.BronzeAge.Patches.Verse
     public static class ThingFilter_SetAllow_NoNull
     {
         // Don't allow a null in
-        public static bool Prefix(ThingDef thingDef)
+        public static bool Prefix(ThingDef? thingDef)
         {
             return thingDef != null;
         }

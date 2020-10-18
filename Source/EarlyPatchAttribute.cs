@@ -1,7 +1,9 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using JetBrains.Annotations;
+// ReSharper disable UnusedMember.Global
 
 namespace ABrenneke.BronzeAge
 {
@@ -192,7 +194,7 @@ namespace ABrenneke.BronzeAge
             ParseSpecialArguments(argumentTypes, argumentVariations);
         }
 
-        private void ParseSpecialArguments(Type[] argumentTypes, ArgumentType[] argumentVariations)
+        private void ParseSpecialArguments(Type[] argumentTypes, ArgumentType[]? argumentVariations)
         {
             if (argumentVariations == null || argumentVariations.Length == 0)
             {

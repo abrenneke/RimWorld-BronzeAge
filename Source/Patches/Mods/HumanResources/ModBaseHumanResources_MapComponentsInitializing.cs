@@ -12,7 +12,7 @@ namespace ABrenneke.BronzeAge.Patches.Mods.HumanResources
         {
             foreach (var instruction in instructions)
             {
-                if (instruction.Calls(typeof(GenScene).GetProperty("InPlayScene").GetGetMethod()))
+                if (instruction.Calls(typeof(GenScene).GetProperty("InPlayScene")?.GetGetMethod()))
                 {
                     // FROM: call bool ['Assembly-CSharp']Verse.GenScene::get_InPlayScene()
                     // TO:   ldc.i4.1

@@ -12,7 +12,8 @@ namespace ABrenneke.BronzeAge.Patches.Verse
         {
             // Does not matter
             new Regex("Capacity (Fertility|BleedRate) does not have any bodyPartTags associated with it", RegexOptions.Compiled),
-            
+            new Regex("def is must be SeasoningSocialThoughtDef", RegexOptions.Compiled),
+
             // Do not care
             new Regex(@"\[Uuugggg.rimworld.Replace_Stuff.main\] Patches on methods annotated as Obsolete were detected by HugsLib: Verse\.GhostDrawer\.DrawGhostThing", RegexOptions.Compiled),
 

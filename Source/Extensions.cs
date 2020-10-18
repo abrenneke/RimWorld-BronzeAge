@@ -25,31 +25,31 @@ namespace ABrenneke.BronzeAge
             {
                 ((Action) (() =>
                 {
-                    if (LoadedModManager.RunningModsListForReading.Any(x => x.PackageId == modPackageId))
+                    if (!BronzeAgeMod.ModIsRunning(modPackageIdMatch: modPackageId))
+                        return;
+
+                    var modType = AccessTools.TypeByName(typeName);
+
+                    if (modType == null)
                     {
-                        var modType = AccessTools.TypeByName(typeName);
+                        Log.Warning($"[BronzeAge] Could not find {typeName} in mod {modPackageId}, but mod should be loaded.");
+                        return;
+                    }
 
-                        if (modType == null)
-                        {
-                            Log.Warning($"[BronzeAge] Could not find {typeName} in mod {modPackageId}, but mod should be loaded.");
-                            return;
-                        }
+                    var method = AccessTools.Method(modType, methodName);
 
-                        var method = AccessTools.Method(modType, methodName);
+                    if (method != null)
+                    {
+                        var postfix = AccessTools.Method(patchType, "Postfix") != null ? new HarmonyMethod(patchType, "Postfix") : null; 
+                        var prefix = AccessTools.Method(patchType, "Prefix") != null ? new HarmonyMethod(patchType, "Prefix") : null; 
+                        var transpiler = AccessTools.Method(patchType, "Transpiler") != null ? new HarmonyMethod(patchType, "Transpiler") : null; 
+                        var finalizer = AccessTools.Method(patchType, "Finalizer") != null ? new HarmonyMethod(patchType, "Finalizer") : null; 
 
-                        if (method != null)
-                        {
-                            var postfix = patchType.GetAnyMethod("Postfix") != null ? new HarmonyMethod(patchType, "Postfix") : null; 
-                            var prefix = patchType.GetAnyMethod("Prefix") != null ? new HarmonyMethod(patchType, "Prefix") : null; 
-                            var transpiler = patchType.GetAnyMethod("Transpiler") != null ? new HarmonyMethod(patchType, "Transpiler") : null; 
-                            var finalizer = patchType.GetAnyMethod("Finalizer") != null ? new HarmonyMethod(patchType, "Finalizer") : null; 
-
-                            harmony.Patch(method, prefix, postfix, transpiler, finalizer);
-                        }
-                        else if (BronzeAgeMod.Debug)
-                        {
-                            Log.Warning($"[BronzeAge] Could not find {typeName}.{methodName} in mod {modPackageId}, but mod should be loaded.");
-                        }
+                        harmony.Patch(method, prefix, postfix, transpiler, finalizer);
+                    }
+                    else if (BronzeAgeMod.Debug)
+                    {
+                        Log.Warning($"[BronzeAge] Could not find {typeName}.{methodName} in mod {modPackageId}, but mod should be loaded.");
                     }
                 }))();
             }
@@ -60,22 +60,6 @@ namespace ABrenneke.BronzeAge
                     Log.Message(ex.ToStringSafe());
                 }
             }
-        }
-
-        public static MethodInfo GetAnyMethod(this Type type, string name)
-        {
-            return type.GetMethod(name, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-        }
-
-        public static T GetFieldValue<T>(this Type type, object? instance, string name)
-        {
-            var field = type.GetField(name, BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            return (T) field.GetValue(instance);
-        }
-
-        public static T GetPrivate<T>(this object obj, string name)
-        {
-            return obj.GetType().GetFieldValue<T>(obj, name);
         }
 
         // https://stackoverflow.com/a/55794983/365416
@@ -134,6 +118,12 @@ namespace ABrenneke.BronzeAge
             }
 
             return true;
+        }
+
+        public static bool IsSlave(this Pawn? p)
+        {
+            var hediffs = p?.health?.hediffSet?.hediffs;
+            return hediffs != null && hediffs.Any(h => h.def.defName == "Enslaved");
         }
     }
 }

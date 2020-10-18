@@ -48,6 +48,10 @@
       <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\1446523594\1.2\Assemblies\DubsMintMenus.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GearUpAndGo">
+      <HintPath>..\..\..\..\..\Steam\steamapps\workshop\content\294100\1316142788\1.2\Assemblies\GearUpAndGo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="HugsLib">
       <HintPath>..\packages\UnlimitedHugs.Rimworld.HugsLib.7.2.1\lib\net472\HugsLib.dll</HintPath>
       <Private>False</Private>
@@ -96,12 +100,14 @@
     <Compile Include="Defs.cs" />
     <Compile Include="EarlyPatchAttribute.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Patches\Mods\JobsOfOpportunity\Patch_TryOpportunisticJob_NotWhenGearing.cs" />
     <Compile Include="Patches\Mods\ModDubsMintMenus\MainTabWindow_MintArchitect_CacheDesPanels_ActivePanels.cs" />
     <Compile Include="Patches\Mods\HumanResources\ModBaseHumanResources_MapComponentsInitializing.cs" />
-    <Compile Include="Patches\Mods\ModUniversalFermenter\CompUniversalFermenter_DoTicks.cs" />
+    <Compile Include="Patches\Mods\Psychology\GameCondition_Election_Slaves.cs" />
+    <Compile Include="Patches\Mods\Psychology\LordJob_Joinable_Election_IsInvited_Slaves.cs" />
     <Compile Include="Patches\Mods\Rimocracy\StatPart_Governance_Multiplier_ExceptionFix.cs" />
-    <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsSameCondimentLoverSocial_NoWarning.cs" />
-    <Compile Include="Patches\Mods\RimSeasoning\ThoughtWorker_IsDifferentCondimentLoverSocial_NoWarning.cs" />
+    <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_DoesEveryoneLocallyHate_Slaves.cs" />
+    <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_FindCliques_Slaves.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_ResearchChanges.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_WorkDefaults.cs" />
     <Compile Include="Patches\RimWorld\GenConstruct_AmountNeededByOf_AlternateThings.cs" />
@@ -119,7 +125,6 @@
     <Compile Include="Patches\Verse\ThingOwner_TotalStackCountOfDef_AlternateThings.cs" />
     <Compile Include="Patches\Verse\ThingRequest_Accepts_AlternateThings.cs" />
     <Compile Include="Patches\RimWorld\WorkGiver_ConstructDeliverResources_ResourceValidator_AlternateThings.cs" />
-    <Compile Include="Patches\UnityEngine\ColorUtility_TryParseHtmlString.cs" />
     <Compile Include="Patches\Verse\LoadedModManager_ParseAndProcessXML.cs" />
     <Compile Include="ModPatchAttribute.cs" />
     <Compile Include="Patches\Verse\WindManager_WindManagerTick_AddLimits.cs" />
@@ -129,6 +134,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ExternalAnnotations\Assembly-CSharp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

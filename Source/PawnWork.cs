@@ -14,7 +14,7 @@ namespace ABrenneke.BronzeAge
             pawn.SetWorkPriority("Patient", 1);
 
             // Study and research P1 (if there's research to do, prioritize it)
-            pawn.SetWorkPriority("Study", 1);
+            pawn.SetWorkPriority(DefDatabase<WorkTypeDef>.GetNamed("HR_Learn") != null ? "HR_Learn" : "Study", 1);
             pawn.SetWorkPriority("Research", 1);
 
             // Same with governing
