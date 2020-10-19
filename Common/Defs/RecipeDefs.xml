@@ -190,4 +190,53 @@
       <li>CraftingSpot</li>
     </recipeUsers>
   </RecipeDef>
+  <RecipeDef>
+    <defName>SewPatchworkCloth</defName>
+    <label>sew patchwork cloth</label>
+    <description>sew different colors and types of cloth together into ugly, but functional, patchwork cloth</description>
+    <jobString>sewing patchwork cloth.</jobString>
+    <workAmount>300</workAmount>
+    <workSpeedStat>TailoringSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>DyedCloth2</li>
+            <li>Leathers</li>
+          </categories>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>DyedCloth2</li>
+      </categories>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>DyedCloth2</li>
+      </categories>
+    </defaultIngredientFilter>
+    <products>
+      <ClothPatchwork>10</ClothPatchwork>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>CraftingSpot</li>
+      <li>TableLoom</li>
+      <li>TableElecLoom</li>
+      <li>HandTailoringBench</li>
+      <li>ElectricTailoringBench</li>
+    </recipeUsers>
+  </RecipeDef>
 </Defs>

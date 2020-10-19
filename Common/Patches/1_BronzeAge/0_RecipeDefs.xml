@@ -50,5 +50,20 @@
     </nomatch>
   </Operation>
 
-  <!-- Green Ironwood Lumber -->
+  <!-- Patchwork Cloth -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VGP Garden Dyes</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/</xpath>
+        </li>
+      </operations>
+    </match>
+    <nomatch Class="PatchOperationRemove">
+      <xpath>/Defs/RecipeDef[defName='SewPatchworkCloth']</xpath>
+    </nomatch>
+  </Operation>
 </Patch>

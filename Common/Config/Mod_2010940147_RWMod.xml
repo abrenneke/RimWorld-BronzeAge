@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="AgeMattersUpdated.RWModSettings">
+		<Aging_Rate>3</Aging_Rate>
+	</ModSettings>
+</SettingsBlock>

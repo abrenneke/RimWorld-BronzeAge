@@ -3052,4 +3052,53 @@
       </match>
     </match>
   </Operation>
+
+  <!-- Dying vat into medieval clothing -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>VGP Garden Dyes</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName='BarrelDye']/researchPrerequisites</xpath>
+            <value>
+              <researchPrerequisites>
+                <li>MedTimes_MedievalTailoring</li>
+              </researchPrerequisites>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <!-- Show unlocked medieval clothing -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>
+            /Defs/ThingDef[
+            (@Name='MedTimes_Tail_Apparel_Tier1'
+            or @Name='MedTimes_Tail_ApparelTabard'
+            or @Name='MedTimes_Tail_ApparelJacket') 
+            and not(researchPrerequisites)]
+          </xpath>
+          <value>
+            <researchPrerequisites>
+              <li>MedTimes_MedievalTailoring</li>
+            </researchPrerequisites>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>

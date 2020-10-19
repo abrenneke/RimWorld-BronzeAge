@@ -3505,4 +3505,384 @@
       </li>
     </operations>
   </Operation>
+  
+  <!-- Fix weird universal fermenter changes mods impose for some reason -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationRemove">
+        <success>Always</success>
+        <xpath>
+          /Defs/WorkGiverDef[giverClass='UniversalFermenter.WorkGiver_TakeProductOutOfUF'][position()>1] |
+          /Defs/WorkGiverDef[giverClass='UniversalFermenter.WorkGiver_FillUF'][position()>1]
+        </xpath>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/WorkGiverDef[giverClass='UniversalFermenter.WorkGiver_TakeProductOutOfUF']</xpath>
+        <value>
+          <WorkGiverDef>
+            <defName>UF_WorkGiver_TakeProductOutOfUniversalFermenter</defName>
+            <label>take product out of fermenter</label>
+            <giverClass>UniversalFermenter.WorkGiver_TakeProductOutOfUF</giverClass>
+            <workType>Hauling</workType>
+            <verb>take product</verb>
+            <gerund>taking product from</gerund>
+            <priorityInType>20</priorityInType>
+            <requiredCapacities>
+              <li>Manipulation</li>
+            </requiredCapacities>
+          </WorkGiverDef>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/WorkGiverDef[giverClass='UniversalFermenter.UniversalFermenter.WorkGiver_FillUF']</xpath>
+        <value>
+          <WorkGiverDef>
+            <defName>UF_WorkGiver_FillUniversalFermenter</defName>
+            <label>fill fermenter</label>
+            <giverClass>UniversalFermenter.WorkGiver_FillUF</giverClass>
+            <workType>Hauling</workType>
+            <verb>fill</verb>
+            <gerund>filling</gerund>
+            <priorityInType>19</priorityInType>
+            <requiredCapacities>
+              <li>Manipulation</li>
+            </requiredCapacities>
+          </WorkGiverDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Remove smithy, move its recipes to the blacksmith forges -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Times Unofficial Update</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd"> <!-- Everything makeable by fueled smithy is makable by electric smithy -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef/recipeMaker/recipeUsers[li='FueledSmithy' and not(li='ElectricSmithy')] |
+            /Defs/RecipeDef/recipeUsers[li='FueledSmithy' and not(li='ElectricSmithy')
+          </xpath>
+          <value>
+            <li>ElectricSmithy</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace"> <!-- Move everything to advanced blacksmith forge -->
+          <xpath>
+            /Defs/ThingDef/recipeMaker/recipeUsers[li='FueledSmithy' and not(li='MedTimes_BlacksmithForgeTierTwo')]/li[.='FueledSmithy'] |
+            /Defs/RecipeDef/recipeUsers[li='FueledSmithy' and not(li='MedTimes_BlacksmithForgeTierTwo')]/li[.='FueledSmithy']
+          </xpath>
+          <value>
+            <li>MedTimes_BlacksmithForgeTierTwo</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd"> <!-- Then add some to blacksmith forge -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[
+            defName='Apparel_SimpleHelmet'
+            or defName='Apparel_NordShield'
+            or defName='Apparel_KiteShield'
+            or defName='Apparel_Pavise'
+            or defName='VWE_MeleeWeapon_Shovel'
+            or defName='VWE_MeleeWeapon_Cleaver'
+            or defName='VWE_MeleeWeapon_Pickaxe'
+            or defName='VWE_MeleeWeapon_Hammer'
+            or defName='VWE_MeleeWeapon_Axe'
+            or defName='VWE_Throwing_Knives'
+            or defName='VWE_Bow_Long'
+            or defName='Apparel_SlaveCollar'
+            ]/recipeMaker/recipeUsers |
+            /Defs/RecipeDef[
+            defName='TomahawkThrowingAxeCraft'
+            or defName='ShurikenCraft'
+            or defName='R13_17_Pike'
+            or defName='R13_17_Halberd'
+            ]/recipeUsers
+          </xpath>
+          <value>
+            <li>MedTimes_BlacksmithForge</li>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace"> <!-- Some things OK at crafting station -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[
+            defName='Apparel_Coronet'
+            or defName='Apparel_Crown'
+            of defName='VFES_Tomahawk'
+            or defName='VWE_MeleeWeapon_Baton'
+            ]/recipeMaker/recipeUsers/li[.='FueledSmithy']
+          </xpath>
+          <value>
+            <li>MedTimes_CraftingStation</li>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove"> <!-- Some things are good at e.g. Crafting Station -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[
+            defName='Harp'
+            or defName='Harpsichord'
+            or defName='Apparel_Respirator'
+            or defName='Apparel_FullFaceRespirator'
+            or defName='Apparel_PAPR'
+            ]/recipeMaker/recipeUsers[li='MedTimes_BlacksmithForgeTierTwo'] |
+            /Defs/RecipeDef[
+            defName='SlingshotCraft'
+            ]/recipeUsers[li='MedTimes_BlacksmithForgeTierTwo']
+          </xpath>
+        </li>
+        <li Class="PatchOperationRemove"> <!-- Some things not makable at electric smithy either -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[li='false']/recipeMaker/recipeUsers[li='ElectricSmithy'] |
+            /Defs/RecipeDef[
+            defName='SlingshotCraft'
+            ]/recipeUsers[li='ElectricSmithy']
+          </xpath>
+        </li>
+        <li Class="PatchOperationRemove"> <!-- No build fueled smithy (leave in in case of DefOfs) -->
+          <success>Always</success>
+          <xpath>
+            /Defs/ThingDef[defName='FueledSmithy' or defName='GL_FueledSmithy']/designationCategory |
+            /Defs/ThingDef[defName='FueledSmithy' or defName='GL_FueledSmithy']/researchPrerequisites
+          </xpath>
+        </li>
+        <li Class="PatchOperationAdd"> <!-- Everything makable at basic forge makable at adv forge-->
+          <xpath>
+            /Defs/ThingDef/recipeMaker/recipeUsers[li='MedTimes_BlacksmithForge' and not(li='MedTimes_BlacksmithForgeTierTwo')]
+            /Defs/RecipeDef/recipeUsers[li='MedTimes_BlacksmithForge' and not(li='MedTimes_BlacksmithForgeTierTwo')]
+          </xpath>
+          <value>
+            <li>MedTimes_BlacksmithForgeTierTwo</li>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd"> <!-- Everything makable at basic forge makable at electric smithy -->
+          <xpath>
+            /Defs/ThingDef/recipeMaker/recipeUsers[li='MedTimes_BlacksmithForge' and not(li='ElectricSmithy')]
+            /Defs/RecipeDef/recipeUsers[li='MedTimes_BlacksmithForge' and not(li='ElectricSmithy')]
+          </xpath>
+          <value>
+            <li>ElectricSmithy</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Research bench not require steel (bad at very start of game) -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[defName='SimpleResearchBench']/costList</xpath>
+  </Operation>
+  
+  <!-- Ship chunks not dropping steel directly -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='VFEI_InfestedShipChunk']/killedLeavings/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>2</ChunkSlagSteel> <!-- 30 steel -->
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='VEE_ShipChunkHuman']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>3</ChunkSlagSteel> <!-- 30 steel -->
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_green']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>14</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_green_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>7</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_greenI']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>20</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_greenI_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>10</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_yellow']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>4</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_yellow_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>2</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_blue']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>4</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_blue_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>1</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_gray']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>4</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_gray_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>1</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_grayI']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>4</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_grayI_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>2</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_purple']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>19</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_purple_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>9</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_black']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>13</ChunkSlagSteel>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <success>Always</success>
+        <xpath>/Defs/ThingDef[defName='ShipChunk_black_small']/costList/Steel</xpath>
+        <value>
+          <ChunkSlagSteel>7</ChunkSlagSteel>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Bloomery inefficiently smelts steel slag -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Simple Chains: Steel</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs</xpath>
+          <value>
+            <RecipeDef>
+              <defName>ExtractMetalFromSlagInefficient</defName>
+              <label>melt slag into steel</label>
+              <description>Melt down steel slag into usable steel. In a bloomery, this is extremely inefficient.</description>
+              <jobString>Smelting steel from slag.</jobString>
+              <workAmount>1000</workAmount>
+              <workSpeedStat>SmeltingSpeed</workSpeedStat>
+              <effectWorking>Smelt</effectWorking>
+              <soundWorking>Recipe_Smelt</soundWorking>
+              <ingredients>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ChunkSlagSteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <Steel>5</Steel>
+              </products>
+              <fixedIngredientFilter>
+                <thingDefs>
+                  <li>ChunkSlagSteel</li>
+                </thingDefs>
+              </fixedIngredientFilter>
+            </RecipeDef>
+          </value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[defName='Owl_Bloomery']/recipes/li[.='ExtractMetalFromSlag']</xpath>
+          <value>
+            <li>ExtractMetalFromSlagInefficient</li>
+          </value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[defName='Owl_Bloomery']/recipes/li[.='SmeltWeapon']</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Some "operations" should not be able to fail -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[defName='InstallEarBandage' or defName='InstallEyePatch']</xpath>
+        <value>
+          <surgerySuccessChanceFactor>999999</surgerySuccessChanceFactor>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!-- Rename Smithing -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName='Smithing']/label</xpath>
+    <value>
+      <label>Steelworking</label>
+    </value>
+  </Operation>
 </Patch>

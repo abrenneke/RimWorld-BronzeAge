@@ -106,7 +106,9 @@
     <Compile Include="Patches\Mods\Psychology\GameCondition_Election_Slaves.cs" />
     <Compile Include="Patches\Mods\Psychology\LordJob_Joinable_Election_IsInvited_Slaves.cs" />
     <Compile Include="Patches\Mods\Rimocracy\StatPart_Governance_Multiplier_ExceptionFix.cs" />
+    <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_DoesEveryoneLocallyHate_Children.cs" />
     <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_DoesEveryoneLocallyHate_Slaves.cs" />
+    <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_FindCliques_Children.cs" />
     <Compile Include="Patches\Mods\RumorHasIt\ThirdPartyManager_FindCliques_Slaves.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_ResearchChanges.cs" />
     <Compile Include="Patches\RimWorld\Game_InitNewGame_WorkDefaults.cs" />

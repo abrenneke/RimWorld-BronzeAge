@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="DubsMintMenus.Settings">
+		<HideFinished>True</HideFinished>
+		<HideLocked>True</HideLocked>
+		<LastSavedBuild>818</LastSavedBuild>
+		<BoxSizeX>90</BoxSizeX>
+		<BoxSizeY>75</BoxSizeY>
+		<infocardW>350</infocardW>
+		<MaxHeight>650</MaxHeight>
+		<InfoWidth>358</InfoWidth>
+		<billTabH>300</billTabH>
+		<bBoxSizeY>62</bBoxSizeY>
+		<listWidth>404</listWidth>
+		<ResearchListWidth>350</ResearchListWidth>
+		<OverrideArchitect>True</OverrideArchitect>
+		<ShowBuildInfoCard>True</ShowBuildInfoCard>
+		<WheelOnRightClick>True</WheelOnRightClick>
+		<ResourceReadout />
+		<WheelDefs>
+			<li>RimWorld.Designator_Mine</li>
+			<li>AllowTool.Designator_HaulUrgently</li>
+			<li>RimWorld.Designator_Cancel</li>
+			<li>RimWorld.Designator_PlantsHarvestWood</li>
+			<li>RimWorld.Designator_ZoneAdd_Growing</li>
+			<li>RimWorld.Designator_AreaAllowedExpand</li>
+			<li>RimWorld.Designator_AreaAllowedClear</li>
+			<li>MedTimes_Brazier</li>
+			<li>RimWorld.Designator_SmoothSurface</li>
+			<li>Wall</li>
+			<li>Door</li>
+			<li>RimWorld.Designator_PlantsCut</li>
+			<li>RimWorld.Designator_Deconstruct</li>
+			<li>LogWall</li>
+			<li>INSDoorSimple_Biomass</li>
+			<li>INSWall_Biomass</li>
+			<li>RimWorld.Designator_Haul</li>
+			<li>SimpleOpenWindow</li>
+		</WheelDefs>
+	</ModSettings>
+</SettingsBlock>

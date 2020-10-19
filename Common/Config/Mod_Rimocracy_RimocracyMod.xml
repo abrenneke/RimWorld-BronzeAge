@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="Rimocracy.Settings">
+		<GovernanceDecaySpeed>0.5</GovernanceDecaySpeed>
+		<SuccessionType>Election</SuccessionType>
+		<DebugLogging>True</DebugLogging>
+	</ModSettings>
+</SettingsBlock>

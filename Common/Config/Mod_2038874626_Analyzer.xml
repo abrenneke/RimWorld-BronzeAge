@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="DubsAnalyzer.PerfAnalSettings">
+		<MeshOnlyBuildings>True</MeshOnlyBuildings>
+		<ShowOnMainTab>True</ShowOnMainTab>
+		<FixRepair>True</FixRepair>
+		<FixGame>True</FixGame>
+		<SnowOptimize>True</SnowOptimize>
+		<OptimizeDrills>True</OptimizeDrills>
+		<OptimizeDrawInspectGizmoGrid>True</OptimizeDrawInspectGizmoGrid>
+		<NeverCheckJobsOnDamage>True</NeverCheckJobsOnDamage>
+		<OverrideBuildRoof>True</OverrideBuildRoof>
+		<OptimiseAlerts>True</OptimiseAlerts>
+		<OverrideAlerts>True</OverrideAlerts>
+		<AlertFilter>
+			<keys>
+				<li>RimWorld.Alert_NeedResearchProject</li>
+			</keys>
+			<values>
+				<li>True</li>
+			</values>
+		</AlertFilter>
+	</ModSettings>
+</SettingsBlock>

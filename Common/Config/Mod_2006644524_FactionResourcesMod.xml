@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="MURFactionResources.FactionResourcesSettings">
+		<showHourlyGain>False</showHourlyGain>
+		<disableRefundMessage>False</disableRefundMessage>
+	</ModSettings>
+</SettingsBlock>

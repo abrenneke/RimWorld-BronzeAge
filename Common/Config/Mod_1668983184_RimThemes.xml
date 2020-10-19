@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="aRandomKiwi.RimThemes.Settings">
+		<overrideThemeWindowFillColorAlpha>1</overrideThemeWindowFillColorAlpha>
+		<disableWallpaper>True</disableWallpaper>
+		<disableCustomFontsInConsole>False</disableCustomFontsInConsole>
+		<disableParticle>False</disableParticle>
+		<disableCustomSounds>True</disableCustomSounds>
+		<disableVideoBg>False</disableVideoBg>
+		<lastVersionInfo>RimThemes NX</lastVersionInfo>
+	</ModSettings>
+</SettingsBlock>

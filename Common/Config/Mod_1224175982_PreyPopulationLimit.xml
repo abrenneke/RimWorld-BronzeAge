@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="PreyPopulationLimitSettings">
+		<preyLimit>6</preyLimit>
+		<preyLimitString>6</preyLimitString>
+		<showPreyPopulationAlerts>False</showPreyPopulationAlerts>
+		<showOverPopulationAlerts>False</showOverPopulationAlerts>
+	</ModSettings>
+</SettingsBlock>

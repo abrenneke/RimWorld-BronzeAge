@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="O21Toolbox.O21ToolboxSettings">
+		<FirstStartUp>True</FirstStartUp>
+		<EnergyNeedCompatMode>True</EnergyNeedCompatMode>
+		<moonCycleEnabled>True</moonCycleEnabled>
+	</ModSettings>
+</SettingsBlock>

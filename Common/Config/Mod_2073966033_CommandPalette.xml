@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+	<ModSettings Class="CommandPalette.Settings">
+		<paletteScale>0.7456964</paletteScale>
+		<numCols>6</numCols>
+		<numRows>4</numRows>
+		<keybinding>
+			<label>Open Command Palette</label>
+			<type>MouseButton</type>
+			<button>1</button>
+		</keybinding>
+	</ModSettings>
+</SettingsBlock>
